@@ -3,14 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Clases/Medicamento.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Rest/MedicoResource.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Listas/ListaTratamiento.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Rest/HabitacionResource.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Rest/MedicamentoResource.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Rest/PacienteResource.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Listas/ListaMedico.java</file>
-            <file>file:/C:/Users/joans/OneDrive/Documentos/NetBeansProjects/gestiMed2024/src/java/Rest/TratamientoResource.java</file>
+            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/DAO/DAOMedicamento.java</file>
         </group>
     </open-files>
 </project-private>
