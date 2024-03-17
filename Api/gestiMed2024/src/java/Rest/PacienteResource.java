@@ -48,7 +48,7 @@ public class PacienteResource {
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response getOnePaciente(@PathParam("sip") String sip){
         Response response;
-        Paciente paciente = DAOPaciente.getPaciente(sip);
+        Paciente paciente = DAOPaciente.getPaciente(sip,true);
         response = Response.status(Response.Status.OK).entity(paciente).build();
         return response;
     }

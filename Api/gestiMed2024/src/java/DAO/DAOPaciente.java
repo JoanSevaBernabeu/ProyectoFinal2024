@@ -81,7 +81,7 @@ public class DAOPaciente {
         return lista;
     }
     
-    public static Paciente getPaciente(String sip){
+    public static Paciente getPaciente(String sip,boolean obtenerMed){
         Paciente paciente = null;
         Statement statement = null;
         conectar();
@@ -93,8 +93,10 @@ public class DAOPaciente {
                 paciente = new Paciente(rs.getString("sip"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("numContacto"),rs.getDate("nacimiento"),rs.getString("urgencia"));
                 Tratamiento tratamiento = DAOTratamiento.getTratamiento(rs.getString("tratamiento"));
                 paciente.setTratamiento(tratamiento);
-                ListaMedico medicos = obtenerMedicos(rs.getString("sip"));
-                paciente.setMedicoList(medicos);
+                if(obtenerMed == true){
+                    ListaMedico medicos = obtenerMedicos(rs.getString("sip"));
+                    paciente.setMedicoList(medicos);
+                }
                 Habitacion habitacion = getHabitacion(rs.getString("numHabitacion"));
                 paciente.setNumHabitacion(habitacion);
             }
@@ -104,7 +106,6 @@ public class DAOPaciente {
         desconectar();
         return paciente;
     }
-    
     
     
     public static ListaMedico obtenerMedicos(String sip){
@@ -117,7 +118,7 @@ public class DAOPaciente {
             statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sentencia);
             while(rs.next()){
-                Medico medico = DAOMedico.getMedico(rs.getString("dni_medico"));
+                Medico medico = DAOMedico.getMedico(rs.getString("dni_medico"),false);
                 lista.add(medico);
             }
         }catch(SQLException ex){
@@ -152,7 +153,7 @@ public class DAOPaciente {
         statement = con.createStatement();
         ArrayList<Medico> lista = medicos.getLista();
         for(Medico med : lista){
-            String consulta = "INSERT INTO cura VALUES ('"+med.getDni()+"','"+paciente.getSip()+"')";
+            String consulta = "INSERT INTO trata VALUES ('"+med.getDni()+"','"+paciente.getSip()+"')";
             ResultSet rs = statement.executeQuery(consulta);
         }
     }
@@ -182,7 +183,7 @@ public class DAOPaciente {
     
     public static void deleteCura(String sip) throws SQLException{
         Statement statement = con.createStatement();
-        String delete = "DELETE FROM cura WHERE sip_paciente LIKE '"+sip+"'";
+        String delete = "DELETE FROM trata WHERE sip_paciente LIKE '"+sip+"'";
         ResultSet rs = statement.executeQuery(delete);
     }
 }

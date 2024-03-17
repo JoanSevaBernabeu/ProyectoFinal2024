@@ -49,7 +49,7 @@ public class MedicoResource {
     public Response getMedico(@PathParam("dni") String dni){
         Response response;
         
-        Medico med = DAOMedico.getMedico(dni);
+        Medico med = DAOMedico.getMedico(dni,true);
         
         response = Response.status(Response.Status.OK).entity(med).build();
         return response;

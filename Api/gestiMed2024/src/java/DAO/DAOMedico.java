@@ -57,12 +57,12 @@ public class DAOMedico {
         Statement statement = null;
         conectar();
         try{
-            String sentencia = "SELECT * FROM medico";
+            String sentencia = "SELECT * FROM medico;";
             statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sentencia);
             while(rs.next()){
                 Medico med = new Medico(rs.getString("dni"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("email"),rs.getString("contrasenya"),rs.getString("numContacto"));
-                ListaPaciente pacientes = obtenerPacientes(rs.getString("dni"));
+                ListaPaciente pacientes = obtenerPacientes(med.getDni());
                 med.setPacienteList(pacientes);
                 lista.add(med);
             }
@@ -74,7 +74,7 @@ public class DAOMedico {
         return lista    ;
     }
     
-    public static Medico getMedico(String dni){
+    public static Medico getMedico(String dni,boolean obtenerPac){
         Medico med = null;
         Statement statement = null;
         conectar();
@@ -84,8 +84,10 @@ public class DAOMedico {
             ResultSet rs = statement.executeQuery(sentencia);
             if(rs.next()){
                 med = new Medico(rs.getString("dni"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("email"),rs.getString("contrasenya"),rs.getString("numContacto"));
-                ListaPaciente pacientes = obtenerPacientes(rs.getString("dni"));
-                med.setPacienteList(pacientes);
+                if(obtenerPac == true){
+                    ListaPaciente pacientes = obtenerPacientes(med.getDni());
+                    med.setPacienteList(pacientes);
+                }   
             }
         }catch(SQLException ex){
             Logger.getLogger(DAOMedico.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,21 +99,21 @@ public class DAOMedico {
     public static ListaPaciente obtenerPacientes(String dni){
         ListaPaciente lista = new ListaPaciente();
         Statement statement = null;
-        conectar();
+//        conectar();
         try{
-            String sentencia = "SELECT * FROM cura WHERE dni_enfermero LIKE '"+dni+"'";
+            String sentencia = "SELECT * FROM trata WHERE dni_medico LIKE '"+dni+"';";
             statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sentencia);
             if(rs.next()){
                 while(rs.next()){
-                    Paciente paciente = DAOPaciente.getPaciente(rs.getString("sip_paciente"));
+                    Paciente paciente = DAOPaciente.getPaciente(rs.getString("sip_paciente"),false);
                     lista.add(paciente);
                 }
             }
         }catch(SQLException ex){
             Logger.getLogger(DAOMedico.class.getName()).log(Level.SEVERE, null, ex);
         }
-        desconectar();
+//        desconectar();
         return lista;
     }
     public static void medicoPost(Medico medico){
