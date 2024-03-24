@@ -1,0 +1,152 @@
+﻿<Window x:Class="gestiMed2024.vistas.PacienteNuevo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gestiMed2024.vistas"
+        mc:Ignorable="d"
+        Title="PacienteNuevo" Height="900" Width="1600">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="baseTextBlock">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="enunciadoTextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="tituloTextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextDecorations" Value="Underline"/>
+            <Setter Property="Grid.ColumnSpan" Value="2"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="baseTextBox">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="ComboBox" x:Key="baseComboBox">
+            <Setter Property="Width" Value="110"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Button" x:Key="baseButton">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="sintomasTextBox">
+            <Setter Property="Margin" Value="50"/>
+        </Style>
+        <Style TargetType="Border" x:Key="baseBorder">
+            <Setter Property="BorderBrush" Value="DeepSkyBlue"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.75*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="0.25*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource baseBorder}">
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource enunciadoTextBlock}" Text="Datos personales"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Nombre: " />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Nº SIP:"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource baseTextBlock}" Text="Tlf contacto:"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="nombreTextBox"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="SipTextBox"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" Style="{StaticResource baseTextBox}" x:Name="telefonoTextBox"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Apellido: " />
+                    <Grid Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource baseTextBlock}" Text="Dia de nacimiento: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Mes de nacimiento: "/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Año de nacimiento: "/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource baseTextBox}" x:Name="diaTextBox"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="mesTextBox"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="anoTextBox"/>
+                    </Grid>
+                    <TextBox Grid.Column="3" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="apellidoTextBox"/>
+                </Grid>
+            </Border>
+            <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource baseBorder}">
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource enunciadoTextBlock}" Text="Datos hospitalarios"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Nº habitacion: " />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Tratamiento: "/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="numHabitacionTextBox"/>
+                    <ComboBox Grid.Column="1" Grid.Row="2" x:Name="tratamientoComboBox" Style="{StaticResource baseComboBox}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Urgencia: " />
+                    <TextBlock Grid.Column="2" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Medicos: "/>
+                    <Button Grid.Column="2" Grid.Row="3" Content="Añadir medico" Style="{StaticResource baseButton}" Click="addButton_Click"/>
+                    <ComboBox Grid.Column="3" Grid.Row="1" x:Name="urgenciaComboBox" Style="{StaticResource baseComboBox}"/>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" >
+                        <StackPanel x:Name="medicosStackPanel">
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Sintomas" Style="{StaticResource enunciadoTextBlock}" x:Name="sintomasTextBox"/>
+                    <TextBox Style="{StaticResource sintomasTextBox}"/>
+                </DockPanel>
+            </Border>
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="Aceptar" Style="{StaticResource baseButton}" Click="aceptarButton_Click"/>
+                <Button Grid.Column="1" Content="Salir" Style="{StaticResource baseButton}" Click="cancelarButton_Click"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
