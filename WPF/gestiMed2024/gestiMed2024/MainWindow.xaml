@@ -1,0 +1,80 @@
+﻿<Window x:Class="gestiMed2024.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gestiMed2024"
+        mc:Ignorable="d"
+        Icon="src/logo3.ico"
+        Title="GestiMed" Height="900" MinHeight="900" Width="1600" MinWidth="1600">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.Cancelar"
+                        Executed="CommandBindingCancelar_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.Salir"
+                        Executed="CommandBindingSalir_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.HabNueva"
+                        Executed="CommandBindingHabitacionNueva_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.EliminarHabitacion"
+                        Executed="CommandBindingEliminarHabitacion_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.TratNuevo"
+                        Executed="CommandBindingTratamientoNuevo_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.EliminarTratamiento"
+                        Executed="CommandBindingEliminarTratamiento_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.MedicamentoNuevo"
+                        Executed="CommandBindingMedicamentoNuevo_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.EliminarMedicamento"
+                        Executed="CommandBindingEliminarMedicamento_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.MedicoNuevo"
+                        Executed="CommandBindingMedicoNuevo_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.EliminarMedico"
+                        Executed="CommandBindingEliminarMedico_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.PacienteNuevo"
+                        Executed="CommandBindingPacienteNuevo_Executed"></CommandBinding>
+        <CommandBinding Command="local:CustomCommands.EliminarPaciente"
+                        Executed="CommandBindingEliminarPaciente_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.Resources>
+        <Style TargetType="MenuItem" x:Key="baseMenuItem">
+            <Setter Property="Header" Value="_Cancelar"/>
+            <Setter Property="InputGestureText" Value="Ctrl + C"/>
+            <Setter Property="Command" Value="local:CustomCommands.Cancelar"/>
+        </Style>
+        <Style TargetType="Button" x:Key="baseButton">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="40"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="LightSkyBlue" Height="20">
+            <MenuItem Header="Pacientes">
+                <MenuItem Header="Paciente nuevo..." InputGestureText="Ctrl + P" Command="local:CustomCommands.PacienteNuevo"/>
+                <MenuItem Header="Eliminar Paciente..." InputGestureText="Ctrl + N" Command="local:CustomCommands.EliminarPaciente"/>
+                <MenuItem Style="{StaticResource baseMenuItem}"/>
+            </MenuItem>
+            <MenuItem Header="Habitaciones">
+                <MenuItem Header="_Habitacion nueva..." InputGestureText="Ctrl + H" Command="local:CustomCommands.HabNueva"/>
+                <MenuItem Header="Eliminar Habitacion..." InputGestureText="Ctrl + A" Command="local:CustomCommands.EliminarHabitacion"/>
+                <MenuItem Style="{StaticResource baseMenuItem}"/>
+            </MenuItem>
+            <MenuItem Header="Tratamiento">
+                <MenuItem Header="_Tratamiento nuevo..." InputGestureText="Ctrl + T" Command="local:CustomCommands.TratNuevo"/>
+                <MenuItem Header="Eliminar Tratamiento..." InputGestureText="Ctrl + R" Command="local:CustomCommands.EliminarTratamiento"/>
+                <MenuItem Style="{StaticResource baseMenuItem}"/>
+            </MenuItem>
+            <MenuItem Header="Medicamentos">
+                <MenuItem Header="_Medicacion nueva..." InputGestureText="Ctrl + M" Command="local:CustomCommands.MedicamentoNuevo"/>
+                <MenuItem Header="Eliminar Medicacion..." InputGestureText="Ctrl + D" Command="local:CustomCommands.EliminarMedicamento"/>
+                <MenuItem Style="{StaticResource baseMenuItem}"/>
+            </MenuItem>
+            <MenuItem Header="Medicos">
+                <MenuItem Header="M_edico Nuevo..." InputGestureText="Ctrl + E" Command="local:CustomCommands.MedicoNuevo"/>
+                <MenuItem Header="Eliminar Medico..." InputGestureText="Ctrl + I" Command="local:CustomCommands.EliminarMedico"/>
+                <MenuItem Style="{StaticResource baseMenuItem}"/>
+            </MenuItem>
+        </Menu>
+        <Button DockPanel.Dock="Bottom" Content="Salir" Style="{StaticResource baseButton}" Click="salirButton_Click"/>
+        <Image Source="/src/logo2.png" Margin="20"/>
+    </DockPanel>
+</Window>
