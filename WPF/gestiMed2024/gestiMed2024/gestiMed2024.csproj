@@ -55,6 +55,36 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="vistas\EliminarHabitacion.xaml.cs">
+      <DependentUpon>EliminarHabitacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\EliminarMedicamento.xaml.cs">
+      <DependentUpon>EliminarMedicamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\EliminarMedico.xaml.cs">
+      <DependentUpon>EliminarMedico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\EliminarPaciente.xaml.cs">
+      <DependentUpon>EliminarPaciente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\EliminarTratamiento.xaml.cs">
+      <DependentUpon>EliminarTratamiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\HabitacionNueva.xaml.cs">
+      <DependentUpon>HabitacionNueva.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\MedicamentoNuevo.xaml.cs">
+      <DependentUpon>MedicamentoNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\MedicoNuevo.xaml.cs">
+      <DependentUpon>MedicoNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\PacienteNuevo.xaml.cs">
+      <DependentUpon>PacienteNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\TratamientoNuevo.xaml.cs">
+      <DependentUpon>TratamientoNuevo.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +93,56 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clases\Habitacion.cs" />
+    <Compile Include="clases\Medicamento.cs" />
+    <Compile Include="clases\Medico.cs" />
+    <Compile Include="clases\Paciente.cs" />
+    <Compile Include="clases\Tratamiento.cs" />
+    <Compile Include="CustomCommands.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="vistas\EliminarHabitacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\EliminarMedicamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\EliminarMedico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\EliminarPaciente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\EliminarTratamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\HabitacionNueva.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\MedicamentoNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\MedicoNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\PacienteNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\TratamientoNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,6 +169,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="servicios\" />
+    <Folder Include="src\" />
+    <Folder Include="viewmodels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
