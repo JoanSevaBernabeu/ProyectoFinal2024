@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using gestiMed2024.clases;
 using gestiMed2024.servicios;
+using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -19,7 +20,8 @@ namespace gestiMed2024.viewmodels
         public void obtenerMedicos()
         {
             servicio = new MedicoService();
-            medicos = servicio.GetAllMedicos();
+            ListaMedico listaMedicos = servicio.GetAllMedicos();
+            medicos = listaMedicos.getCollectionMedicos();
         }
         public void aceptar(Medico med)
         {

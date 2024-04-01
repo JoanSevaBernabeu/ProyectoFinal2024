@@ -1,4 +1,5 @@
 ﻿using gestiMed2024.clases;
+using gestiMed2024.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

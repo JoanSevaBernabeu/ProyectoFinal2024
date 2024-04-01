@@ -81,7 +81,7 @@ namespace gestiMed2024.viewmodels
         }
         public void medicoNuevo()
         {
-            MedicoNuevoVM medico_nuevo = new MedicoNuevoVM();
+            MedicoNuevo medico_nuevo = new MedicoNuevo();
             medico_nuevo.Owner = ventana;
             medico_nuevo.Show();
         }

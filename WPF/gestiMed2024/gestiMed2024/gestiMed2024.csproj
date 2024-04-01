@@ -91,7 +91,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="listas\ListaMedico.cs" />
     <Compile Include="servicios\HabitacionService.cs" />
+    <Compile Include="servicios\MedicamentoService.cs" />
+    <Compile Include="servicios\MedicoService.cs" />
+    <Compile Include="servicios\PacienteService.cs" />
+    <Compile Include="servicios\TratamientoService.cs" />
     <Compile Include="viewmodels\EliminarHabitacionVM.cs" />
     <Compile Include="viewmodels\EliminarMedicamentoVM.cs" />
     <Compile Include="viewmodels\EliminarMedicoVM.cs" />
@@ -219,8 +224,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="src\" />
+    <Resource Include="src\logo3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\logo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

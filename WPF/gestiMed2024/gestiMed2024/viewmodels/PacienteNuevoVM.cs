@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using gestiMed2024.clases;
 using gestiMed2024.vistas;
 using gestiMed2024.servicios;
+using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -71,11 +72,12 @@ namespace gestiMed2024.viewmodels
             if (existe) error();
             else postPaciente(paciente);
         }
-        public Collection<Medico> getMedicos()
+        public ListaMedico getMedicos()
         {
             MedicoService medServicio = new MedicoService();
-            ObservableCollection<Medico> medicos = medServicio.GetAllMedicos();
-            return medicos;
+            ListaMedico listaMedicos = new ListaMedico();
+            listaMedicos = medServicio.GetAllMedicos();
+            return listaMedicos;
         }
         public Medico getMedico(string dni)
         {

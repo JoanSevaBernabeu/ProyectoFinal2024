@@ -1,4 +1,6 @@
 ﻿using gestiMed2024.clases;
+using gestiMed2024.listas;
+using gestiMed2024.viewmodels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -65,7 +67,8 @@ namespace gestiMed2024.vistas
             combo.Width = 110;
             combo.Height = 30;
             combo.Margin = new Thickness(10, 10, 10, 10);
-            Collection<Medico> medicos = vm.getMedicos();
+            ListaMedico listaMedicos = vm.getMedicos();
+            ObservableCollection<Medico> medicos = listaMedicos.getCollectionMedicos();
             foreach (Medico med in medicos)
             {
                 combo.Items.Add(med.getNombre());
