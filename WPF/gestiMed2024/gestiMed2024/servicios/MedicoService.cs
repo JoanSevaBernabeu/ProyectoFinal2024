@@ -28,12 +28,13 @@ namespace gestiMed2024.servicios
             ListaMedico medicosCollection = JsonConvert.DeserializeObject<ListaMedico>(response.Content);
             return medicosCollection;
         }
-        public ObservableCollection<Medico> getMedico(string dni)
+        public ListaMedico getMedico(string dni)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/dni/" + dni, Method.Get);
             var response = client.Execute(request);
-            return JsonConvert.DeserializeObject<ObservableCollection<Medico>>(response.Content);
+            ListaMedico medicosCollection = JsonConvert.DeserializeObject<ListaMedico>(response.Content);
+            return medicosCollection;
         }
         public RestResponse postMedico(Medico medico)
         {

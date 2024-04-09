@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using gestiMed2024.clases;
 using gestiMed2024.vistas;
 using gestiMed2024.servicios;
+using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -38,20 +39,23 @@ namespace gestiMed2024.viewmodels
         public void obtenerMedicamentos()
         {
             servicio = new MedicamentoService();
-            medicamentos = servicio.getAllMedicamentos();
+            ListaMedicamento lista = servicio.getAllMedicamentos();
+            medicamentos = lista.getMedicamentos();
         }
         public Collection<Tratamiento> getTratamientos()
         {
             TratamientoService tratamientoService = new TratamientoService();
-            Collection<Tratamiento> tratamientos = tratamientoService.getAllTratamientos();
+            ListaTratamiento listaTratamientos = tratamientoService.getAllTratamientos();
+            Collection<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
             return tratamientos;
         }
         public Tratamiento getTratamiento(string nombre)
         {
             TratamientoService tratamientoService = new TratamientoService();
-            Collection<Tratamiento> tratamiento = tratamientoService.getTratamiento(nombre);
-            if (tratamiento.Count() != 1) return null;
-            else return tratamiento[0];
+            ListaTratamiento listaTratamientos = tratamientoService.getAllTratamientos();
+            Collection<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
+            if (tratamientos.Count() != 1) return null;
+            else return tratamientos[0];
         }
         public void error()
         {

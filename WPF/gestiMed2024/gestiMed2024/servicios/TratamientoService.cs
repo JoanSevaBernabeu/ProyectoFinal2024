@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using gestiMed2024.clases;
 using RestSharp;
 using Newtonsoft.Json;
+using gestiMed2024.listas;
 
 namespace gestiMed2024.servicios
 {
@@ -17,19 +18,21 @@ namespace gestiMed2024.servicios
         {
             ruta = "http://localhost:8085/gestiMed2024/gestimed2024/tratamiento";
         }
-        public ObservableCollection<Tratamiento> getAllTratamientos()
+        public ListaTratamiento getAllTratamientos()
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
-            return JsonConvert.DeserializeObject<ObservableCollection<Tratamiento>>(response.Content);
+            ListaTratamiento tratamientos = JsonConvert.DeserializeObject<ListaTratamiento>(response.Content);
+            return tratamientos;
         }
-        public ObservableCollection<Tratamiento> getTratamiento(string nombre)
+        public ListaTratamiento getTratamiento(string nombre)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/tratamiento/" + nombre, Method.Get);
             var response = client.Execute(request);
-            return JsonConvert.DeserializeObject<ObservableCollection<Tratamiento>>(response.Content);
+            ListaTratamiento tratamientos = JsonConvert.DeserializeObject<ListaTratamiento>(response.Content);
+            return tratamientos;
         }
         public RestResponse postTratamiento(Tratamiento tratamiento)
         {

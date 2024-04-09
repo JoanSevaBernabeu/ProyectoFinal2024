@@ -110,7 +110,6 @@ public class DAOPaciente {
     
     public static ListaMedico obtenerMedicos(String sip){
         ListaMedico lista = new ListaMedico();
-        ArrayList<Medico> listaMedicos = null;
         Statement statement = null;
         conectar();
         try{

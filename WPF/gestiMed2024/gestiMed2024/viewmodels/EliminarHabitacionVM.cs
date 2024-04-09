@@ -1,4 +1,5 @@
 ﻿using gestiMed2024.clases;
+using gestiMed2024.listas;
 using gestiMed2024.servicios;
 using gestiMed2024.vistas;
 using System;
@@ -47,7 +48,8 @@ namespace gestiMed2024.viewmodels
         public void obtenerHabitaciones()
         {
             servicio = new HabitacionService();
-            habitaciones = servicio.getAllHabitaciones();
+            ListaHabitaciones lista = servicio.getAllHabitaciones();
+            habitaciones = lista.getHabitaciones();
         }
         public void deleteHabitacion(string numero)
         {
