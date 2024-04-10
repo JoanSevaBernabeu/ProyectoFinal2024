@@ -82,28 +82,32 @@ namespace gestiMed2024.viewmodels
         public Medico getMedico(string dni)
         {
             MedicoService medServicio = new MedicoService();
-            Collection<Medico> medico = medServicio.getMedico(dni);
+            ListaMedico listaMedico = medServicio.getMedico(dni);
+            Collection<Medico> medico = listaMedico.getCollectionMedicos();
             if (medico.Count != 1) return null;
             else return medico[0];
         }
         public Habitacion getHabitacion(string num)
         {
             HabitacionService habServicio = new HabitacionService();
-            ObservableCollection<Habitacion> habitaciones = habServicio.getHabitacion(num);
+            ListaHabitaciones listaHabitaciones = habServicio.getHabitacion(num);
+            ObservableCollection<Habitacion> habitaciones = listaHabitaciones.getHabitaciones();
             if (habitaciones.Count() != 1) return null;
             else return habitaciones[0];
         }
         public Tratamiento getTratamiento(string nombre)
         {
             TratamientoService tratServicio = new TratamientoService();
-            ObservableCollection<Tratamiento> tratamientos = tratServicio.getTratamiento(nombre);
+            ListaTratamiento listaTratamientos = tratServicio.getTratamiento(nombre);
+            ObservableCollection<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
             if (tratamientos.Count() != 1) return null;
             else return tratamientos[0];
         }
         public Collection<Tratamiento> getTratamientos()
         {
             TratamientoService tratServicio = new TratamientoService();
-            ObservableCollection<Tratamiento> tratamientos = tratServicio.getAllTratamientos();
+            ListaTratamiento listaTratamiento = tratServicio.getAllTratamientos();
+            ObservableCollection<Tratamiento> tratamientos = listaTratamiento.getListaTratamientos();
             return tratamientos;
         }
     }

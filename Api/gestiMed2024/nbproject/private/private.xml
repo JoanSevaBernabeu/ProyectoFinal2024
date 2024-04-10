@@ -3,10 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Clases/Medico.java</file>
-            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/DAO/DAOMedico.java</file>
-            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Rest/MedicoResource.java</file>
-            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Listas/ListaMedico.java</file>
+            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Clases/Medicamento.java</file>
         </group>
     </open-files>
 </project-private>

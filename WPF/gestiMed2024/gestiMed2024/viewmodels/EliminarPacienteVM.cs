@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using gestiMed2024.servicios;
+using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -47,7 +48,8 @@ namespace gestiMed2024.viewmodels
         public void obtenerPacientes()
         {
             servicio = new PacienteService();
-            pacientes = servicio.getAllPacientes();
+            ListaPaciente lista = servicio.getAllPacientes();
+            pacientes = lista.getListaPacientes();
         }
         private void deletePaciente(string sip)
         {
