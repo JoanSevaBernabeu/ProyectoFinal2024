@@ -16,7 +16,7 @@ namespace gestiMed2024.viewmodels
     {
         private EliminarPaciente ventana;
         PacienteService servicio;
-        Collection<Paciente> pacientes;
+        List<Paciente> pacientes;
 
         public void error()
         {

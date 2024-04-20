@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestiMed2024.listas;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,28 +14,28 @@ namespace gestiMed2024.clases
         private string nombre;
         private int cantidad;
         private int intervalo;
-        private Collection<Tratamiento> tratamientos;
+        private ListaTratamiento tratamientos;
 
         // Constructores
         public Medicamento() { }
-        public Medicamento(string id, string nombre, int cantidad, int intervalo)
+        public Medicamento(int cantidad, string id, int intervalo, string nombre)
         {
-            this.id = id;
-            this.nombre = nombre;
             this.cantidad = cantidad;
+            this.id = id;
             this.intervalo = intervalo;
+            this.nombre = nombre;
         }
         // Getters
         public string getId() { return id; }
         public string getNombre() { return nombre; }
         public int getCantidad() { return cantidad; }
         public int getIntervalo() { return intervalo; }
-        public Collection<Tratamiento> getTratamiento() { return tratamientos; }
+        public ListaTratamiento getTratamiento() { return tratamientos; }
         // Setters
         public void setId(string id) { this.id = id; }
         public void setNombre(string nombre) { this.nombre = nombre; }
         public void setCantidad(int cantidad) { this.cantidad = cantidad; }
         public void setIntervalo(int intervalo) { this.intervalo = intervalo; }
-        public void setTratamientos(Collection<Tratamiento> tratamientos) { this.tratamientos = tratamientos; }
+        public void setTratamientos(ListaTratamiento tratamientos) { this.tratamientos = tratamientos; }
     }
 }

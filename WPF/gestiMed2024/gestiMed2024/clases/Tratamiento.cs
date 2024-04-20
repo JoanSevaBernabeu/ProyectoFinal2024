@@ -15,10 +15,17 @@ namespace gestiMed2024.clases
 
         // Constructores
         public Tratamiento() { }
-        public Tratamiento(string nombre, string descripcion, string solucion)
+        public Tratamiento(string descripcion, Medicamento medicamento, string nombre, string solucion)
         {
-            this.nombre = nombre;
             this.descripcion = descripcion;
+            this.medicamento = medicamento;
+            this.nombre = nombre;
+            this.solucion = solucion;
+        }
+        public Tratamiento(string descripcion, string nombre, string solucion)
+        {
+            this.descripcion = descripcion;
+            this.nombre = nombre;
             this.solucion = solucion;
         }
         public void addMedicamento(Medicamento medicamento)

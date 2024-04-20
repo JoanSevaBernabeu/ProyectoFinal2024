@@ -47,7 +47,7 @@ namespace gestiMed2024.vistas
         }
         private void rellenaComboTratamiento()
         {
-            Collection<Tratamiento> tratamientos = vm.getTratamientos();
+            List<Tratamiento> tratamientos = vm.getTratamientos();
             foreach (Tratamiento trat in tratamientos)
             {
                 tratamientoComboBox.Items.Add(trat.getNombre());
@@ -68,17 +68,17 @@ namespace gestiMed2024.vistas
             combo.Height = 30;
             combo.Margin = new Thickness(10, 10, 10, 10);
             ListaMedico listaMedicos = vm.getMedicos();
-            ObservableCollection<Medico> medicos = listaMedicos.getCollectionMedicos();
+            List<Medico> medicos = listaMedicos.getCollectionMedicos();
             foreach (Medico med in medicos)
             {
                 combo.Items.Add(med.getNombre());
             }
             medicosStackPanel.Children.Add(combo);
         }
-        private Collection<Medico> obtenerMedicos()
+        private List<Medico> obtenerMedicos()
         {
             StackPanel stack = medicosStackPanel;
-            Collection<Medico> medicos = null;
+            List<Medico> medicos = null;
             for (int i = 0; i < stack.Children.Count; i++)
             {
                 Medico med = vm.getMedico(stack.Children[i].ToString());
@@ -93,7 +93,6 @@ namespace gestiMed2024.vistas
             string sip = SipTextBox.Text;
             string telefono = telefonoTextBox.Text;
             string apellidos = apellidoTextBox.Text;
-            string sintomas = sintomasTextBox.Text;
             int dia = int.Parse(diaTextBox.Text);
             int mes = int.Parse(mesTextBox.Text);
             int ano = int.Parse(anoTextBox.Text);
@@ -101,8 +100,9 @@ namespace gestiMed2024.vistas
             Habitacion habitacion = vm.getHabitacion(numHabitacionTextBox.Text);
             Tratamiento tratamiento = vm.getTratamiento(tratamientoComboBox.SelectedItem.ToString());
             string urgencia = urgenciaComboBox.SelectedItem.ToString();
-            Collection<Medico> medicos = obtenerMedicos();
-            paciente = new Paciente(sip, nombre, apellidos, telefono, nacimiento, sintomas, urgencia);
+            List<Medico> listaMedicos = obtenerMedicos();
+            ListaMedico medicos = new ListaMedico(listaMedicos);
+            paciente = new Paciente(apellidos,nacimiento,nombre,telefono,sip,urgencia);
             paciente.setHabitacion(habitacion);
             paciente.setTratamiento(tratamiento);
             paciente.setMedicos(medicos);

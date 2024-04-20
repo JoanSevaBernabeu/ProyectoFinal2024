@@ -1,4 +1,5 @@
 ﻿using gestiMed2024.clases;
+using gestiMed2024.listas;
 using gestiMed2024.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace gestiMed2024.vistas
             ComboBox combo = new ComboBox();
             combo.Width = 110;
             combo.Height = 30;
-            Collection<Tratamiento> tratamientos = vm.getTratamientos();
+            List<Tratamiento> tratamientos = vm.getTratamientos();
             foreach (Tratamiento trat in tratamientos)
             {
                 combo.Items.Add(trat.getNombre());
@@ -66,17 +67,18 @@ namespace gestiMed2024.vistas
             int intervalo = int.Parse(intervaloTextBox.Text);
             int cantidad = int.Parse(cantidadTextBox.Text);
             string nombre = nombreTextBox.Text;
-            Collection<Tratamiento> tratamientos = obtenerTratamientos();
-            medicamento = new Medicamento(id, nombre, cantidad, intervalo);
-            medicamento.setTratamientos(tratamientos);
+            List<Tratamiento> tratamientos = obtenerTratamientos();
+            ListaTratamiento listaTratamientos = new ListaTratamiento(tratamientos);
+            medicamento = new Medicamento(cantidad,id,intervalo,nombre);
+            medicamento.setTratamientos(listaTratamientos);
 
             return medicamento;
         }
 
-        private Collection<Tratamiento> obtenerTratamientos()
+        private List<Tratamiento> obtenerTratamientos()
         {
             StackPanel stack = tratamientosStackPanel;
-            Collection<Tratamiento> tratamientos = null;
+            List<Tratamiento> tratamientos = null;
             for (int i = 0; i < stack.Children.Count; i++)
             {
                 Tratamiento trat = vm.getTratamiento(stack.Children[i].ToString());

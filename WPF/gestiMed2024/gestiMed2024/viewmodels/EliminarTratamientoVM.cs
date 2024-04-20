@@ -16,7 +16,7 @@ namespace gestiMed2024.viewmodels
     {
         private EliminarTratamiento ventana;
         TratamientoService servicio;
-        Collection<Tratamiento> tratamientos;
+        List<Tratamiento> tratamientos;
 
         public void error()
         {

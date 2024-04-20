@@ -10,17 +10,17 @@ namespace gestiMed2024.listas
 {
     class ListaPaciente
     {
-        ObservableCollection<Paciente> pacientes;
+        List<Paciente> pacientes;
         public ListaPaciente() { }
-        public ListaPaciente(ObservableCollection<Paciente> pacientes)
+        public ListaPaciente(List<Paciente> pacientes)
         {
             this.pacientes = pacientes;
         }
-        public void setListaPacientes(ObservableCollection<Paciente> pacientes)
+        public void setListaPacientes(List<Paciente> pacientes)
         {
             this.pacientes = pacientes;
         }
-        public ObservableCollection<Paciente> getListaPacientes()
+        public List<Paciente> getListaPacientes()
         {
             return pacientes;
         }

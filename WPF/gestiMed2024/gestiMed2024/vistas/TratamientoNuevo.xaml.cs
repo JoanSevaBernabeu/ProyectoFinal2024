@@ -52,14 +52,14 @@ namespace gestiMed2024.vistas
             if (medicamento == null) vm.error();
             else
             {
-                tratamiento = new Tratamiento(nombre, descripcion, solucion);
+                tratamiento = new Tratamiento(descripcion,nombre,solucion);
                 tratamiento.setMedicamento(medicamento);
             }
             return tratamiento;
         }
         private void rellenaComboBox()
         {
-            Collection<Medicamento> medicamentos = vm.getMedicamentos();
+            List<Medicamento> medicamentos = vm.getMedicamentos();
             foreach (Medicamento med in medicamentos)
             {
                 medicamentoComboBox.Items.Add(med.getNombre());

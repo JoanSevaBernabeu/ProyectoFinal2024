@@ -10,13 +10,13 @@ namespace gestiMed2024.listas
 {
     class ListaHabitaciones
     {
-        ObservableCollection<Habitacion> habitaciones;
+        List<Habitacion> habitaciones;
         public ListaHabitaciones() { }
-        public ListaHabitaciones(ObservableCollection<Habitacion> habitaciones)
+        public ListaHabitaciones(List<Habitacion> habitaciones)
         {
             this.habitaciones = habitaciones;
         }
-        public void setHabitaciones(ObservableCollection<Habitacion> habitaciones) { this.habitaciones = habitaciones; }
-        public ObservableCollection<Habitacion> getHabitaciones() { return habitaciones; }
+        public void setHabitaciones(List<Habitacion> habitaciones) { this.habitaciones = habitaciones; }
+        public List<Habitacion> getHabitaciones() { return habitaciones; }
     }
 }

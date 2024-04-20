@@ -46,7 +46,7 @@ namespace gestiMed2024.vistas
             string dni = dniTextBox.Text;
             string mail = emailTextBox.Text;
             string contra = contraTextBox.Text;
-            Medico med = new Medico(dni, nombre, apellidos, mail, contra, numero);
+            Medico med = new Medico(apellidos,contra,dni,mail,nombre,numero);
             return med;
         }
     }

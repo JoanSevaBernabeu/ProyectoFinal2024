@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestiMed2024.listas;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,22 +14,43 @@ namespace gestiMed2024.clases
         private string nombre;
         private string apellidos;
         private string numContacto;
-        private string dolencias;
         private string urgencia;
         private DateTime nacimiento;
-        private Collection<Medico> medicos;
+        private ListaMedico medicos;
         private Tratamiento tratamiento;
         private Habitacion habitacion;
 
         public Paciente() { }
-        public Paciente(string sip, string nombre, string apellidos, string numContacto, DateTime nacimiento, string dolencias, string urgencia)
+        public Paciente(string apellidos, DateTime nacimiento, string nombre, string numContacto,Habitacion habitacion, string sip,Tratamiento tratamiento,string urgencia) 
         {
-            this.sip = sip;
-            this.nombre = nombre;
             this.apellidos = apellidos;
-            this.numContacto = numContacto;
             this.nacimiento = nacimiento;
-            this.dolencias = dolencias;
+            this.nombre = nombre;
+            this.numContacto = numContacto;
+            this.habitacion = habitacion;
+            this.sip = sip;
+            this.tratamiento = tratamiento;
+            this.urgencia = urgencia;
+        }
+        public Paciente(string apellidos,ListaMedico medicos, DateTime nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
+        {
+            this.apellidos = apellidos;
+            this.medicos = medicos;
+            this.nacimiento = nacimiento;
+            this.nombre = nombre;
+            this.numContacto = numContacto;
+            this.habitacion = habitacion;
+            this.sip = sip;
+            this.tratamiento = tratamiento;
+            this.urgencia = urgencia;
+        }
+        public Paciente(string apellidos, DateTime nacimiento, string nombre, string numContacto, string sip, string urgencia)
+        {
+            this.apellidos = apellidos;
+            this.nacimiento = nacimiento;
+            this.nombre = nombre;
+            this.numContacto = numContacto;
+            this.sip = sip;
             this.urgencia = urgencia;
         }
         // Getters
@@ -36,8 +58,9 @@ namespace gestiMed2024.clases
         public string getNombre() { return nombre; }
         public string getApellidos() { return apellidos; }
         public string getNumContactos() { return numContacto; }
+        public string getUrgencia() { return urgencia; }
         public DateTime getNacimiento() { return nacimiento; }
-        public Collection<Medico> getMedicos() { return medicos; }
+        public ListaMedico getMedicos() { return medicos; }
         public Tratamiento getTratamiento() { return tratamiento; }
         public Habitacion getHabitacion() { return habitacion; }
         //Setters
@@ -45,8 +68,9 @@ namespace gestiMed2024.clases
         public void setNombre(string nombre) { this.nombre = nombre; }
         public void setApellidos(string apellidos) { this.apellidos = apellidos; }
         public void setNumContacto(string numContacto) { this.numContacto = numContacto; }
+        public void setUrgencia(string urgencia) { this.urgencia = urgencia; }
         public void setNacimiento(DateTime nacimiento) { this.nacimiento = nacimiento; }
-        public void setMedicos(Collection<Medico> medicos) { this.medicos = medicos; }
+        public void setMedicos(ListaMedico medicos) { this.medicos = medicos; }
         public void setTratamiento(Tratamiento tratamiento) { this.tratamiento = tratamiento; }
         public void setHabitacion(Habitacion habitacion) { this.habitacion = habitacion; }
     }

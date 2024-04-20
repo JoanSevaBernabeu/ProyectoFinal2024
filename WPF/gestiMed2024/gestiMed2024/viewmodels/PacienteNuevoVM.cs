@@ -16,7 +16,7 @@ namespace gestiMed2024.viewmodels
     {
         private PacienteNuevo ventana;
         PacienteService servicio;
-        Collection<Paciente> pacientes;
+        List<Paciente> pacientes;
 
         public void setVentana(PacienteNuevo ventana)
         {
@@ -48,7 +48,8 @@ namespace gestiMed2024.viewmodels
         public void obtenerPacientes()
         {
             servicio = new PacienteService();
-            pacientes = servicio.getAllPacientes();
+            ListaPaciente listaPacientes = servicio.getAllPacientes();
+            pacientes = listaPacientes.getListaPacientes();
         }
         public void postPaciente(Paciente paciente)
         {
@@ -83,7 +84,7 @@ namespace gestiMed2024.viewmodels
         {
             MedicoService medServicio = new MedicoService();
             ListaMedico listaMedico = medServicio.getMedico(dni);
-            Collection<Medico> medico = listaMedico.getCollectionMedicos();
+            List<Medico> medico = listaMedico.getCollectionMedicos();
             if (medico.Count != 1) return null;
             else return medico[0];
         }
@@ -91,7 +92,7 @@ namespace gestiMed2024.viewmodels
         {
             HabitacionService habServicio = new HabitacionService();
             ListaHabitaciones listaHabitaciones = habServicio.getHabitacion(num);
-            ObservableCollection<Habitacion> habitaciones = listaHabitaciones.getHabitaciones();
+            List<Habitacion> habitaciones = listaHabitaciones.getHabitaciones();
             if (habitaciones.Count() != 1) return null;
             else return habitaciones[0];
         }
@@ -99,15 +100,15 @@ namespace gestiMed2024.viewmodels
         {
             TratamientoService tratServicio = new TratamientoService();
             ListaTratamiento listaTratamientos = tratServicio.getTratamiento(nombre);
-            ObservableCollection<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
+            List<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
             if (tratamientos.Count() != 1) return null;
             else return tratamientos[0];
         }
-        public Collection<Tratamiento> getTratamientos()
+        public List<Tratamiento> getTratamientos()
         {
             TratamientoService tratServicio = new TratamientoService();
             ListaTratamiento listaTratamiento = tratServicio.getAllTratamientos();
-            ObservableCollection<Tratamiento> tratamientos = listaTratamiento.getListaTratamientos();
+            List<Tratamiento> tratamientos = listaTratamiento.getListaTratamientos();
             return tratamientos;
         }
     }

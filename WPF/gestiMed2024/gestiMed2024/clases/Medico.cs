@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestiMed2024.listas;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -15,17 +16,27 @@ namespace gestiMed2024.clases
         private string email;
         private string contrasenya;
         private string numContacto;
-        private Collection<Paciente> pacientes;
+        private ListaPaciente pacientes;
 
         //Constructores 
         public Medico() { }
-        public Medico(string dni, string nombre, string apellidos, string email, string contrasenya, string numContacto)
+        public Medico(string apellidos,string contrasenya, string dni, string email, string nombre, string numContacto, ListaPaciente pacientes)
         {
-            this.dni = dni;
-            this.nombre = nombre;
             this.apellidos = apellidos;
-            this.email = email;
             this.contrasenya = contrasenya;
+            this.dni = dni;
+            this.email = email;
+            this.nombre = nombre;
+            this.numContacto = numContacto;
+            this.pacientes = pacientes;
+        }
+        public Medico(string apellidos, string contrasenya, string dni, string email, string nombre, string numContacto)
+        {
+            this.apellidos = apellidos;
+            this.contrasenya = contrasenya;
+            this.dni = dni;
+            this.email = email;
+            this.nombre = nombre;
             this.numContacto = numContacto;
         }
         //Getters
@@ -35,13 +46,13 @@ namespace gestiMed2024.clases
         public string getEmail() { return email; }
         public string getContrasenya() { return contrasenya; }
         public string getNumContacto() { return numContacto; }
-        public Collection<Paciente> getPacientes() { return pacientes; }
+        public ListaPaciente getPacientes() { return pacientes; }
         // Setters
         public void setDni(string dni) { this.dni = dni; }
         public void setNombre(string nombre) { this.nombre = nombre; }
         public void setApellidos(string apellidos) { this.apellidos = apellidos; }
         public void setEmail(string email) { this.email = email; }
         public void setContrasenya(string contrasenya) { this.contrasenya = contrasenya; }
-        public void setPacientes(Collection<Paciente> pacientes) { this.pacientes = pacientes; }
+        public void setPacientes(ListaPaciente pacientes) { this.pacientes = pacientes; }
     }
 }

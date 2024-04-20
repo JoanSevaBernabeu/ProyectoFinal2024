@@ -10,18 +10,18 @@ namespace gestiMed2024.listas
 {
     class ListaTratamiento
     {
-        ObservableCollection<Tratamiento> tratamientos;
+        List<Tratamiento> tratamientos;
 
         public ListaTratamiento() { }
-        public ListaTratamiento(ObservableCollection<Tratamiento> tratamientos)
+        public ListaTratamiento(List<Tratamiento> tratamientos)
         {
             this.tratamientos = tratamientos;
         }
-        public void setListaTratamiento(ObservableCollection<Tratamiento> tratamientos)
+        public void setListaTratamiento(List<Tratamiento> tratamientos)
         {
             this.tratamientos = tratamientos;
         }
-        public ObservableCollection<Tratamiento> getListaTratamientos()
+        public List<Tratamiento> getListaTratamientos()
         {
             return tratamientos;
         }

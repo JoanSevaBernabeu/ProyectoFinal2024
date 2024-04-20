@@ -43,7 +43,7 @@ namespace gestiMed2024.vistas
             string numeroHabitacion = nHabitacionTextBox.Text;
             int camasTotales = int.Parse(nCamasTextBox.Text);
             int camasOcupadas = int.Parse(ocuCamasTextBox.Text);
-            Habitacion habitacion = new Habitacion(numeroHabitacion, camasTotales, camasOcupadas);
+            Habitacion habitacion = new Habitacion(camasTotales, camasOcupadas,numeroHabitacion);
             return habitacion;
         }
     }

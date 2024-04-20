@@ -16,7 +16,7 @@ namespace gestiMed2024.viewmodels
     {
         private HabitacionNueva ventana;
         HabitacionService servicio;
-        Collection<Habitacion> habitaciones;
+        List<Habitacion> habitaciones;
 
         public void obtenerHabitaciones()
         {

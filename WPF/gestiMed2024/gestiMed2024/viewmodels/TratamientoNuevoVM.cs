@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using gestiMed2024.clases;
 using gestiMed2024.vistas;
 using gestiMed2024.servicios;
+using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -15,7 +16,7 @@ namespace gestiMed2024.viewmodels
     {
         private TratamientoNuevo ventana;
         TratamientoService servicio;
-        Collection<Tratamiento> tratamientos;
+        List<Tratamiento> tratamientos;
 
         public void setVentana(TratamientoNuevo ventana)
         {
@@ -44,16 +45,18 @@ namespace gestiMed2024.viewmodels
                 ventana.Close();
             }
         }
-        public Collection<Medicamento> getMedicamentos()
+        public List<Medicamento> getMedicamentos()
         {
             MedicamentoService medicamentoService = new MedicamentoService();
-            Collection<Medicamento> medicamentos = medicamentoService.getAllMedicamentos();
+            ListaMedicamento lista = medicamentoService.getAllMedicamentos();
+            List<Medicamento> medicamentos = lista.getMedicamentos();
             return medicamentos;
         }
         public Medicamento getMedicamento(string nombre)
         {
             MedicamentoService medicamentoService = new MedicamentoService();
-            Collection<Medicamento> medicamento = medicamentoService.getMedicamento(nombre);
+            ListaMedicamento lista = medicamentoService.getMedicamento(nombre);
+            List<Medicamento> medicamento = lista.getMedicamentos();
             if (medicamento.Count() != 1) return null;
             else return medicamento[0];
         }
@@ -82,7 +85,8 @@ namespace gestiMed2024.viewmodels
         public void obtenerTratamientos()
         {
             servicio = new TratamientoService();
-            tratamientos = servicio.getAllTratamientos();
+            ListaTratamiento lista = servicio.getAllTratamientos();
+            tratamientos = lista.getListaTratamientos();
         }
     }
 }
