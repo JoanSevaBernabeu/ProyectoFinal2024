@@ -38,7 +38,7 @@ public class PacienteResource {
         Response response;
         
         ListaPaciente lista = DAOPaciente.getPacientes();
-        response = Response.status(Response.Status.OK).entity(lista).build();
+        response = Response.status(Response.Status.OK).entity(lista.getLista()).build();
         
         return response;
     }

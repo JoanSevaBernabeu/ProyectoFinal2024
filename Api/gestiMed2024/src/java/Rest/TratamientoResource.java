@@ -38,7 +38,7 @@ public class TratamientoResource {
         Response response;
         
         ListaTratamiento lista = DAOTratamiento.getTratamientos();
-        response = Response.status(Response.Status.OK).entity(lista).build();
+        response = Response.status(Response.Status.OK).entity(lista.getLista()).build();
         
         return response;
     }

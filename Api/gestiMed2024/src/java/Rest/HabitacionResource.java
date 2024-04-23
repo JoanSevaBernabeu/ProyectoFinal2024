@@ -38,7 +38,7 @@ public class HabitacionResource {
     public Response getHabitaciones(){
         Response response;
         ListaHabitaciones lista = DAOHabitacion.obtenerHabitaciones();
-        response = Response.status(Response.Status.OK).entity(lista).build();
+        response = Response.status(Response.Status.OK).entity(lista.getLista()).build();
         return response;
     }
     

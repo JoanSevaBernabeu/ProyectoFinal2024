@@ -5,20 +5,66 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace gestiMed2024.clases
 {
-    class Paciente
+    class Paciente : ObservableObject
     {
         private string sip;
+        public string Sip
+        {
+            get { return sip; }
+            set { SetProperty(ref sip, value); }
+        }
         private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
         private string apellidos;
+        public string Apellidos
+        {
+            get { return apellidos; }
+            set { SetProperty(ref apellidos, value); }
+        }
         private string numContacto;
+        public string NumContacto
+        {
+            get { return numContacto; }
+            set { SetProperty(ref numContacto, value); }
+        }
         private string urgencia;
+        public string Urgencia
+        {
+            get { return urgencia; }
+            set { SetProperty(ref urgencia, value); }
+        }
         private DateTime nacimiento;
+        public DateTime Nacimiento
+        {
+            get { return nacimiento; }
+            set { SetProperty(ref nacimiento, value); }
+        }
         private ListaMedico medicos;
+        public ListaMedico Medicos
+        {
+            get { return medicos; }
+            set { SetProperty(ref medicos, value); }
+        }
         private Tratamiento tratamiento;
+        public Tratamiento Tratamiento
+        {
+            get { return tratamiento; }
+            set { SetProperty(ref tratamiento, value); }
+        }
         private Habitacion habitacion;
+        public Habitacion Habitacion
+        {
+            get { return habitacion; }
+            set { SetProperty(ref habitacion, value); }
+        }
 
         public Paciente() { }
         public Paciente(string apellidos, DateTime nacimiento, string nombre, string numContacto,Habitacion habitacion, string sip,Tratamiento tratamiento,string urgencia) 
@@ -53,25 +99,5 @@ namespace gestiMed2024.clases
             this.sip = sip;
             this.urgencia = urgencia;
         }
-        // Getters
-        public string getSip() { return sip; }
-        public string getNombre() { return nombre; }
-        public string getApellidos() { return apellidos; }
-        public string getNumContactos() { return numContacto; }
-        public string getUrgencia() { return urgencia; }
-        public DateTime getNacimiento() { return nacimiento; }
-        public ListaMedico getMedicos() { return medicos; }
-        public Tratamiento getTratamiento() { return tratamiento; }
-        public Habitacion getHabitacion() { return habitacion; }
-        //Setters
-        public void setSip(string sip) { this.sip = sip; }
-        public void setNombre(string nombre) { this.nombre = nombre; }
-        public void setApellidos(string apellidos) { this.apellidos = apellidos; }
-        public void setNumContacto(string numContacto) { this.numContacto = numContacto; }
-        public void setUrgencia(string urgencia) { this.urgencia = urgencia; }
-        public void setNacimiento(DateTime nacimiento) { this.nacimiento = nacimiento; }
-        public void setMedicos(ListaMedico medicos) { this.medicos = medicos; }
-        public void setTratamiento(Tratamiento tratamiento) { this.tratamiento = tratamiento; }
-        public void setHabitacion(Habitacion habitacion) { this.habitacion = habitacion; }
     }
 }

@@ -5,17 +5,42 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace gestiMed2024.clases
 {
-    class Medicamento
+    class Medicamento : ObservableObject
     {
         private string id;
+        public string Id
+        {
+            get { return id; }
+            set { SetProperty(ref id, value); }
+        }
         private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
         private int cantidad;
+        public int Cantidad
+        {
+            get { return cantidad; }
+            set { SetProperty(ref cantidad, value); }
+        }
         private int intervalo;
+        public int Intervalo
+        {
+            get { return intervalo; }
+            set { SetProperty(ref intervalo, value); }
+        }
         private ListaTratamiento tratamientos;
-
+        public ListaTratamiento Tratamientos
+        {
+            get { return tratamientos; }
+            set { SetProperty(ref tratamientos, value); }
+        }
         // Constructores
         public Medicamento() { }
         public Medicamento(int cantidad, string id, int intervalo, string nombre)
@@ -25,17 +50,5 @@ namespace gestiMed2024.clases
             this.intervalo = intervalo;
             this.nombre = nombre;
         }
-        // Getters
-        public string getId() { return id; }
-        public string getNombre() { return nombre; }
-        public int getCantidad() { return cantidad; }
-        public int getIntervalo() { return intervalo; }
-        public ListaTratamiento getTratamiento() { return tratamientos; }
-        // Setters
-        public void setId(string id) { this.id = id; }
-        public void setNombre(string nombre) { this.nombre = nombre; }
-        public void setCantidad(int cantidad) { this.cantidad = cantidad; }
-        public void setIntervalo(int intervalo) { this.intervalo = intervalo; }
-        public void setTratamientos(ListaTratamiento tratamientos) { this.tratamientos = tratamientos; }
     }
 }

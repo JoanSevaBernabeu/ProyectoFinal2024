@@ -5,18 +5,54 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace gestiMed2024.clases
 {
-    class Medico
+    class Medico : ObservableObject
     {
         private string dni;
+        public string Dni
+        {
+            get { return dni; }
+            set { SetProperty(ref dni, value); }
+        }
         private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
         private string apellidos;
+        public string Apellidos
+        {
+            get { return apellidos; }
+            set { SetProperty(ref apellidos, value); }
+        }
         private string email;
+        public string Email
+        {
+            get { return email; }
+            set { SetProperty(ref email, value); }
+        }
         private string contrasenya;
+        public string Contrasenya
+        {
+            get { return contrasenya; }
+            set { SetProperty(ref contrasenya, value); }
+        }
         private string numContacto;
+        public string NumContacto
+        {
+            get { return numContacto; }
+            set { SetProperty(ref numContacto, value); }
+        }
         private ListaPaciente pacientes;
+        public ListaPaciente Pacientes
+        {
+            get { return pacientes; }
+            set { SetProperty(ref pacientes, value); }
+        }
 
         //Constructores 
         public Medico() { }
@@ -39,20 +75,5 @@ namespace gestiMed2024.clases
             this.nombre = nombre;
             this.numContacto = numContacto;
         }
-        //Getters
-        public string getDni() { return dni; }
-        public string getNombre() { return nombre; }
-        public string getApellidos() { return apellidos; }
-        public string getEmail() { return email; }
-        public string getContrasenya() { return contrasenya; }
-        public string getNumContacto() { return numContacto; }
-        public ListaPaciente getPacientes() { return pacientes; }
-        // Setters
-        public void setDni(string dni) { this.dni = dni; }
-        public void setNombre(string nombre) { this.nombre = nombre; }
-        public void setApellidos(string apellidos) { this.apellidos = apellidos; }
-        public void setEmail(string email) { this.email = email; }
-        public void setContrasenya(string contrasenya) { this.contrasenya = contrasenya; }
-        public void setPacientes(ListaPaciente pacientes) { this.pacientes = pacientes; }
     }
 }

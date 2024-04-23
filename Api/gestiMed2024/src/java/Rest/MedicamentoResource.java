@@ -39,7 +39,7 @@ public class MedicamentoResource {
   
         ListaMedicamento lista = DAOMedicamento.getMedicamentos();
         
-        response = Response.status(Response.Status.OK).entity(lista).build();
+        response = Response.status(Response.Status.OK).entity(lista.getLista()).build();
         return response;
     }
     

@@ -39,7 +39,7 @@ public class MedicoResource {
 
         ListaMedico med = DAOMedico.getMedicos();
         
-        response = Response.status(Response.Status.OK).entity(med).build();
+        response = Response.status(Response.Status.OK).entity(med.getLista()).build();
         return response;
     }
     

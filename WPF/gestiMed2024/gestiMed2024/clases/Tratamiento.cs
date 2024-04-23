@@ -3,15 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace gestiMed2024.clases
 {
-    class Tratamiento
+    class Tratamiento : ObservableObject
     {
         private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
         private string descripcion;
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { SetProperty(ref descripcion, value); }
+        }
         private string solucion;
+        public string Solucion
+        {
+            get { return solucion; }
+            set { SetProperty(ref solucion, value); }
+        }
         private Medicamento medicamento;
+        public Medicamento Medicamento
+        {
+            get { return medicamento; }
+            set { SetProperty(ref medicamento, value); }
+        }
 
         // Constructores
         public Tratamiento() { }
@@ -32,15 +53,5 @@ namespace gestiMed2024.clases
         {
             if (medicamento == null) this.medicamento = medicamento;
         }
-        // Getters
-        public string getNombre() { return nombre; }
-        public string getDescripcion() { return descripcion; }
-        public string getSolucion() { return solucion; }
-        public Medicamento getMedicamento() { return medicamento; }
-        // Setters
-        public void setNombre(string nombre) { this.nombre = nombre; }
-        public void setDescripcion(string descripcion) { this.descripcion = descripcion; }
-        public void setSolucion(string solucion) { this.solucion = solucion; }
-        public void setMedicamento(Medicamento medicamento) { this.medicamento = medicamento; }
     }
 }
