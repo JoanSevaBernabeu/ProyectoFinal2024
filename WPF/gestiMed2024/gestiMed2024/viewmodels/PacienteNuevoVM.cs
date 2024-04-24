@@ -16,7 +16,19 @@ namespace gestiMed2024.viewmodels
     {
         private PacienteNuevo ventana;
         PacienteService servicio;
+        MedicoService medServicio;
         List<Paciente> pacientes;
+        HabitacionService habServicio;
+        TratamientoService tratServicio;
+
+        public PacienteNuevoVM()
+        {
+            servicio = new PacienteService();
+            medServicio = new MedicoService();
+            pacientes = new List<Paciente>();
+            habServicio = new HabitacionService();
+            tratServicio = new TratamientoService();
+        }
 
         public void setVentana(PacienteNuevo ventana)
         {
@@ -47,7 +59,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerPacientes()
         {
-            servicio = new PacienteService();
             ListaPaciente listaPacientes = servicio.getAllPacientes();
             pacientes = listaPacientes.getListaPacientes();
         }
@@ -68,21 +79,19 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Paciente pac in pacientes)
             {
-                if (pac.getSip() == paciente.getSip()) existe = true;
+                if (pac.Sip == paciente.Sip) existe = true;
             }
             if (existe) error();
             else postPaciente(paciente);
         }
         public ListaMedico getMedicos()
         {
-            MedicoService medServicio = new MedicoService();
             ListaMedico listaMedicos = new ListaMedico();
             listaMedicos = medServicio.GetAllMedicos();
             return listaMedicos;
         }
         public Medico getMedico(string dni)
         {
-            MedicoService medServicio = new MedicoService();
             ListaMedico listaMedico = medServicio.getMedico(dni);
             List<Medico> medico = listaMedico.getCollectionMedicos();
             if (medico.Count != 1) return null;
@@ -90,7 +99,6 @@ namespace gestiMed2024.viewmodels
         }
         public Habitacion getHabitacion(string num)
         {
-            HabitacionService habServicio = new HabitacionService();
             ListaHabitaciones listaHabitaciones = habServicio.getHabitacion(num);
             List<Habitacion> habitaciones = listaHabitaciones.getHabitaciones();
             if (habitaciones.Count() != 1) return null;
@@ -98,7 +106,6 @@ namespace gestiMed2024.viewmodels
         }
         public Tratamiento getTratamiento(string nombre)
         {
-            TratamientoService tratServicio = new TratamientoService();
             ListaTratamiento listaTratamientos = tratServicio.getTratamiento(nombre);
             List<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
             if (tratamientos.Count() != 1) return null;
@@ -106,7 +113,6 @@ namespace gestiMed2024.viewmodels
         }
         public List<Tratamiento> getTratamientos()
         {
-            TratamientoService tratServicio = new TratamientoService();
             ListaTratamiento listaTratamiento = tratServicio.getAllTratamientos();
             List<Tratamiento> tratamientos = listaTratamiento.getListaTratamientos();
             return tratamientos;

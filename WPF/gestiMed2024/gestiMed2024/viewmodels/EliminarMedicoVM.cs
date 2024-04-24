@@ -18,6 +18,12 @@ namespace gestiMed2024.viewmodels
         MedicoService servicio;
         List<Medico> medicos;
 
+        public EliminarMedicoVM()
+        {
+            servicio = new MedicoService();
+            medicos = new List<Medico>();
+        }
+
         public void error()
         {
             string mensaje = "Este medico no existe";
@@ -47,7 +53,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerMedicos()
         {
-            servicio = new MedicoService();
             ListaMedico listaMedicos = servicio.GetAllMedicos();
             medicos = listaMedicos.getCollectionMedicos();
         }
@@ -57,7 +62,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Medico medico in medicos)
             {
-                if (medico.getDni() == dni) existe = true;
+                if (medico.Dni == dni) existe = true;
             }
             if (existe) deleteMedico(dni);
             else error();

@@ -18,6 +18,12 @@ namespace gestiMed2024.viewmodels
         PacienteService servicio;
         List<Paciente> pacientes;
 
+        public EliminarPacienteVM()
+        {
+            servicio = new PacienteService();
+            pacientes = new List<Paciente>();
+        }
+
         public void error()
         {
             string mensaje = "Este paciente no existe";
@@ -47,7 +53,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerPacientes()
         {
-            servicio = new PacienteService();
             ListaPaciente lista = servicio.getAllPacientes();
             pacientes = lista.getListaPacientes();
         }
@@ -68,7 +73,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Paciente paciente in pacientes)
             {
-                if (paciente.getSip() == sip) existe = true;
+                if (paciente.Sip == sip) existe = true;
             }
             if (existe) deletePaciente(sip);
             else error();

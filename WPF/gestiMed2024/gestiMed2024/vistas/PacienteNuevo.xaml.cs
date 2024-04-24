@@ -50,7 +50,7 @@ namespace gestiMed2024.vistas
             List<Tratamiento> tratamientos = vm.getTratamientos();
             foreach (Tratamiento trat in tratamientos)
             {
-                tratamientoComboBox.Items.Add(trat.getNombre());
+                tratamientoComboBox.Items.Add(trat.Nombre);
             }
         }
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -71,7 +71,7 @@ namespace gestiMed2024.vistas
             List<Medico> medicos = listaMedicos.getCollectionMedicos();
             foreach (Medico med in medicos)
             {
-                combo.Items.Add(med.getNombre());
+                combo.Items.Add(med.Nombre);
             }
             medicosStackPanel.Children.Add(combo);
         }
@@ -103,9 +103,9 @@ namespace gestiMed2024.vistas
             List<Medico> listaMedicos = obtenerMedicos();
             ListaMedico medicos = new ListaMedico(listaMedicos);
             paciente = new Paciente(apellidos,nacimiento,nombre,telefono,sip,urgencia);
-            paciente.setHabitacion(habitacion);
-            paciente.setTratamiento(tratamiento);
-            paciente.setMedicos(medicos);
+            paciente.Habitacion=habitacion;
+            paciente.Tratamiento=tratamiento;
+            paciente.Medicos=medicos;
             return paciente;
         }
     }

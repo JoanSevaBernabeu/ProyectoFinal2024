@@ -18,6 +18,12 @@ namespace gestiMed2024.viewmodels
         TratamientoService servicio;
         List<Tratamiento> tratamientos;
 
+        public EliminarTratamientoVM()
+        {
+            servicio = new TratamientoService();
+            tratamientos = new List<Tratamiento>();
+        }
+
         public void error()
         {
             string mensaje = "Este tratamiento no existe";
@@ -47,7 +53,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerTratamientos()
         {
-            servicio = new TratamientoService();
             ListaTratamiento lista = servicio.getAllTratamientos();
             tratamientos = lista.getListaTratamientos();
         }
@@ -68,7 +73,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Tratamiento tratamiento in tratamientos)
             {
-                if (tratamiento.getNombre() == nombre) existe = true;
+                if (tratamiento.Nombre == nombre) existe = true;
             }
             if (existe) deleteTratmiento(nombre);
             else error();

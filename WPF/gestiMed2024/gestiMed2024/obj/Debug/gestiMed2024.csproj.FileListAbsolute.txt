@@ -55,3 +55,7 @@ D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\g
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\gestiMed2024.csproj.CoreCompileInputs.cache
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\gestiMed2024.exe
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\gestiMed2024.pdb
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\CommunityToolkit.Mvvm.dll
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\System.ComponentModel.Annotations.dll
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\CommunityToolkit.Mvvm.pdb
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\CommunityToolkit.Mvvm.xml

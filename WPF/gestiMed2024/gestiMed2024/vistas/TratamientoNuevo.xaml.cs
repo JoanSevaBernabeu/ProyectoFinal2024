@@ -53,7 +53,7 @@ namespace gestiMed2024.vistas
             else
             {
                 tratamiento = new Tratamiento(descripcion,nombre,solucion);
-                tratamiento.setMedicamento(medicamento);
+                tratamiento.Medicamento=medicamento;
             }
             return tratamiento;
         }
@@ -62,7 +62,7 @@ namespace gestiMed2024.vistas
             List<Medicamento> medicamentos = vm.getMedicamentos();
             foreach (Medicamento med in medicamentos)
             {
-                medicamentoComboBox.Items.Add(med.getNombre());
+                medicamentoComboBox.Items.Add(med.Nombre);
             }
         }
     }

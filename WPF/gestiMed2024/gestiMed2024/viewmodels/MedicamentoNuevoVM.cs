@@ -17,6 +17,13 @@ namespace gestiMed2024.viewmodels
         private MedicamentoNuevo ventana;
         MedicamentoService servicio;
         List<Medicamento> medicamentos;
+        List<Tratamiento> tratamientos;
+
+        public MedicamentoNuevoVM()
+        {
+            servicio = new MedicamentoService();
+            medicamentos = new List<Medicamento>();
+        }
 
         public void setVentana(MedicamentoNuevo ventana)
         {
@@ -38,7 +45,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerMedicamentos()
         {
-            servicio = new MedicamentoService();
             ListaMedicamento lista = servicio.getAllMedicamentos();
             medicamentos = lista.getMedicamentos();
         }
@@ -72,7 +78,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Medicamento med in medicamentos)
             {
-                if (med.getId() == medicamento.getId()) existe = true;
+                if (med.Id == medicamento.Id) existe = true;
             }
             if (existe) error();
             else postMedicamento(medicamento);

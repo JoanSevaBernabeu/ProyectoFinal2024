@@ -44,7 +44,7 @@ namespace gestiMed2024.vistas
             List<Tratamiento> tratamientos = vm.getTratamientos();
             foreach (Tratamiento trat in tratamientos)
             {
-                combo.Items.Add(trat.getNombre());
+                combo.Items.Add(trat.Nombre);
             }
             StackPanel stack = tratamientosStackPanel;
             stack.Children.Add(combo);
@@ -61,7 +61,6 @@ namespace gestiMed2024.vistas
         }
         private Medicamento obtenerMedicamento()
         {
-            // id, nombre, intervalo cantidad, tratamientos
             Medicamento medicamento;
             string id = idTextBox.Text;
             int intervalo = int.Parse(intervaloTextBox.Text);
@@ -70,7 +69,7 @@ namespace gestiMed2024.vistas
             List<Tratamiento> tratamientos = obtenerTratamientos();
             ListaTratamiento listaTratamientos = new ListaTratamiento(tratamientos);
             medicamento = new Medicamento(cantidad,id,intervalo,nombre);
-            medicamento.setTratamientos(listaTratamientos);
+            medicamento.Tratamientos = listaTratamientos;
 
             return medicamento;
         }

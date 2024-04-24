@@ -17,9 +17,15 @@ namespace gestiMed2024.viewmodels
         private MedicoNuevo ventana;
         MedicoService servicio;
         List<Medico> medicos;
-        public void obtenerMedicos()
+
+        public MedicoNuevoVM()
         {
             servicio = new MedicoService();
+            medicos = new List<Medico>();
+        }
+       
+        public void obtenerMedicos()
+        {
             ListaMedico listaMedicos = servicio.GetAllMedicos();
             medicos = listaMedicos.getCollectionMedicos();
         }
@@ -29,7 +35,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Medico medico in medicos)
             {
-                if (medico.getDni() == med.getDni()) existe = true;
+                if (medico.Dni == med.Dni) existe = true;
             }
             if (existe) error();
             else postMedico(med);

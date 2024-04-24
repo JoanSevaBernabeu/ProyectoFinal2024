@@ -23,7 +23,9 @@ namespace gestiMed2024.servicios
             var client = new RestClient(ruta);
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
-            ListaTratamiento tratamientos = JsonConvert.DeserializeObject<ListaTratamiento>(response.Content);
+            List<Tratamiento> lista = JsonConvert.DeserializeObject<List<Tratamiento>>(response.Content);
+            ListaTratamiento tratamientos = new ListaTratamiento();
+            tratamientos.setListaTratamiento(lista);
             return tratamientos;
         }
         public ListaTratamiento getTratamiento(string nombre)
@@ -31,7 +33,9 @@ namespace gestiMed2024.servicios
             var client = new RestClient(ruta);
             var request = new RestRequest("/tratamiento/" + nombre, Method.Get);
             var response = client.Execute(request);
-            ListaTratamiento tratamientos = JsonConvert.DeserializeObject<ListaTratamiento>(response.Content);
+            List<Tratamiento> lista = JsonConvert.DeserializeObject<List<Tratamiento>>(response.Content);
+            ListaTratamiento tratamientos = new ListaTratamiento();
+            tratamientos.setListaTratamiento(lista);
             return tratamientos;
         }
         public RestResponse postTratamiento(Tratamiento tratamiento)

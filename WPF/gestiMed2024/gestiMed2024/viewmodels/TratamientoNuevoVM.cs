@@ -18,6 +18,13 @@ namespace gestiMed2024.viewmodels
         TratamientoService servicio;
         List<Tratamiento> tratamientos;
 
+        public TratamientoNuevoVM()
+        {
+            ventana = new TratamientoNuevo();
+            servicio = new TratamientoService();
+            tratamientos = new List<Tratamiento>();
+        }
+
         public void setVentana(TratamientoNuevo ventana)
         {
             this.ventana = ventana;
@@ -66,7 +73,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Tratamiento trat in tratamientos)
             {
-                if (trat.getNombre() == tratamiento.getNombre()) existe = true;
+                if (trat.Nombre == tratamiento.Nombre) existe = true;
             }
             if (existe) error();
             else postTratamiento(tratamiento);

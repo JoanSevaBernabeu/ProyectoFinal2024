@@ -18,9 +18,14 @@ namespace gestiMed2024.viewmodels
         HabitacionService servicio;
         List<Habitacion> habitaciones;
 
-        public void obtenerHabitaciones()
+        public HabitacionNuevaVM()
         {
             servicio = new HabitacionService();
+            habitaciones = new List<Habitacion>();
+        }
+
+        public void obtenerHabitaciones()
+        {
             ListaHabitaciones lista = servicio.getAllHabitaciones();
             habitaciones = lista.getHabitaciones();
         }
@@ -57,7 +62,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Habitacion hab in habitaciones)
             {
-                if (hab.getNumHabitacion() == habitacion.getNumHabitacion()) existe = true;
+                if (hab.NumHabitacion == habitacion.NumHabitacion) existe = true;
             }
             if (existe) error();
             else postHabitacion(habitacion);

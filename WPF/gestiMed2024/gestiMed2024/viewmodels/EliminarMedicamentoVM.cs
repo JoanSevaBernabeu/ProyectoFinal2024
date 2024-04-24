@@ -18,6 +18,12 @@ namespace gestiMed2024.viewmodels
         MedicamentoService servicio;
         List<Medicamento> medicamentos;
 
+        public EliminarMedicamentoVM()
+        {
+            servicio = new MedicamentoService();
+            medicamentos = new List<Medicamento>();
+        }
+
         public void error()
         {
             string mensaje = "Este medicamento no existe";
@@ -47,7 +53,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerMedicamentos()
         {
-            servicio = new MedicamentoService();
             ListaMedicamento lista = servicio.getAllMedicamentos();
             medicamentos = lista.getMedicamentos();
         }
@@ -68,7 +73,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Medicamento med in medicamentos)
             {
-                if (med.getId() == id) existe = true;
+                if (med.Id == id) existe = true;
             }
             if (existe) deleteMedicamento(id);
             else error();

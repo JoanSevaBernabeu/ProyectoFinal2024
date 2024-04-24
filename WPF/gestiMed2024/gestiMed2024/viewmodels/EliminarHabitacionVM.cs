@@ -18,6 +18,12 @@ namespace gestiMed2024.viewmodels
         HabitacionService servicio;
         List<Habitacion> habitaciones;
 
+        public EliminarHabitacionVM()
+        {
+            servicio = new HabitacionService();
+            habitaciones = new List<Habitacion>();
+        }
+
         public void error()
         {
             string mensaje = "Esta habitacion no existe";
@@ -47,7 +53,6 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerHabitaciones()
         {
-            servicio = new HabitacionService();
             ListaHabitaciones lista = servicio.getAllHabitaciones();
             habitaciones = lista.getHabitaciones();
         }
@@ -67,7 +72,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Habitacion habitacion in habitaciones)
             {
-                if (habitacion.getNumHabitacion() == numero) existe = true;
+                if (habitacion.NumHabitacion == numero) existe = true;
             }
             if (existe) deleteHabitacion(numero);
             else error();

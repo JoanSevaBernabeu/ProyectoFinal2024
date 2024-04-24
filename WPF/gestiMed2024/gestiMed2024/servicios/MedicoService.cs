@@ -25,7 +25,9 @@ namespace gestiMed2024.servicios
             var client = new RestClient(ruta);
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
-            ListaMedico medicosCollection = JsonConvert.DeserializeObject<ListaMedico>(response.Content);
+            List<Medico> lista = JsonConvert.DeserializeObject<List<Medico>>(response.Content);
+            ListaMedico medicosCollection = new ListaMedico();
+            medicosCollection.setCollectionMedicos(lista);
             return medicosCollection;
         }
         public ListaMedico getMedico(string dni)
@@ -33,7 +35,9 @@ namespace gestiMed2024.servicios
             var client = new RestClient(ruta);
             var request = new RestRequest("/dni/" + dni, Method.Get);
             var response = client.Execute(request);
-            ListaMedico medicosCollection = JsonConvert.DeserializeObject<ListaMedico>(response.Content);
+            List<Medico> lista = JsonConvert.DeserializeObject<List<Medico>>(response.Content);
+            ListaMedico medicosCollection = new ListaMedico();
+            medicosCollection.setCollectionMedicos(lista);
             return medicosCollection;
         }
         public RestResponse postMedico(Medico medico)

@@ -24,5 +24,9 @@ namespace gestiMed2024.listas
         {
             return pacientes;
         }
+        public void addPaciente(Paciente paciente)
+        {
+            pacientes.Add(paciente);
+        }
     }
 }
