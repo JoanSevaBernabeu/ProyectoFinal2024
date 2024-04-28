@@ -13,5 +13,4 @@
         app:defaultNavHost="true"
         android:id="@+id/contenedor"
         app:navGraph="@navigation/navigation_fragments"/>
-
 </LinearLayout>
