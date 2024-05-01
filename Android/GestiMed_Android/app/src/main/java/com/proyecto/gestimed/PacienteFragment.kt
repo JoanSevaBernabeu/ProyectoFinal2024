@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 
 class PacienteFragment(): Fragment() {
     val model: PacienteModel by activityViewModels()
@@ -41,7 +42,7 @@ class PacienteFragment(): Fragment() {
         view.findViewById<TextView>(R.id.contactoText).setText(paciente.numContacto)
     }
     private fun bindDatos(view: View, paciente: Paciente){
-        var medicos : List<Medico> = paciente.medicos
+        var medicos : List<Medico> = paciente.medicoList
         var tratamiento : Tratamiento = paciente.tratamiento
         var medicamento : Medicamento = tratamiento.medicamento
         view.findViewById<TextView>(R.id.medico1Text).setText(medicos[0].nombre + " " + medicos[0].apellidos)

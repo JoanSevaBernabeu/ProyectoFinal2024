@@ -1,9 +1,9 @@
 package com.proyecto.gestimed
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
+import kotlinx.coroutines.*
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class AdaptadorApi {
     fun cargarMedicos(): Deferred<ArrayList<Medico>> {

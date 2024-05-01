@@ -59,8 +59,7 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerPacientes()
         {
-            ListaPaciente listaPacientes = servicio.getAllPacientes();
-            pacientes = listaPacientes.getListaPacientes();
+            pacientes = servicio.getAllPacientes();
         }
         public void postPaciente(Paciente paciente)
         {
@@ -84,37 +83,33 @@ namespace gestiMed2024.viewmodels
             if (existe) error();
             else postPaciente(paciente);
         }
-        public ListaMedico getMedicos()
+        public List<Medico> getMedicos()
         {
-            ListaMedico listaMedicos = new ListaMedico();
+            List<Medico> listaMedicos = new List<Medico>();
             listaMedicos = medServicio.GetAllMedicos();
             return listaMedicos;
         }
         public Medico getMedico(string dni)
         {
-            ListaMedico listaMedico = medServicio.getMedico(dni);
-            List<Medico> medico = listaMedico.getCollectionMedicos();
+            List<Medico> medico = medServicio.getMedico(dni);
             if (medico.Count != 1) return null;
             else return medico[0];
         }
         public Habitacion getHabitacion(string num)
         {
-            ListaHabitaciones listaHabitaciones = habServicio.getHabitacion(num);
-            List<Habitacion> habitaciones = listaHabitaciones.getHabitaciones();
+            List<Habitacion> habitaciones = habServicio.getHabitacion(num);
             if (habitaciones.Count() != 1) return null;
             else return habitaciones[0];
         }
         public Tratamiento getTratamiento(string nombre)
         {
-            ListaTratamiento listaTratamientos = tratServicio.getTratamiento(nombre);
-            List<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
+            List<Tratamiento> tratamientos = tratServicio.getTratamiento(nombre);
             if (tratamientos.Count() != 1) return null;
             else return tratamientos[0];
         }
         public List<Tratamiento> getTratamientos()
         {
-            ListaTratamiento listaTratamiento = tratServicio.getAllTratamientos();
-            List<Tratamiento> tratamientos = listaTratamiento.getListaTratamientos();
+            List<Tratamiento> tratamientos = tratServicio.getAllTratamientos();
             return tratamientos;
         }
     }

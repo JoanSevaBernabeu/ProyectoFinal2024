@@ -53,8 +53,7 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerPacientes()
         {
-            ListaPaciente lista = servicio.getAllPacientes();
-            pacientes = lista.getListaPacientes();
+            pacientes = servicio.getAllPacientes();
         }
         private void deletePaciente(string sip)
         {

@@ -55,15 +55,13 @@ namespace gestiMed2024.viewmodels
         public List<Medicamento> getMedicamentos()
         {
             MedicamentoService medicamentoService = new MedicamentoService();
-            ListaMedicamento lista = medicamentoService.getAllMedicamentos();
-            List<Medicamento> medicamentos = lista.getMedicamentos();
+            List<Medicamento> medicamentos = medicamentoService.getAllMedicamentos();
             return medicamentos;
         }
         public Medicamento getMedicamento(string nombre)
         {
             MedicamentoService medicamentoService = new MedicamentoService();
-            ListaMedicamento lista = medicamentoService.getMedicamento(nombre);
-            List<Medicamento> medicamento = lista.getMedicamentos();
+            List<Medicamento> medicamento = medicamentoService.getMedicamento(nombre);
             if (medicamento.Count() != 1) return null;
             else return medicamento[0];
         }
@@ -92,8 +90,7 @@ namespace gestiMed2024.viewmodels
         public void obtenerTratamientos()
         {
             servicio = new TratamientoService();
-            ListaTratamiento lista = servicio.getAllTratamientos();
-            tratamientos = lista.getListaTratamientos();
+            tratamientos = servicio.getAllTratamientos();
         }
     }
 }

@@ -53,8 +53,7 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerTratamientos()
         {
-            ListaTratamiento lista = servicio.getAllTratamientos();
-            tratamientos = lista.getListaTratamientos();
+            tratamientos = servicio.getAllTratamientos();
         }
         public void deleteTratmiento(string nombre)
         {

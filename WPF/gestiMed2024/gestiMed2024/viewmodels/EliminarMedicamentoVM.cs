@@ -53,8 +53,7 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerMedicamentos()
         {
-            ListaMedicamento lista = servicio.getAllMedicamentos();
-            medicamentos = lista.getMedicamentos();
+            medicamentos = servicio.getAllMedicamentos();
         }
         public void deleteMedicamento(string id)
         {

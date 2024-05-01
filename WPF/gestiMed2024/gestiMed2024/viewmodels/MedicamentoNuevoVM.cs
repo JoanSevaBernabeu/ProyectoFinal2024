@@ -45,21 +45,18 @@ namespace gestiMed2024.viewmodels
         }
         public void obtenerMedicamentos()
         {
-            ListaMedicamento lista = servicio.getAllMedicamentos();
-            medicamentos = lista.getMedicamentos();
+            medicamentos = servicio.getAllMedicamentos();
         }
         public List<Tratamiento> getTratamientos()
         {
             TratamientoService tratamientoService = new TratamientoService();
-            ListaTratamiento listaTratamientos = tratamientoService.getAllTratamientos();
-            List<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
+            List<Tratamiento> tratamientos = tratamientoService.getAllTratamientos();
             return tratamientos;
         }
         public Tratamiento getTratamiento(string nombre)
         {
             TratamientoService tratamientoService = new TratamientoService();
-            ListaTratamiento listaTratamientos = tratamientoService.getAllTratamientos();
-            List<Tratamiento> tratamientos = listaTratamientos.getListaTratamientos();
+            List<Tratamiento> tratamientos = tratamientoService.getAllTratamientos();
             if (tratamientos.Count() != 1) return null;
             else return tratamientos[0];
         }

@@ -26,8 +26,7 @@ namespace gestiMed2024.viewmodels
 
         public void obtenerHabitaciones()
         {
-            ListaHabitaciones lista = servicio.getAllHabitaciones();
-            habitaciones = lista.getHabitaciones();
+            habitaciones = servicio.getAllHabitaciones();
         }
         public void error()
         {

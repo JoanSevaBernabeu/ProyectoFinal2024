@@ -67,8 +67,7 @@ namespace gestiMed2024.vistas
             combo.Width = 110;
             combo.Height = 30;
             combo.Margin = new Thickness(10, 10, 10, 10);
-            ListaMedico listaMedicos = vm.getMedicos();
-            List<Medico> medicos = listaMedicos.getCollectionMedicos();
+            List<Medico> medicos = vm.getMedicos();
             foreach (Medico med in medicos)
             {
                 combo.Items.Add(med.Nombre);

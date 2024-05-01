@@ -18,25 +18,21 @@ namespace gestiMed2024.servicios
         {
             ruta = "http://localhost:8085/gestiMed2024/gestimed2024/tratamiento";
         }
-        public ListaTratamiento getAllTratamientos()
+        public List<Tratamiento> getAllTratamientos()
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
             List<Tratamiento> lista = JsonConvert.DeserializeObject<List<Tratamiento>>(response.Content);
-            ListaTratamiento tratamientos = new ListaTratamiento();
-            tratamientos.setListaTratamiento(lista);
-            return tratamientos;
+            return lista;
         }
-        public ListaTratamiento getTratamiento(string nombre)
+        public List<Tratamiento> getTratamiento(string nombre)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/tratamiento/" + nombre, Method.Get);
             var response = client.Execute(request);
             List<Tratamiento> lista = JsonConvert.DeserializeObject<List<Tratamiento>>(response.Content);
-            ListaTratamiento tratamientos = new ListaTratamiento();
-            tratamientos.setListaTratamiento(lista);
-            return tratamientos;
+            return lista;
         }
         public RestResponse postTratamiento(Tratamiento tratamiento)
         {

@@ -20,20 +20,20 @@ namespace gestiMed2024.servicios
             ruta = "http://localhost:8085/gestiMed2024/gestimed2024/habitacion";
         }
 
-        public ListaHabitaciones getAllHabitaciones()
+        public List<Habitacion> getAllHabitaciones()
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
-            ListaHabitaciones habitaciones = JsonConvert.DeserializeObject<ListaHabitaciones>(response.Content);
+            List<Habitacion> habitaciones = JsonConvert.DeserializeObject<List<Habitacion>>(response.Content);
             return habitaciones;
         }
-        public ListaHabitaciones getHabitacion(string numero)
+        public List<Habitacion> getHabitacion(string numero)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/num/" + numero, Method.Get);
             var response = client.Execute(request);
-            ListaHabitaciones habitaciones = JsonConvert.DeserializeObject<ListaHabitaciones>(response.Content);
+            List<Habitacion> habitaciones = JsonConvert.DeserializeObject<List<Habitacion>>(response.Content);
             return habitaciones;
         }
         public RestResponse postHabitacion(Habitacion habitacion)
