@@ -28,8 +28,9 @@ namespace gestiMed2024.vistas
             vm = new TratamientoNuevoVM();
             this.DataContext = vm;
             vm.setVentana(this);
-            //rellenaComboBox();
+            
             InitializeComponent();
+            rellenaComboBox();
         }
         private void aceptarButton_Click(object sender, RoutedEventArgs e)
         {

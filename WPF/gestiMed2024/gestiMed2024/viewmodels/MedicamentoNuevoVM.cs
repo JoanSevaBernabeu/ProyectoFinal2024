@@ -23,6 +23,7 @@ namespace gestiMed2024.viewmodels
         {
             servicio = new MedicamentoService();
             medicamentos = new List<Medicamento>();
+            tratamientos = new List<Tratamiento>();
         }
 
         public void setVentana(MedicamentoNuevo ventana)
@@ -50,13 +51,13 @@ namespace gestiMed2024.viewmodels
         public List<Tratamiento> getTratamientos()
         {
             TratamientoService tratamientoService = new TratamientoService();
-            List<Tratamiento> tratamientos = tratamientoService.getAllTratamientos();
+            tratamientos = tratamientoService.getAllTratamientos();
             return tratamientos;
         }
         public Tratamiento getTratamiento(string nombre)
         {
             TratamientoService tratamientoService = new TratamientoService();
-            List<Tratamiento> tratamientos = tratamientoService.getAllTratamientos();
+            tratamientos = tratamientoService.getAllTratamientos();
             if (tratamientos.Count() != 1) return null;
             else return tratamientos[0];
         }

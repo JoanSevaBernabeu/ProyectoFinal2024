@@ -20,7 +20,6 @@ namespace gestiMed2024.viewmodels
 
         public TratamientoNuevoVM()
         {
-            ventana = new TratamientoNuevo();
             servicio = new TratamientoService();
             tratamientos = new List<Tratamiento>();
         }

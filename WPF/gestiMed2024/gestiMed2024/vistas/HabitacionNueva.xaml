@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="HabitacionNueva" Height="400" Width="800">
+        Title="HabitacionNueva" Height="400" Width="500">
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="baseTextBox">
             <Setter Property="Width" Value="120"/>
@@ -14,9 +14,10 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style TargetType="TextBlock" x:Key="baseTextBlock">
-            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="20"/>
         </Style>
         <Style TargetType="Button" x:Key="baseButton">
             <Setter Property="Width" Value="140"/>
@@ -29,21 +30,20 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource baseTextBlock}" Text="Nº de Habitacion: "/>
         <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Nº de Camas: "/>
-        <TextBlock Grid.Column="2" Grid.Row="0" Style="{StaticResource baseTextBlock}" Text="Nº de camas ocupadas: "/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Nº de camas ocupadas: "/>
         <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource baseTextBox}" x:Name="nHabitacionTextBox"/>
         <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="nCamasTextBox"/>
-        <TextBox Grid.Column="3" Grid.Row="0" Style="{StaticResource baseTextBox}" x:Name="ocuCamasTextBox"/>
-        <Button Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource baseButton}" Content="Aceptar" Click="aceptarButton_Click"/>
-        <Button Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource baseButton}" Content="Cancelar" Click="cancelarButton_Click"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="ocuCamasTextBox"/>
+        <Button Grid.Column="0" Grid.Row="3" Style="{StaticResource baseButton}" Content="Aceptar" Click="aceptarButton_Click"/>
+        <Button Grid.Column="1" Grid.Row="3" Style="{StaticResource baseButton}" Content="Cancelar" Click="cancelarButton_Click"/>
     </Grid>
 </Window>
