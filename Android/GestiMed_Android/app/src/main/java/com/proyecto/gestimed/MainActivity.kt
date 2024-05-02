@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
          */
     }
-
+/*
     private fun getPacientes(){
         CoroutineScope(Dispatchers.Main).launch {
             listaPacientes = adaptadorApi.cargarPacientes().await()
@@ -52,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             listaMedicos = adaptadorApi.cargarMedicos().await()
         }
     }
+
+ */
 
     private fun addMedicos(): ArrayList<Medico>{
         var medicos = ArrayList<Medico>()
@@ -85,9 +87,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun addPacientes():ArrayList<Paciente>{
         var pacientes = ArrayList<Paciente>()
-        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku","620220902",listaHabitaciones[0],listaTratamientos[0],"alta"))
-        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku2","620220902",listaHabitaciones[0],listaTratamientos[0],"alta"))
-        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku3","620220902",listaHabitaciones[0],listaTratamientos[0],"alta"))
+        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku","620220902",listaHabitaciones[0],"1234",listaTratamientos[0],"alta"))
+        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku2","620220902",listaHabitaciones[0],"1234",listaTratamientos[0],"alta"))
+        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku3","620220902",listaHabitaciones[0],"1234",listaTratamientos[0],"alta"))
         return pacientes
     }
     /*

@@ -23,6 +23,7 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="15"/>
         </Style>
         <Style TargetType="Button" x:Key="baseButton">
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -44,7 +45,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource baseTextBlock}" Text="Nombre: "/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource baseTextBlock}" Text="Descripcion: "/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource baseTextBlock}" Text="Descripción: "/>
         <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource baseTextBlock}" Text="Solución: "/>
         <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource baseTextBlock}" Text="Medicamento: "/>
         <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource baseTextBox}" x:Name="nombreTextBox"/>

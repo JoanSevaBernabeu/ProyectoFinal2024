@@ -1,11 +1,12 @@
 package com.proyecto.gestimed
 
 import kotlinx.coroutines.*
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+// import retrofit2.Response
+// import retrofit2.Retrofit
+// import retrofit2.converter.gson.GsonConverterFactory
 
 class AdaptadorApi {
+    /*
     fun cargarMedicos(): Deferred<ArrayList<Medico>> {
         val proveedorServicio : ProveedorServicio = creaRetrofit()
         var respuesta = ArrayList<Medico>()
@@ -44,4 +45,6 @@ class AdaptadorApi {
             GsonConverterFactory.create()).build()
         return retrofit.create(ProveedorServicio::class.java)
     }
+
+     */
 }

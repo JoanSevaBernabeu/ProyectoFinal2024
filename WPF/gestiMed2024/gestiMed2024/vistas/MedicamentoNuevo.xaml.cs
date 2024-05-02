@@ -31,21 +31,30 @@ namespace gestiMed2024.vistas
             vm.setVentana(this);
             //rellenaComboBox();
             InitializeComponent();
+            creaComboBox();
         }
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            rellenaComboBox();
+            creaComboBox();
         }
-        private void rellenaComboBox()
+        private void rellenaComboBox(ComboBox comboBox)
         {
-            ComboBox combo = new ComboBox();
-            combo.Width = 110;
-            combo.Height = 30;
             List<Tratamiento> tratamientos = vm.getTratamientos();
             foreach (Tratamiento trat in tratamientos)
             {
-                combo.Items.Add(trat.Nombre);
+                comboBox.Items.Add(trat.Nombre);
             }
+            
+        }
+        private void creaComboBox()
+        {
+            ComboBox combo = new ComboBox();
+            combo.Width = 120;
+            combo.Height = 30;
+            combo.FontSize = 15;
+            combo.VerticalAlignment =VerticalAlignment.Center;
+            combo.HorizontalAlignment = HorizontalAlignment.Center;
+            rellenaComboBox(combo);
             StackPanel stack = tratamientosStackPanel;
             stack.Children.Add(combo);
         }

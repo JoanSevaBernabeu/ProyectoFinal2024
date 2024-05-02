@@ -1,6 +1,7 @@
 package com.proyecto.gestimed
 
 interface ProveedorServicio {
+    /*
     @GET("medico")
     @Headers("Accept: application/json","Content-Type: application/json")
     suspend fun getAllMedicos():Response<ArrayList<Medico>>
@@ -16,4 +17,6 @@ interface ProveedorServicio {
     @GET("paciente/sip/{sip}")
     @Headers("Accept: Application/json","Content-Type: application/json")
     suspend fun getPaciente(@Path("sip") sip: String):Response<Paciente>
+
+     */
 }

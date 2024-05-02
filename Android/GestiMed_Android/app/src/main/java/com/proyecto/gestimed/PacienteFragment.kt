@@ -34,7 +34,7 @@ class PacienteFragment(): Fragment() {
         return view
     }
     private fun bindPaciente(view: View, paciente:Paciente){
-        var dia =paciente.nacimiento.year
+        var dia =paciente.nacimiento
         view.findViewById<TextView>(R.id.nombreText).setText(paciente.nombre)
         view.findViewById<TextView>(R.id.apellidosText).setText(paciente.apellidos)
         view.findViewById<TextView>(R.id.sipText).setText(paciente.sip)
