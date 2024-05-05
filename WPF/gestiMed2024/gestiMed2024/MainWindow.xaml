@@ -44,6 +44,13 @@
             <Setter Property="Width" Value="100"/>
             <Setter Property="Height" Value="30"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="baseTextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="DeepSkyBlue"/>
+            <Setter Property="FontFamily" Value="Bold"/>
+        </Style>
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="LightSkyBlue" Height="20">
@@ -74,6 +81,42 @@
             </MenuItem>
         </Menu>
         <Button DockPanel.Dock="Bottom" Content="Salir" Style="{StaticResource baseButton}" Click="salirButton_Click"/>
-        <Image Source="/src/logo2.png" Margin="20"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="addPaciente" MouseLeftButtonUp="addPaciente_MouseLeftButtonUp" Text="Añadir Usuario" Grid.Column="2" Grid.Row="0"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="delPaciente" MouseLeftButtonUp="delPaciente_MouseLeftButtonUp"  Text="Eliminar Paciente" Grid.Column="2" Grid.Row="1"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="addMedico" MouseLeftButtonUp="addMedico_MouseLeftButtonUp"  Text="Añadir Medico" Grid.Column="2" Grid.Row="2"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="delMedico" MouseLeftButtonUp="delMedico_MouseLeftButtonUp"  Text="Eliminar Medico" Grid.Column="2" Grid.Row="3"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="addHabitacion" MouseLeftButtonUp="addHabitacion_MouseLeftButtonUp"  Text="Añadir Usuario" Grid.Column="4" Grid.Row="0"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="delHabitacion" MouseLeftButtonUp="delHabitacion_MouseLeftButtonUp"  Text="Eliminar Paciente" Grid.Column="4" Grid.Row="1"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="addMedicamento" MouseLeftButtonUp="addMedicamento_MouseLeftButtonUp"  Text="Añadir Medico" Grid.Column="4" Grid.Row="2"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="delMedicamento" MouseLeftButtonUp="delMedicamento_MouseLeftButtonUp"  Text="Eliminar Medico" Grid.Column="4" Grid.Row="3"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="addTratamiento" MouseLeftButtonUp="addTratamiento_MouseLeftButtonUp"  Text="Añadir Medico" Grid.Column="4" Grid.Row="2"/>
+            <TextBlock Style="{StaticResource baseTextBlock}" x:Name="delTratamiento" MouseLeftButtonUp="delTratamiento_MouseLeftButtonUp"  Text="Eliminar Medico" Grid.Column="3" Grid.Row="4"/>
+            <Image x:Name="addPacienteImage" MouseLeftButtonUp="addPacienteImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="delPacienteImage" MouseLeftButtonUp="delPacienteImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="1"/>
+            <Image x:Name="addMedicoImage" MouseLeftButtonUp="addMedicoImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="delMedicoImage" MouseLeftButtonUp="delMedicoImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="addHabitacionImage" MouseLeftButtonUp="addHabitacionImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="delHabitacionImage" MouseLeftButtonUp="delHabitacionImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="addMedicamentoImage" MouseLeftButtonUp="addMedicamentoImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="delMedicamentoImage" MouseLeftButtonUp="delMedicamentoImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="addTratamientoImage" MouseLeftButtonUp="addTratamientoImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+            <Image x:Name="delTratamientoImage" MouseLeftButtonUp="delTratamientoImage_MouseLeftButtonUp" Grid.Column="1" Grid.Row="0"/>
+        </Grid>
     </DockPanel>
 </Window>

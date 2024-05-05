@@ -39,47 +39,167 @@ namespace gestiMed2024
         }
         private void CommandBindingHabitacionNueva_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.habitacionNueva();
+            abreVentanaHabitacionNueva();
         }
         private void CommandBindingEliminarHabitacion_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.eliminarHabitacion();
+            abreVentanaEliminarHabitacion();
         }
         private void CommandBindingTratamientoNuevo_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.tratamientoNuevo();
+            abreVentanaTratamientoNuevo();
         }
         private void CommandBindingEliminarTratamiento_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.eliminarTratamiento();
+            abreVentanaEliminarTratamiento();
         }
         private void CommandBindingMedicamentoNuevo_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.medicamentoNuevo();
+            abreVentanaMedicamentoNuevo();
         }
         private void CommandBindingEliminarMedicamento_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.eliminarMedicamento();
+            abreVentanaEliminarMedicamento();
         }
         private void CommandBindingMedicoNuevo_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.medicoNuevo();
+            abreVentanaMedicoNuevo();
         }
         private void CommandBindingEliminarMedico_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.eliminarMedico();
+            abreVentanaEliminarMedico();
         }
         private void CommandBindingPacienteNuevo_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.pacienteNuevo();
+            abreVentanaPacienteNuevo();
         }
         private void CommandBindingEliminarPaciente_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            vm.eliminarPaciente();
+            abreVentanaEliminarPaciente();
         }
         private void salirButton_Click(object sender, RoutedEventArgs e)
         {
             vm.cancelar();
+        }
+        private void addPaciente_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaPacienteNuevo();
+        }
+        private void delPaciente_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarPaciente();
+        }
+        private void addMedico_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaMedicoNuevo();
+        }
+        private void delMedico_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarMedico();
+        }
+        private void addHabitacion_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaHabitacionNueva();
+        }
+        private void delHabitacion_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarHabitacion();
+        }
+        private void addMedicamento_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaMedicamentoNuevo();
+        }
+        private void delMedicamento_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarMedicamento();
+        }
+        private void addTratamiento_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaTratamientoNuevo();
+        }
+        private void delTratamiento_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarTratamiento();
+        }
+        private void addPacienteImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaPacienteNuevo();
+        }
+        private void delPacienteImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarPaciente();
+        }
+        private void addMedicoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaMedicoNuevo();
+        }
+        private void delMedicoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarMedico();
+        }
+        private void addHabitacionImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaHabitacionNueva();
+        }
+        private void delHabitacionImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarHabitacion();
+        }
+        private void addMedicamentoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaMedicamentoNuevo();
+        }
+        private void delMedicamentoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarMedicamento();
+        }
+        private void addTratamientoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaTratamientoNuevo();
+        }
+        private void delTratamientoImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            abreVentanaEliminarTratamiento();
+        }
+        private void abreVentanaEliminarPaciente()
+        {
+            vm.eliminarPaciente();
+        }
+        private void abreVentanaEliminarHabitacion()
+        {
+            vm.eliminarHabitacion();
+        }
+        private void abreVentanaEliminarMedicamento()
+        {
+            vm.eliminarMedicamento();
+        }
+        private void abreVentanaEliminarMedico()
+        {
+            vm.eliminarMedico();
+        }
+        private void abreVentanaEliminarTratamiento()
+        {
+            vm.eliminarTratamiento();
+        }
+        private void abreVentanaPacienteNuevo()
+        {
+            vm.pacienteNuevo();
+        }
+        private void abreVentanaHabitacionNueva()
+        {
+            vm.habitacionNueva();
+        }
+        private void abreVentanaMedicamentoNuevo()
+        {
+            vm.medicamentoNuevo();
+        }
+        private void abreVentanaMedicoNuevo()
+        {
+            vm.medicoNuevo();
+        }
+        private void abreVentanaTratamientoNuevo()
+        {
+            vm.tratamientoNuevo();
         }
     }
 }
