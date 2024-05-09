@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using RestSharp;
+using Newtonsoft.Json;
+using gestiMed_Medico.clases;
+
+namespace gestiMed_Medico.servicios
+{
+    class PacienteService
+    {
+        private string ruta;
+        public PacienteService()
+        {
+            ruta = "http://localhost:8085/gestiMed2024/gestimed2024/paciente";
+
+        }
+        public List<Paciente> getAllPacientes()
+        {
+            var client = new RestClient(ruta);
+            var request = new RestRequest("", Method.Get);
+            var response = client.Execute(request);
+            List<Paciente> pacientes = JsonConvert.DeserializeObject<List<Paciente>>(response.Content);
+            return pacientes;
+        }
+        public List<Paciente> getPaciente(string sip)
+        {
+            var client = new RestClient(ruta);
+            var request = new RestRequest("/sip/" + sip, Method.Get);
+            var response = client.Execute(request);
+            List<Paciente> pacientes = JsonConvert.DeserializeObject<List<Paciente>>(response.Content);
+            return pacientes;
+        }
+        public RestResponse postPaciente(Paciente paciente)
+        {
+            var client = new RestClient(ruta);
+            var request = new RestRequest("/nuevo", Method.Post);
+            string datos = JsonConvert.SerializeObject(paciente);
+            request.AddParameter("application/json", datos, ParameterType.RequestBody);
+            var response = client.Execute(request);
+            return response;
+        }
+        public RestResponse deletePaciente(string sip)
+        {
+            var client = new RestClient(ruta);
+            var request = new RestRequest("/delete/" + sip, Method.Delete);
+            var response = client.Execute(request);
+            return response;
+        }
+    }
+}

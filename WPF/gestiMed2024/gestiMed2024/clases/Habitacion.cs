@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
-using gestiMed2024.listas;
 
 namespace gestiMed2024.clases
 {
@@ -29,8 +28,8 @@ namespace gestiMed2024.clases
             get { return camOcupadas; }
             set { SetProperty(ref camOcupadas, value); }
         }
-        private ListaPaciente pacientes;
-        public ListaPaciente Pacientes
+        private List<Paciente> pacientes;
+        public List<Paciente> Pacientes
         {
             get { return pacientes; }
             set { SetProperty(ref pacientes, value); }
@@ -46,7 +45,7 @@ namespace gestiMed2024.clases
         }
         public void addPaciente(Paciente paciente)
         {
-            if (camTotales >= camOcupadas) pacientes.addPaciente(paciente);
+            if (camTotales >= camOcupadas) pacientes.Add(paciente);
         }
     }
 }

@@ -23,9 +23,9 @@ class HolderPaciente(itemView:View, i:Int, contexto: Context): RecyclerView.View
         nombre.text = paciente.nombre
         apellidos.text = paciente.apellidos
         sip.text = paciente.sip
-        if(paciente.urgencia.equals("Urgente")){
+        if(paciente.urgencia.equals("alta")){
             linear.setBackgroundColor(Color.parseColor("#800101"))
-        }else if(paciente.urgencia.equals("Medio")) {
+        }else if(paciente.urgencia.equals("media")) {
             linear.setBackgroundColor(Color.parseColor("#B69902"))
         }else{
             linear.setBackgroundColor(Color.parseColor("#428101"))

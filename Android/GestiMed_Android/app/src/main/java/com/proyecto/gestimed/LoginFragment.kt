@@ -109,8 +109,8 @@ class LoginFragment(): Fragment() {
     private fun addPacientes():ArrayList<Paciente>{
         var pacientes = ArrayList<Paciente>()
         pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku","620220902",listaHabitaciones[0],"1234",listaTratamientos[0],"alta"))
-        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku2","620220902",listaHabitaciones[0],"1234",listaTratamientos[0],"alta"))
-        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku3","620220902",listaHabitaciones[0],"1234",listaTratamientos[0],"alta"))
+        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku2","620220902",listaHabitaciones[1],"1234",listaTratamientos[0],"media"))
+        pacientes.add(Paciente("Hernandez",listaMedicos,19930620,"Goku3","620220902",listaHabitaciones[2],"1234",listaTratamientos[0],"baja"))
         return pacientes
     }
 

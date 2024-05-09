@@ -47,8 +47,8 @@ namespace gestiMed2024.clases
             get { return nacimiento; }
             set { SetProperty(ref nacimiento, value); }
         }
-        private ListaMedico medicos;
-        public ListaMedico Medicos
+        private List<Medico> medicos;
+        public List<Medico> Medicos
         {
             get { return medicos; }
             set { SetProperty(ref medicos, value); }
@@ -78,7 +78,7 @@ namespace gestiMed2024.clases
             this.tratamiento = tratamiento;
             this.urgencia = urgencia;
         }
-        public Paciente(string apellidos,ListaMedico medicos, DateTime nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
+        public Paciente(string apellidos,List<Medico> medicos, DateTime nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
         {
             this.apellidos = apellidos;
             this.medicos = medicos;

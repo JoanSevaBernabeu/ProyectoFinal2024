@@ -1,5 +1,4 @@
-﻿using gestiMed2024.listas;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -47,8 +46,8 @@ namespace gestiMed2024.clases
             get { return numContacto; }
             set { SetProperty(ref numContacto, value); }
         }
-        private ListaPaciente pacientes;
-        public ListaPaciente Pacientes
+        private List<Paciente> pacientes;
+        public List<Paciente> Pacientes
         {
             get { return pacientes; }
             set { SetProperty(ref pacientes, value); }

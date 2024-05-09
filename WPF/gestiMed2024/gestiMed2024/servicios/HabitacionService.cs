@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using gestiMed2024.clases;
 using RestSharp;
 using Newtonsoft.Json;
-using gestiMed2024.listas;
 
 namespace gestiMed2024.servicios
 {

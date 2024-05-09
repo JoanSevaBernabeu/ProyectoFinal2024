@@ -100,11 +100,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="listas\ListaHabitaciones.cs" />
-    <Compile Include="listas\ListaMedicamento.cs" />
-    <Compile Include="listas\ListaMedico.cs" />
-    <Compile Include="listas\ListaPaciente.cs" />
-    <Compile Include="listas\ListaTratamiento.cs" />
     <Compile Include="servicios\HabitacionService.cs" />
     <Compile Include="servicios\MedicamentoService.cs" />
     <Compile Include="servicios\MedicoService.cs" />

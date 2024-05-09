@@ -1,5 +1,4 @@
-﻿using gestiMed2024.listas;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -35,8 +34,8 @@ namespace gestiMed2024.clases
             get { return intervalo; }
             set { SetProperty(ref intervalo, value); }
         }
-        private ListaTratamiento tratamientos;
-        public ListaTratamiento Tratamientos
+        private List<Tratamiento> tratamientos;
+        public List<Tratamiento> Tratamientos
         {
             get { return tratamientos; }
             set { SetProperty(ref tratamientos, value); }
