@@ -12,6 +12,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -33,7 +34,7 @@ public class PacienteResource {
     }
     
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getAllPacientes(){
         Response response;
         
@@ -45,7 +46,7 @@ public class PacienteResource {
     
     @GET
     @Path("sip/{sip}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getOnePaciente(@PathParam("sip") String sip){
         Response response;
         Paciente paciente = DAOPaciente.getPaciente(sip,true);
@@ -67,11 +68,44 @@ public class PacienteResource {
     
     @DELETE
     @Path("delete/{sip}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response deletePaciente(@PathParam("sip") String sip){
         Response response;
         
         DAOPaciente.pacienteDelete(sip);
+        response = Response.status(Response.Status.OK).build();
+        return response;
+    }
+    
+    @PUT
+    @Path("putHab/{sip}/{numHabitacion}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response putPacienteHabitacion(@PathParam("sip") String sip, @PathParam("numHabiacion") String numHabiacion){
+        Response response;
+        
+        DAOPaciente.putHabitacion(sip, numHabiacion);
+        response = Response.status(Response.Status.OK).build();
+        return response;
+    }
+    
+    @PUT
+    @Path("putTrat/{sip}/{tratamiento}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response putPacienteTratamiento(@PathParam("sip") String sip, @PathParam("tratamiento") String tratamiento){
+        Response response;
+        
+        DAOPaciente.putTratamiento(sip, tratamiento);
+        response = Response.status(Response.Status.OK).build();
+        return response;
+    }
+    
+    @PUT
+    @Path("putUrg/{sip}/{urgencia}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response putPacienteUrgencia(@PathParam("sip") String sip, @PathParam("urgencia") String urgencia){
+        Response response;
+        
+        DAOPaciente.putUrgencia(sip, urgencia);
         response = Response.status(Response.Status.OK).build();
         return response;
     }

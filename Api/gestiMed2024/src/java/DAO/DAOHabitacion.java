@@ -49,7 +49,7 @@ public class DAOHabitacion {
             Logger.getLogger(DAOHabitacion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-        public static Habitacion getHabitacion(String numHabitacion){
+    public static Habitacion getHabitacion(String numHabitacion){
         Habitacion habitacion = null;
         ListaHabitaciones lista = obtenerHabitaciones();
         for(Habitacion hab: lista.getLista()){
@@ -84,7 +84,8 @@ public class DAOHabitacion {
         conectar();
         try{
             String sentencia = "INSERT INTO habitacion VALUES ('"+habitacion.getNumHabitacion()+"',"+habitacion.getCamTotales()+","+habitacion.getCamOcupadas()+";";
-            ResultSet rs = statement.executeQuery(sentencia);
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
         }catch(SQLException ex){
             Logger.getLogger(DAOHabitacion.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -96,11 +97,26 @@ public class DAOHabitacion {
         conectar();
         try{
             String sentencia = "DELETE FROM habitacion WHERE numHabitacion LIKE '"+id+"';";
-            ResultSet rs = statement.executeQuery(sentencia);   
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);   
         }catch(SQLException ex){
             Logger.getLogger(DAOHabitacion.class.getName()).log(Level.SEVERE, null, ex);
         }
         desconectar();
         return ok;
+    }
+    
+    public static void putCamOcupadas(String numHabitacion, int numCamasOcu){
+        Statement statement = null;
+        conectar();
+
+        try{
+            String sentencia = "UPDATE habitacion SET numCamasOcu = "+numCamasOcu+" WHERE numHabitacion LIKE '"+numHabitacion+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

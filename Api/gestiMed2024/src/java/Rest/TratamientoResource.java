@@ -33,7 +33,7 @@ public class TratamientoResource {
     }
     
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getAllTratamientos(){
         Response response;
         
@@ -45,7 +45,7 @@ public class TratamientoResource {
     
     @GET
     @Path("tratamiento/{nombre}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getTratamiento(@PathParam("nombre") String nombre){
         Response response;
         
@@ -68,7 +68,7 @@ public class TratamientoResource {
     
     @DELETE
     @Path("delete/{nombre}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response deleteTratamiento(@PathParam("nombre") String nombre){
         Response response;
         

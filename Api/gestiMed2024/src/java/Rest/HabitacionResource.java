@@ -12,6 +12,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -34,7 +35,7 @@ public class HabitacionResource {
     }
     
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getHabitaciones(){
         Response response;
         ListaHabitaciones lista = DAOHabitacion.obtenerHabitaciones();
@@ -44,7 +45,7 @@ public class HabitacionResource {
     
     @GET
     @Path("num/{numero}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getHabitacion(@PathParam("numero") Short numero){
         Response response;
         String id = numero.toString();
@@ -64,12 +65,12 @@ public class HabitacionResource {
         return response;
     }
     
-    @DELETE
-    @Path("delete/{numHabitacion}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response deleteHabitacion(@PathParam("numHabitacion") String numHabitacion){
+    @PUT
+    @Path("put/{numHabitacion}/{numCamasOcu}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response putPacienteUrgencia(@PathParam("numHabitacion") String numHabitacion, @PathParam("numCamasOcu") int numCamasOcu){
         Response response;
-        DAOHabitacion.deleteHabitacion(numHabitacion);
+        DAOHabitacion.putCamOcupadas(numHabitacion, numCamasOcu);
         response = Response.status(Response.Status.OK).build();
         return response;
     }

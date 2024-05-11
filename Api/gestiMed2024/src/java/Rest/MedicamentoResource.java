@@ -12,6 +12,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -33,7 +34,7 @@ public class MedicamentoResource {
     }
     
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getAllMedicamentos() {
         Response response;
   
@@ -45,7 +46,7 @@ public class MedicamentoResource {
     
     @GET
     @Path("id/{id}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getOneMedicamento(@PathParam("id") String id) {
         Response response;
         
@@ -67,10 +68,20 @@ public class MedicamentoResource {
     }
     @DELETE
     @Path("delete/{id}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response deleteMedicamento(@PathParam("id") String id){
         Response response;
         DAOMedicamento.deleteMedicamento(id);
+        response = Response.status(Response.Status.OK).build();
+        return response;
+    }
+    
+    @PUT
+    @Path("put/{id}/{cantidad}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response putCantidad(@PathParam("id") String id, @PathParam("cantidad")int cantidad){
+        Response response;
+        DAOMedicamento.putMedicamento(id, cantidad);
         response = Response.status(Response.Status.OK).build();
         return response;
     }

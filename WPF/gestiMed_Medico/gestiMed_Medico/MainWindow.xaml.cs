@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestiMed_Medico.vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace gestiMed_Medico
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowVM vm;
         public MainWindow()
         {
+            vm = new MainWindowVM();
+            this.DataContext = vm;
+            vm.setVentana(this);
             InitializeComponent();
+        }
+
+        private void aceptarButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.aceptar();
         }
     }
 }

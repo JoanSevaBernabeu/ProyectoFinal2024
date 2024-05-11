@@ -100,7 +100,7 @@ public class DAOTratamiento {
         try{
             statement = con.createStatement();
             String creaTratamiento = "INSERT INTO Tratamiento VALUES('"+tratamiento.getNombre()+"','"+tratamiento.getDescripcion()+"','"+tratamiento.getSolucion()+"','"+medicamento.getId()+"');";
-            ResultSet rs = statement.executeQuery(creaTratamiento);
+            int rs = statement.executeUpdate(creaTratamiento);
             
         }catch(SQLException ex){
             Logger.getLogger(DAOTratamiento.class.getName()).log(Level.SEVERE, null, ex);
@@ -114,7 +114,7 @@ public class DAOTratamiento {
         try{
             statement = con.createStatement();
             String delete = "DELETE FROM Tratamiento WHERE nombre LIKE '"+nombre+"'";
-            ResultSet rs = statement.executeQuery(delete);
+            int rs = statement.executeUpdate(delete);
         }catch(SQLException ex){
             Logger.getLogger(DAOTratamiento.class.getName()).log(Level.SEVERE, null, ex);
         }

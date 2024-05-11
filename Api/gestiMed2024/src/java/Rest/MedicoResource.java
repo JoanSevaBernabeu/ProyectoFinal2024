@@ -12,6 +12,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -33,7 +34,7 @@ public class MedicoResource {
     }
 
     @GET
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getAllMedicos() {
         Response response;
 
@@ -45,7 +46,7 @@ public class MedicoResource {
     
     @GET
     @Path("dni/{dni}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response getMedico(@PathParam("dni") String dni){
         Response response;
         
@@ -66,11 +67,22 @@ public class MedicoResource {
     }
     @DELETE
     @Path("delete/{dni}")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON})
     public Response deleteMedico(@PathParam("dni") String dni){
         Response response;
         
         DAOMedico.medicoDelete(dni);
+        response = Response.status(Response.Status.OK).build();
+        return response;
+    }
+    
+    @PUT
+    @Path("put/{dni}/{pass}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response putPacienteUrgencia(@PathParam("dni") String dni, @PathParam("pass") String pass){
+        Response response;
+        
+        DAOMedico.putPass(dni, pass);
         response = Response.status(Response.Status.OK).build();
         return response;
     }

@@ -127,7 +127,20 @@ public class DAOMedicamento {
         try{
             statement = con.createStatement();
             String delete = "DELETE FROM medicamento WHERE id LIKE '"+ id + "'";
-            ResultSet rs = statement.executeQuery(delete);
+            int rs = statement.executeUpdate(delete);
+        }catch(SQLException ex){
+            Logger.getLogger(DAOMedicamento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        desconectar();
+    }
+    
+    public static void putMedicamento(String id, int cantidad){
+        Statement statement = null;
+        conectar();
+        try{
+            statement = con.createStatement();
+            String put = "UPDATE medicamento SET cantidad="+cantidad+" WHERE id LIKE '"+id+"'";
+            int rs = statement.executeUpdate(put);
         }catch(SQLException ex){
             Logger.getLogger(DAOMedicamento.class.getName()).log(Level.SEVERE, null, ex);
         }

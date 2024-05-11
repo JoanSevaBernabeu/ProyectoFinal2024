@@ -162,11 +162,12 @@ public class DAOPaciente {
         Statement statement = null;
         conectar();
         try{
+            putHabitacionNull(sip);
+            deleteTrata(sip);
             statement = con.createStatement();
             String delete = "DELETE FROM paciente WHERE sip LIKE '"+sip+"';";
-            ResultSet rs = statement.executeQuery(delete);
-            deleteTrata(sip);
-            deleteCura(sip);
+            int rs = statement.executeUpdate(delete);
+            
         }catch(SQLException ex){
             Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -177,12 +178,60 @@ public class DAOPaciente {
         Statement statement = con.createStatement();
         
         String delete = "DELETE FROM trata WHERE sip_paciente LIKE '"+sip+"'";
-        ResultSet rs = statement.executeQuery(delete);
+        int rs = statement.executeUpdate(delete);
+    }
+
+    
+    public static void putHabitacionNull(String sip){
+        Statement statement = null;
+        conectar();
+        try{
+            String sentencia = "UPDATE paciente SET numHabitacion = null WHERE sip LIKE '"+sip+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    public static void deleteCura(String sip) throws SQLException{
-        Statement statement = con.createStatement();
-        String delete = "DELETE FROM trata WHERE sip_paciente LIKE '"+sip+"'";
-        ResultSet rs = statement.executeQuery(delete);
+    public static void putHabitacion(String sip, String numHabitacion){
+        Statement statement = null;
+        conectar();
+        putHabitacionNull(sip);
+        try{
+            String sentencia = "UPDATE paciente SET numHabitacion = '"+numHabitacion+"' WHERE sip LIKE '"+sip+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static void putTratamiento(String sip, String tratamiento){
+        Statement statement = null;
+        conectar();
+        try{
+            String sentencia = "UPDATE paciente SET tratamiento = '"+tratamiento+"' WHERE sip LIKE '"+sip+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public static void putUrgencia(String sip, String urgencia){
+        Statement statement = null;
+        conectar();
+        try{
+            String sentencia = "UPDATE paciente SET urgencia = '"+urgencia+"' WHERE sip LIKE '"+sip+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
