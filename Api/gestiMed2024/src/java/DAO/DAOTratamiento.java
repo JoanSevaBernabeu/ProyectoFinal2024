@@ -112,6 +112,7 @@ public class DAOTratamiento {
         Statement statement = null;
         conectar();
         try{
+            putMedicamentoNull(nombre);
             statement = con.createStatement();
             String delete = "DELETE FROM Tratamiento WHERE nombre LIKE '"+nombre+"'";
             int rs = statement.executeUpdate(delete);
@@ -119,5 +120,19 @@ public class DAOTratamiento {
             Logger.getLogger(DAOTratamiento.class.getName()).log(Level.SEVERE, null, ex);
         }
         desconectar();
+    }
+    
+    public static void putMedicamentoNull(String nombre){
+        Statement statement = null;
+        conectar();
+        try{
+            String put = "UPDATE tratamiento SET medicamento = null WHERE nombre LIKE '"+nombre+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(put);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 }

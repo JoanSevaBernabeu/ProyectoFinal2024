@@ -55,7 +55,7 @@ namespace gestiMed2024.clases
 
         //Constructores 
         public Medico() { }
-        public Medico(string apellidos,string contrasenya, string dni, string email, string nombre, string numContacto, ListaPaciente pacientes)
+        public Medico(string apellidos,string contrasenya, string dni, string email, string nombre, string numContacto, List<Paciente> pacientes)
         {
             this.apellidos = apellidos;
             this.contrasenya = contrasenya;

@@ -27,13 +27,13 @@ namespace gestiMed2024.servicios
             List<Habitacion> habitaciones = JsonConvert.DeserializeObject<List<Habitacion>>(response.Content);
             return habitaciones;
         }
-        public List<Habitacion> getHabitacion(string numero)
+        public Habitacion getHabitacion(string numero)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/num/" + numero, Method.Get);
             var response = client.Execute(request);
-            List<Habitacion> habitaciones = JsonConvert.DeserializeObject<List<Habitacion>>(response.Content);
-            return habitaciones;
+            Habitacion habitacion = JsonConvert.DeserializeObject<Habitacion>(response.Content);
+            return habitacion;
         }
         public RestResponse postHabitacion(Habitacion habitacion)
         {
@@ -48,7 +48,7 @@ namespace gestiMed2024.servicios
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/delete/" + numero, Method.Delete);
-            var response = client.Execute(request);
+            var response = client.Delete(request);
             return response;
         }
     }

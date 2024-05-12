@@ -8,7 +8,6 @@ using System.Collections.ObjectModel;
 using gestiMed2024.clases;
 using gestiMed2024.vistas;
 using gestiMed2024.servicios;
-using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -91,21 +90,18 @@ namespace gestiMed2024.viewmodels
         }
         public Medico getMedico(string dni)
         {
-            List<Medico> medico = medServicio.getMedico(dni);
-            if (medico.Count != 1) return null;
-            else return medico[0];
+            Medico medico = medServicio.getMedico(dni);
+            return medico;
         }
         public Habitacion getHabitacion(string num)
         {
-            List<Habitacion> habitaciones = habServicio.getHabitacion(num);
-            if (habitaciones.Count() != 1) return null;
-            else return habitaciones[0];
+            Habitacion habitacion = habServicio.getHabitacion(num);
+            return habitacion;
         }
         public Tratamiento getTratamiento(string nombre)
         {
-            List<Tratamiento> tratamientos = tratServicio.getTratamiento(nombre);
-            if (tratamientos.Count() != 1) return null;
-            else return tratamientos[0];
+            Tratamiento tratamiento = tratServicio.getTratamiento(nombre);
+            return tratamiento;
         }
         public List<Tratamiento> getTratamientos()
         {

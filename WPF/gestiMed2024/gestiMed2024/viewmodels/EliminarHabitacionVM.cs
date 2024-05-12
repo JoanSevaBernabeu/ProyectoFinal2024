@@ -1,5 +1,4 @@
 ﻿using gestiMed2024.clases;
-using gestiMed2024.listas;
 using gestiMed2024.servicios;
 using gestiMed2024.vistas;
 using System;
@@ -63,7 +62,6 @@ namespace gestiMed2024.viewmodels
             MessageBoxButtons botones = MessageBoxButtons.OK;
             DialogResult result;
             result = MessageBox.Show(mensaje, caption, botones);
-            servicio.deleteHabitacion(numero);
         }
         public void aceptar(string numero)
         {
@@ -71,9 +69,12 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Habitacion habitacion in habitaciones)
             {
-                if (habitacion.NumHabitacion == numero) existe = true;
+                if (habitacion.NumHabitacion.Equals(numero)) existe = true;
             }
-            if (existe) deleteHabitacion(numero);
+            if (existe){
+                servicio.deleteHabitacion(numero);
+                deleteHabitacion(numero);
+            }
             else error();
         }
     }

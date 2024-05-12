@@ -8,7 +8,6 @@ using System.Collections.ObjectModel;
 using gestiMed2024.clases;
 using gestiMed2024.vistas;
 using gestiMed2024.servicios;
-using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {
@@ -60,9 +59,8 @@ namespace gestiMed2024.viewmodels
         public Medicamento getMedicamento(string nombre)
         {
             MedicamentoService medicamentoService = new MedicamentoService();
-            List<Medicamento> medicamento = medicamentoService.getMedicamento(nombre);
-            if (medicamento.Count() != 1) return null;
-            else return medicamento[0];
+            Medicamento medicamento = medicamentoService.getMedicamento(nombre);
+            return medicamento;
         }
         public void aceptar(Tratamiento tratamiento)
         {
@@ -70,7 +68,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Tratamiento trat in tratamientos)
             {
-                if (trat.Nombre == tratamiento.Nombre) existe = true;
+                if (trat.Nombre.Equals(tratamiento.Nombre)) existe = true;
             }
             if (existe) error();
             else postTratamiento(tratamiento);

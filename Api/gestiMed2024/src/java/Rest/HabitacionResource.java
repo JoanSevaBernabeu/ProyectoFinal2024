@@ -46,10 +46,9 @@ public class HabitacionResource {
     @GET
     @Path("num/{numero}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Response getHabitacion(@PathParam("numero") Short numero){
+    public Response getHabitacion(@PathParam("numero") String numero){
         Response response;
-        String id = numero.toString();
-        Habitacion habitacion = DAOHabitacion.getHabitacion(id);
+        Habitacion habitacion = DAOHabitacion.getHabitacion(numero);
         response = Response.status(Response.Status.OK).entity(habitacion).build();
         return response;
     }

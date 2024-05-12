@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using gestiMed2024.clases;
 using gestiMed2024.vistas;
 using gestiMed2024.servicios;
-using gestiMed2024.listas;
 
 namespace gestiMed2024.viewmodels
 {

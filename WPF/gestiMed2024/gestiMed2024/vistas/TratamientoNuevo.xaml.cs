@@ -44,18 +44,13 @@ namespace gestiMed2024.vistas
         }
         private Tratamiento obtenerTratamiento()
         {
-            Tratamiento tratamiento = null;
             string nombre = nombreTextBox.Text;
             string solucion = solucionTextBox.Text;
             string descripcion = descripcionTextBox.Text;
             string med = medicamentoComboBox.SelectedItem.ToString();
             Medicamento medicamento = vm.getMedicamento(med);
-            if (medicamento == null) vm.error();
-            else
-            {
-                tratamiento = new Tratamiento(descripcion,nombre,solucion);
-                tratamiento.Medicamento=medicamento;
-            }
+            Tratamiento tratamiento = new Tratamiento(descripcion,nombre,solucion);
+            tratamiento.Medicamento = medicamento;
             return tratamiento;
         }
         private void rellenaComboBox()

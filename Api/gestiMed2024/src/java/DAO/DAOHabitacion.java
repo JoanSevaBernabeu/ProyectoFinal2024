@@ -78,12 +78,11 @@ public class DAOHabitacion {
         desconectar();
         return lista;
     }
-    public static void postHabitacion(Habitacion habitacion)
-    {
+    public static void postHabitacion(Habitacion habitacion){
         Statement statement = null;
         conectar();
         try{
-            String sentencia = "INSERT INTO habitacion VALUES ('"+habitacion.getNumHabitacion()+"',"+habitacion.getCamTotales()+","+habitacion.getCamOcupadas()+";";
+            String sentencia = "INSERT INTO habitacion VALUES('"+habitacion.getNumHabitacion()+"',"+habitacion.getCamTotales()+","+habitacion.getCamOcupadas()+");";
             statement = con.createStatement();
             int rs = statement.executeUpdate(sentencia);
         }catch(SQLException ex){

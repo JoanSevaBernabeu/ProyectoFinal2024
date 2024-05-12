@@ -121,17 +121,26 @@ public class DAOMedico {
         conectar();
         try{
             statement = con.createStatement();
-            String insertaMedico = "INSERT INTO medico VALUES ('"+medico.getDni()+"','"+medico.getNombre()+"','"+medico.getApellidos()+"','"+medico.getEmail()+"','"+medico.getContrasenya()+"','"+medico.getNumContacto()+"';";
+            String insertaMedico = "INSERT INTO medico VALUES ('"+medico.getDni()+"','"+medico.getNombre()+"','"+medico.getApellidos()+"','"+medico.getEmail()+"','"+medico.getContrasenya()+"','"+medico.getNumContacto()+"')";
             int rs = statement.executeUpdate(insertaMedico);
         }catch(SQLException ex){
             Logger.getLogger(DAOMedico.class.getName()).log(Level.SEVERE, null, ex);
         }
         desconectar();
     }
+    
+    public static void deleteTrata(String dni) throws SQLException{
+        Statement statement = con.createStatement();
+        
+        String delete = "DELETE FROM trata WHERE dni_medico LIKE '"+dni+"'";
+        int rs = statement.executeUpdate(delete);
+    }
+    
     public static void medicoDelete(String dni){
         Statement statement = null;
         conectar();
         try{
+            deleteTrata(dni);
             statement = con.createStatement();
             String deleteMedico = "DELETE FROM medico WHERE dni LIKE '"+dni+"';";
             int rs = statement.executeUpdate(deleteMedico);

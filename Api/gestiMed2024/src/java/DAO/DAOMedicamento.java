@@ -115,7 +115,7 @@ public class DAOMedicamento {
         try{
             statement = con.createStatement();
             String post = "INSERT INTO medicamento VALUES ('"+medicamento.getId()+"','"+medicamento.getNombre()+"',"+medicamento.getCantidad()+","+medicamento.getIntervalo()+");";
-            ResultSet rs = statement.executeQuery(post);
+            int rs = statement.executeUpdate(post);
         }catch(SQLException ex){
             Logger.getLogger(DAOMedicamento.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -125,6 +125,7 @@ public class DAOMedicamento {
         Statement statement = null;
         conectar();
         try{
+            putTratamientoNull(id);
             statement = con.createStatement();
             String delete = "DELETE FROM medicamento WHERE id LIKE '"+ id + "'";
             int rs = statement.executeUpdate(delete);
@@ -132,6 +133,19 @@ public class DAOMedicamento {
             Logger.getLogger(DAOMedicamento.class.getName()).log(Level.SEVERE, null, ex);
         }
         desconectar();
+    }
+    
+    public static void putTratamientoNull(String id){
+        Statement statement = null;
+        conectar();
+        try{
+            String sentencia = "UPDATE tratamiento SET medicamento = null WHERE medicamento LIKE '"+id+"'";
+            statement = con.createStatement();
+            int rs = statement.executeUpdate(sentencia);
+            
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public static void putMedicamento(String id, int cantidad){

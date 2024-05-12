@@ -20,7 +20,7 @@ public class Paciente implements Serializable{
     private String nombre;
     private String apellidos;
     private String numContacto;
-    private Date nacimiento;
+    private String nacimiento;
     private String urgencia;
     private ListaMedico medicoList;
     private Habitacion numHabitacion;
@@ -29,7 +29,7 @@ public class Paciente implements Serializable{
     public Paciente() {
     }
 
-    public Paciente(String sip, String nombre, String apellidos, String numContacto, Date nacimiento, String urgencia) {
+    public Paciente(String sip, String nombre, String apellidos, String numContacto, String nacimiento, String urgencia) {
         this.sip = sip;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -70,11 +70,11 @@ public class Paciente implements Serializable{
         this.numContacto = numContacto;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
     }
 

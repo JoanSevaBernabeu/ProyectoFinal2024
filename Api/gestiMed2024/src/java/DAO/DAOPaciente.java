@@ -67,7 +67,7 @@ public class DAOPaciente {
             statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sentencia);
             while(rs.next()){
-                Paciente paciente = new Paciente(rs.getString("sip"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("numContacto"),rs.getDate("nacimiento"),rs.getString("urgencia"));
+                Paciente paciente = new Paciente(rs.getString("sip"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("numContacto"),rs.getString("nacimiento"),rs.getString("urgencia"));
                 Tratamiento tratamiento = DAOTratamiento.getTratamiento(rs.getString("tratamiento"));
                 paciente.setTratamiento(tratamiento);
                 ListaMedico medicos = obtenerMedicos(rs.getString("sip"));
@@ -90,7 +90,7 @@ public class DAOPaciente {
             statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sentencia);
             if(rs.next()){
-                paciente = new Paciente(rs.getString("sip"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("numContacto"),rs.getDate("nacimiento"),rs.getString("urgencia"));
+                paciente = new Paciente(rs.getString("sip"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("numContacto"),rs.getString("nacimiento"),rs.getString("urgencia"));
                 Tratamiento tratamiento = DAOTratamiento.getTratamiento(rs.getString("tratamiento"));
                 paciente.setTratamiento(tratamiento);
                 if(obtenerMed == true){
@@ -138,7 +138,7 @@ public class DAOPaciente {
                     paciente.getSip()+"','"+paciente.getNombre()+"','"+paciente.getApellidos()+"','"
                     +paciente.getNumContacto()+"','"+paciente.getNacimiento()+"','"+paciente.getTratamiento()
                     +"');";
-            ResultSet rs = statement.executeQuery(insertPaciente);
+            int rs = statement.executeUpdate(insertPaciente);
             insertaMedicos(listaMedicos,paciente);
             
         }catch(SQLException ex){

@@ -1,5 +1,4 @@
 ﻿using gestiMed2024.clases;
-using gestiMed2024.listas;
 using gestiMed2024.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -75,8 +74,7 @@ namespace gestiMed2024.vistas
             int intervalo = int.Parse(intervaloTextBox.Text);
             int cantidad = int.Parse(cantidadTextBox.Text);
             string nombre = nombreTextBox.Text;
-            List<Tratamiento> tratamientos = obtenerTratamientos();
-            ListaTratamiento listaTratamientos = new ListaTratamiento(tratamientos);
+            List<Tratamiento> listaTratamientos = obtenerTratamientos();
             medicamento = new Medicamento(cantidad,id,intervalo,nombre);
             medicamento.Tratamientos = listaTratamientos;
 

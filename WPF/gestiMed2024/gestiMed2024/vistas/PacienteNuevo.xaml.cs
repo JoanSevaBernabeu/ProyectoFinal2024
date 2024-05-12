@@ -1,5 +1,4 @@
 ﻿using gestiMed2024.clases;
-using gestiMed2024.listas;
 using gestiMed2024.viewmodels;
 using System;
 using System.Collections.Generic;
@@ -77,7 +76,7 @@ namespace gestiMed2024.vistas
         private List<Medico> obtenerMedicos()
         {
             StackPanel stack = medicosStackPanel;
-            List<Medico> medicos = null;
+            List<Medico> medicos = new List<Medico>();
             for (int i = 0; i < stack.Children.Count; i++)
             {
                 Medico med = vm.getMedico(stack.Children[i].ToString());
@@ -94,17 +93,16 @@ namespace gestiMed2024.vistas
             string apellidos = apellidoTextBox.Text;
             int dia = int.Parse(diaTextBox.Text);
             int mes = int.Parse(mesTextBox.Text);
-            int ano = int.Parse(anoTextBox.Text);
-            DateTime nacimiento = new DateTime(ano, mes, dia);
+            string ano = anoTextBox.Text;
+            //DateTime nacimiento = new DateTime(ano, mes, dia);
             Habitacion habitacion = vm.getHabitacion(numHabitacionTextBox.Text);
             Tratamiento tratamiento = vm.getTratamiento(tratamientoComboBox.SelectedItem.ToString());
             string urgencia = urgenciaComboBox.SelectedItem.ToString();
             List<Medico> listaMedicos = obtenerMedicos();
-            ListaMedico medicos = new ListaMedico(listaMedicos);
-            paciente = new Paciente(apellidos,nacimiento,nombre,telefono,sip,urgencia);
+            paciente = new Paciente(apellidos,ano,nombre,telefono,sip,urgencia);
             paciente.Habitacion=habitacion;
             paciente.Tratamiento=tratamiento;
-            paciente.Medicos=medicos;
+            paciente.Medicos=listaMedicos;
             return paciente;
         }
     }
