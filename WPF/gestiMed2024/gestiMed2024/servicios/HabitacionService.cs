@@ -44,11 +44,12 @@ namespace gestiMed2024.servicios
             var response = client.Execute(request);
             return response;
         }
-        public RestResponse deleteHabitacion(string numero)
+        public RestResponse putHabitacion(string numero, int numCamas)
         {
+            string ruta2 = numero + "/" + numCamas;
             var client = new RestClient(ruta);
-            var request = new RestRequest("/delete/" + numero, Method.Delete);
-            var response = client.Delete(request);
+            var request = new RestRequest("/putHab/" + ruta2, Method.Delete);
+            var response = client.Put(request);
             return response;
         }
     }

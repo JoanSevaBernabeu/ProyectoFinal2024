@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="EliminarHabitacion" Height="200" Width="400">
+        Icon="../src/logo3.ico"
+        Title="Eliminar Habitacion" Height="400" Width="800">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="baseTextBlock">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
         </Style>
         <Style TargetType="TextBox" x:Key="baseTextBox">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="Height" Value="20"/>
@@ -33,10 +35,12 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.75*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource baseTextBlock}" Text="Introduzca el Nº de Habitacion: "/>
-        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource baseTextBox}" x:Name="numHabitacionTextBox"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource baseTextBlock}" Text="Introduzca el Nº de Habitacion: "/>
+        <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource baseTextBox}" x:Name="numHabitacionTextBox"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource baseTextBlock}" Text="Introduzca el Nº de camas ocupadas: "/>
+        <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource baseTextBox}" x:Name="numCamasOcupadas"/>
         <Button Grid.Row="2" Grid.Column="0" Style="{StaticResource baseButton}" Content="Aceptar" Click="aceptarButton_Click"/>
         <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource baseButton}" Content="Cancelar" Click="cancelarButton_Click"/>
     </Grid>

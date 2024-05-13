@@ -53,7 +53,7 @@ namespace gestiMed2024.viewmodels
             result = MessageBox.Show(mensaje, caption, botones);
             if (result == DialogResult.Yes)
             {
-                ventana.Close();
+                cierraVentana();
             }
         }
         public void obtenerPacientes()
@@ -107,6 +107,10 @@ namespace gestiMed2024.viewmodels
         {
             List<Tratamiento> tratamientos = tratServicio.getAllTratamientos();
             return tratamientos;
+        }
+        public void cierraVentana()
+        {
+            ventana.Close();
         }
     }
 }

@@ -37,6 +37,7 @@ namespace gestiMed2024.vistas
         {
             Paciente paciente = obtenerPaciente();
             vm.aceptar(paciente);
+            vm.cierraVentana();
         }
         private void rellenaComboUrgencia()
         {
@@ -92,7 +93,6 @@ namespace gestiMed2024.vistas
             string telefono = telefonoTextBox.Text;
             string apellidos = apellidoTextBox.Text;
             string ano = anoTextBox.Text;
-            //DateTime nacimiento = new DateTime(ano, mes, dia);
             Habitacion habitacion = vm.getHabitacion(numHabitacionTextBox.Text);
             Tratamiento tratamiento = vm.getTratamiento(tratamientoComboBox.SelectedItem.ToString());
             string urgencia = urgenciaComboBox.SelectedItem.ToString();

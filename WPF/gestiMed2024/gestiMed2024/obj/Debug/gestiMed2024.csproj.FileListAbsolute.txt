@@ -1,6 +1,5 @@
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\gestiMed2024.csproj.AssemblyReference.cache
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\MainWindow.g.cs
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarHabitacion.g.cs
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarMedicamento.g.cs
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarMedico.g.cs
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarPaciente.g.cs
@@ -39,7 +38,6 @@ D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\S
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\System.ValueTuple.xml
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\MainWindow.baml
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarHabitacion.baml
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarMedicamento.baml
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarMedico.baml
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\EliminarPaciente.baml
@@ -59,3 +57,5 @@ D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\C
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\System.ComponentModel.Annotations.dll
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\CommunityToolkit.Mvvm.pdb
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\Debug\CommunityToolkit.Mvvm.xml
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\ModificarHabitacion.g.cs
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\Debug\vistas\ModificarHabitacion.baml

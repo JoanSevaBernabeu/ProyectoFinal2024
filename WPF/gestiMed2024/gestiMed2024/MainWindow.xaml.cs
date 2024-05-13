@@ -101,7 +101,7 @@ namespace gestiMed2024
         {
             abreVentanaHabitacionNueva();
         }
-        private void delHabitacion_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void modHabitacion_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             abreVentanaEliminarHabitacion();
         }

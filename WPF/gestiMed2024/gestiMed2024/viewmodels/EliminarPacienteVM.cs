@@ -64,6 +64,7 @@ namespace gestiMed2024.viewmodels
             result = MessageBox.Show(mensaje, caption, botones);
 
             servicio.deletePaciente(sip);
+            ventana.Close();
         }
         public void aceptar(string sip)
         {

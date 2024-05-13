@@ -20,10 +20,10 @@ namespace gestiMed2024.vistas
     /// </summary>
     public partial class EliminarHabitacion : Window
     {
-        private EliminarHabitacionVM vm;
+        private ModificarHabitacionVM vm;
         public EliminarHabitacion()
         {
-            vm = new EliminarHabitacionVM();
+            vm = new ModificarHabitacionVM();
             this.DataContext = vm;
             vm.setVentana(this);
             InitializeComponent();
@@ -31,7 +31,8 @@ namespace gestiMed2024.vistas
         private void aceptarButton_Click(object sender, RoutedEventArgs e)
         {
             string numero = numHabitacionTextBox.Text;
-            vm.aceptar(numero);
+            int numCamas = int.Parse(numCamasOcupadas.Text);
+            vm.aceptar(numero,numCamas);
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

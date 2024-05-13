@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="EliminarMedico" Height="200" Width="400">
+        Icon="../src/logo3.ico"
+        Title="Eliminar Medico" Height="200" Width="400">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="baseTextBlock">
             <Setter Property="HorizontalAlignment" Value="Center"/>

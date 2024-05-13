@@ -52,6 +52,7 @@ namespace gestiMed2024.vistas
             combo.Height = 30;
             combo.FontSize = 15;
             combo.VerticalAlignment =VerticalAlignment.Center;
+            combo.Margin = new Thickness(10, 10, 10, 10);
             combo.HorizontalAlignment = HorizontalAlignment.Center;
             rellenaComboBox(combo);
             StackPanel stack = tratamientosStackPanel;

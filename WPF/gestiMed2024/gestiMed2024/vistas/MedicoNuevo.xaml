@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="MedicoNuevo" Height="400" Width="800">
+        Icon="../src/logo3.ico"
+        Title="Medico Nuevo" Height="400" Width="800">
     <Window.Resources>
         <Style TargetType="TextBox" x:Key="baseTextBox">
             <Setter Property="Width" Value="120"/>

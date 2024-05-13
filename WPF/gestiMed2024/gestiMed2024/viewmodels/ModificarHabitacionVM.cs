@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace gestiMed2024.viewmodels
 {
-    class EliminarHabitacionVM
+    class ModificarHabitacionVM
     {
         private EliminarHabitacion ventana;
         HabitacionService servicio;
         List<Habitacion> habitaciones;
 
-        public EliminarHabitacionVM()
+        public ModificarHabitacionVM()
         {
             servicio = new HabitacionService();
             habitaciones = new List<Habitacion>();
@@ -63,7 +63,7 @@ namespace gestiMed2024.viewmodels
             DialogResult result;
             result = MessageBox.Show(mensaje, caption, botones);
         }
-        public void aceptar(string numero)
+        public void aceptar(string numero, int numCamas)
         {
             obtenerHabitaciones();
             bool existe = false;
@@ -72,7 +72,7 @@ namespace gestiMed2024.viewmodels
                 if (habitacion.NumHabitacion.Equals(numero)) existe = true;
             }
             if (existe){
-                servicio.deleteHabitacion(numero);
+                servicio.putHabitacion(numero, numCamas);
                 deleteHabitacion(numero);
             }
             else error();

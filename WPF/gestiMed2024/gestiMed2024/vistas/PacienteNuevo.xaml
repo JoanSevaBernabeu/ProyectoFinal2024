@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="PacienteNuevo" Height="900" Width="1000">
+        Icon="../src/logo3.ico"
+        Title="Paciente Nuevo" Height="900" Width="1000">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="baseTextBlock">
             <Setter Property="HorizontalAlignment" Value="Right"/>
@@ -50,6 +51,12 @@
             <Setter Property="BorderBrush" Value="DeepSkyBlue"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="Button" x:Key="addMedicoButton">
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </Window.Resources>
     <DockPanel>
@@ -107,7 +114,7 @@
                     <ComboBox Grid.Column="1" Grid.Row="2" x:Name="tratamientoComboBox" Style="{StaticResource baseComboBox}"/>
                     <TextBlock Grid.Column="2" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Urgencia: " />
                     <TextBlock Grid.Column="2" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Medicos: "/>
-                    <Button Grid.Column="2" Grid.Row="3" Content="Añadir medico" Style="{StaticResource baseButton}" Click="addButton_Click"/>
+                    <Button Grid.Column="2" Grid.Row="3" Content="Añadir medico" Style="{StaticResource addMedicoButton}" Click="addButton_Click"/>
                     <ComboBox Grid.Column="3" Grid.Row="1" x:Name="urgenciaComboBox" Style="{StaticResource baseComboBox}"/>
                     <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" >
                         <StackPanel x:Name="medicosStackPanel">

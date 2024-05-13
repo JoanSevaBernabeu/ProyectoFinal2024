@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="TratamientoNuevo" Height="400" Width="600">
+        Icon="../src/logo3.ico"
+        Title="Tratamiento Nuevo" Height="400" Width="600">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="baseTextBlock">
             <Setter Property="HorizontalAlignment" Value="Right"/>
