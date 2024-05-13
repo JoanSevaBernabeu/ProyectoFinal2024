@@ -91,8 +91,6 @@ namespace gestiMed2024.vistas
             string sip = SipTextBox.Text;
             string telefono = telefonoTextBox.Text;
             string apellidos = apellidoTextBox.Text;
-            int dia = int.Parse(diaTextBox.Text);
-            int mes = int.Parse(mesTextBox.Text);
             string ano = anoTextBox.Text;
             //DateTime nacimiento = new DateTime(ano, mes, dia);
             Habitacion habitacion = vm.getHabitacion(numHabitacionTextBox.Text);

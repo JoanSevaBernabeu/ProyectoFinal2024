@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:gestiMed2024.vistas"
         mc:Ignorable="d"
-        Title="PacienteNuevo" Height="900" Width="1600">
+        Title="PacienteNuevo" Height="900" Width="1000">
     <Window.Resources>
         <Style TargetType="TextBlock" x:Key="baseTextBlock">
             <Setter Property="HorizontalAlignment" Value="Right"/>
@@ -26,10 +26,11 @@
             <Setter Property="Grid.ColumnSpan" Value="2"/>
         </Style>
         <Style TargetType="TextBox" x:Key="baseTextBox">
-            <Setter Property="Width" Value="100"/>
+            <Setter Property="Width" Value="120"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
         </Style>
         <Style TargetType="ComboBox" x:Key="baseComboBox">
             <Setter Property="Width" Value="110"/>
@@ -53,10 +54,6 @@
     </Window.Resources>
     <DockPanel>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.75*"></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -78,30 +75,15 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource enunciadoTextBlock}" Text="Datos personales"/>
                     <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Nombre: " />
-                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Nº SIP:"/>
-                    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource baseTextBlock}" Text="Tlf contacto:"/>
                     <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="nombreTextBox"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="SipTextBox"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Apellido: "/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="apellidoTextBox"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource baseTextBlock}" Text="Tlf contacto:"/>
                     <TextBox Grid.Column="1" Grid.Row="3" Style="{StaticResource baseTextBox}" x:Name="telefonoTextBox"/>
-                    <TextBlock Grid.Column="2" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Apellido: " />
-                    <Grid Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                            <RowDefinition></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource baseTextBlock}" Text="Dia de nacimiento: "/>
-                        <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Mes de nacimiento: "/>
-                        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Año de nacimiento: "/>
-                        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource baseTextBox}" x:Name="diaTextBox"/>
-                        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="mesTextBox"/>
-                        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="anoTextBox"/>
-                    </Grid>
-                    <TextBox Grid.Column="3" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="apellidoTextBox"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" Style="{StaticResource baseTextBlock}" Text="Nº SIP:"/>
+                    <TextBox Grid.Column="3" Grid.Row="1" Style="{StaticResource baseTextBox}" x:Name="SipTextBox"/>
+                    <TextBlock Grid.Column="2" Grid.Row="2" Style="{StaticResource baseTextBlock}" Text="Año de nacimiento: "/>
+                    <TextBox Grid.Column="3" Grid.Row="2" Style="{StaticResource baseTextBox}" x:Name="anoTextBox"/>
                 </Grid>
             </Border>
             <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource baseBorder}">
@@ -133,13 +115,7 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
-            <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
-                <DockPanel>
-                    <TextBlock DockPanel.Dock="Top" Text="Sintomas" Style="{StaticResource enunciadoTextBlock}" x:Name="sintomasTextBox"/>
-                    <TextBox Style="{StaticResource sintomasTextBox}"/>
-                </DockPanel>
-            </Border>
-            <Grid Grid.Column="1" Grid.Row="2">
+            <Grid Grid.Column="0" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
