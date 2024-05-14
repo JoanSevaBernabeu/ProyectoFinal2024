@@ -23,9 +23,9 @@ VALUES
 
 INSERT INTO paciente(sip,nombre,apellidos,numContacto,nacimiento,tratamiento)
 VALUES
-('03670720','Goku','Hernandez Perez','688269982','1997-06-20','tratamiento1'),
-('04017509','David','Lopez Moreno','690574075','1980-12-08','tratamiento2'),
-('02847304','Monica','Rubio Sanz','620125982','1973-03-16','tratamiento3');
+('03670720','Goku','Hernandez Perez','688269982','1997','tratamiento1'),
+('04017509','David','Lopez Moreno','690574075','1980','tratamiento2'),
+('02847304','Monica','Rubio Sanz','620125982','1973','tratamiento3');
 
 INSERT INTO trata
 VALUES
