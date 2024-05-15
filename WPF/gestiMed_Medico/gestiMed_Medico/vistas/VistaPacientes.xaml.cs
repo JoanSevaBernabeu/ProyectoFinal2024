@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestiMed_Medico.viewmodels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +20,14 @@ namespace gestiMed_Medico.vistas
     /// </summary>
     public partial class VistaPacientes : Window
     {
-        List<string> lista = new List<string> {"Joan","Edurne","Joy"};
+        private VistaPacientesVM vm;
         public VistaPacientes()
         {
+            vm = new VistaPacientesVM();
+            this.DataContext = vm;
+            vm.setVentana(this);
             InitializeComponent();
-            vinculacion();
-        }
-        public void vinculacion()
-        {
-            listaListBox.ItemsSource = lista;
-            
+            // itemsControl.ItemsSource = vm.Pacientes;
         }
     }
 }

@@ -26,13 +26,13 @@ namespace gestiMed_Medico.servicios
             List<Medicamento> medicamentos = JsonConvert.DeserializeObject<List<Medicamento>>(response.Content);
             return medicamentos;
         }
-        public List<Medicamento> getMedicamento(string id)
+        public Medicamento getMedicamento(string id)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/id/" + id, Method.Get);
             var response = client.Execute(request);
-            List<Medicamento> medicamentos = JsonConvert.DeserializeObject<List<Medicamento>>(response.Content);
-            return medicamentos;
+            Medicamento medicamento = JsonConvert.DeserializeObject<Medicamento>(response.Content);
+            return medicamento;
         }
         public RestResponse postMedicamento(Medicamento medicamento)
         {

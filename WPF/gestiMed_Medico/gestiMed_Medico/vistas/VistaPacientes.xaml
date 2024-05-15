@@ -3,16 +3,138 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:gestiMed_Medico.vistas"
+        xmlns:local="clr-namespace:gestiMed_Medico.vistas" 
+        xmlns:vm="clr-namespace:gestiMed_Medico.viewmodels"
+        xmlns:paciente="clr-namespace:gestiMed_Medico.clases"
         mc:Ignorable="d"
         Title="VistaPacientes" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:VistaPacientesVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="listaTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style x:Key="pacienteListaTextBlock" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style x:Key="muestraPacienteTextBlock" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style x:Key="muestraAtributosTextBlock" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <ListBox x:Name="listaListBox">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.75*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox ItemsSource="{Binding Pacientes}" SelectedItem="{Binding PacienteSelect, Mode=TwoWay}" Grid.Column="0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock x:Name="nombreVistaPacientes"/>
+                    <Border x:Name="pacienteBorder" Width="400">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource listaTextBlock}" Text="Nombre: "/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Style="{StaticResource pacienteListaTextBlock}" Text="{Binding Nombre}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource listaTextBlock}" Text="Apellidos:"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource pacienteListaTextBlock}" Text="{Binding Apellidos}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource listaTextBlock}" Text="Nº SIP: "/>
+                            <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource pacienteListaTextBlock}" Text="{Binding Sip}"/>
+                        </Grid>
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Urgencia}" Value="alta">
+                                        <Setter Property="Background" Value="#e22406"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Urgencia}" Value="media">
+                                        <Setter Property="Background" Value="#dffc05"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Urgencia}" Value="baja">
+                                        <Setter Property="Background" Value="#46f416"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <StackPanel Grid.Column="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource muestraAtributosTextBlock}" Text="Nombre: "/>
+                <TextBlock Grid.Column="1" Style="{StaticResource muestraPacienteTextBlock}" Text="{Binding PacienteSelect.Nombre}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource muestraAtributosTextBlock}" Text="Apellidos: "/>
+                <TextBlock Grid.Column="1" Style="{StaticResource muestraPacienteTextBlock}" Text="{Binding PacienteSelect.Apellidos}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource muestraAtributosTextBlock}" Text="Nº SIP: "/>
+                <TextBlock Grid.Column="1" Style="{StaticResource muestraPacienteTextBlock}" Text="{Binding PacienteSelect.Sip}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource muestraAtributosTextBlock}" Text="Numero de Contacto: "/>
+                <TextBlock Grid.Column="1" Style="{StaticResource muestraPacienteTextBlock}" Text="{Binding PacienteSelect.NumContacto}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource muestraAtributosTextBlock}" Text="Tratamiento: "/>
+                <TextBlock Grid.Column="1" Style="{StaticResource muestraPacienteTextBlock}" Text="{Binding PacienteSelect.Tratamiento.Nombre}"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Style="{StaticResource muestraAtributosTextBlock}" Text="Nº Habitacion: "/>
+                <TextBlock Grid.Column="1" Style="{StaticResource muestraPacienteTextBlock}" Text="{Binding PacienteSelect.Habitacion.NumHabitacion}"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

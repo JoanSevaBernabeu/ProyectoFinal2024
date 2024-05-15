@@ -198,7 +198,7 @@ public class DAOPaciente {
     public static void putHabitacion(String sip, String numHabitacion){
         Statement statement = null;
         conectar();
-        putHabitacionNull(sip);
+        //putHabitacionNull(sip);
         try{
             String sentencia = "UPDATE paciente SET numHabitacion = '"+numHabitacion+"' WHERE sip LIKE '"+sip+"'";
             statement = con.createStatement();

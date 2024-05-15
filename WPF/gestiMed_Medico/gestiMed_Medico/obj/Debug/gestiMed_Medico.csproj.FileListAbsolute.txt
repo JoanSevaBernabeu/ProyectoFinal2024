@@ -41,3 +41,4 @@ D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed_Medico\gestiMed_Medico\obj\D
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed_Medico\gestiMed_Medico\obj\Debug\gestiMed_Medico.pdb
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed_Medico\gestiMed_Medico\obj\Debug\vistas\VistaPacientes.g.cs
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed_Medico\gestiMed_Medico\obj\Debug\vistas\VistaPacientes.baml
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed_Medico\gestiMed_Medico\obj\Debug\GeneratedInternalTypeHelper.g.cs

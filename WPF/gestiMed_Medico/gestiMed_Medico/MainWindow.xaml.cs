@@ -1,4 +1,5 @@
-﻿using gestiMed_Medico.vistas;
+﻿using gestiMed_Medico.viewmodels;
+using gestiMed_Medico.vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,14 @@ namespace gestiMed_Medico
 
         private void aceptarButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.aceptar();
+            string dni = dniTextBox.Text;
+            string pass = passTextBox.Text;
+            vm.aceptar(dni,pass);
+        }
+
+        private void salirButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.cancelar();
         }
     }
 }

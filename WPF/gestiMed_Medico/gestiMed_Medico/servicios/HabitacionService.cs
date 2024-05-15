@@ -1,13 +1,14 @@
-﻿using gestiMed_Medico.clases;
-using Newtonsoft.Json;
-using RestSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using RestSharp;
+using Newtonsoft.Json;
+using gestiMed_Medico.clases;
 
-namespace gestiMed_Medico.servicios
+namespace gestiMed2024.servicios
 {
     class HabitacionService
     {
@@ -26,13 +27,13 @@ namespace gestiMed_Medico.servicios
             List<Habitacion> habitaciones = JsonConvert.DeserializeObject<List<Habitacion>>(response.Content);
             return habitaciones;
         }
-        public List<Habitacion> getHabitacion(string numero)
+        public Habitacion getHabitacion(string numero)
         {
             var client = new RestClient(ruta);
             var request = new RestRequest("/num/" + numero, Method.Get);
             var response = client.Execute(request);
-            List<Habitacion> habitaciones = JsonConvert.DeserializeObject<List<Habitacion>>(response.Content);
-            return habitaciones;
+            Habitacion habitacion = JsonConvert.DeserializeObject<Habitacion>(response.Content);
+            return habitacion;
         }
         public RestResponse postHabitacion(Habitacion habitacion)
         {
@@ -43,11 +44,12 @@ namespace gestiMed_Medico.servicios
             var response = client.Execute(request);
             return response;
         }
-        public RestResponse deleteHabitacion(string numero)
+        public RestResponse putHabitacion(string numero, int numCamas)
         {
+            string ruta2 = numero + "/" + numCamas;
             var client = new RestClient(ruta);
-            var request = new RestRequest("/delete/" + numero, Method.Delete);
-            var response = client.Execute(request);
+            var request = new RestRequest("/putHab/" + ruta2, Method.Delete);
+            var response = client.Put(request);
             return response;
         }
     }

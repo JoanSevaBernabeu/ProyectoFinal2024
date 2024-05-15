@@ -78,12 +78,12 @@ public class PacienteResource {
     }
     
     @PUT
-    @Path("putHab/{sip}/{numHabitacion}")
+    @Path("putHab/{sip}/{habitacion}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Response putPacienteHabitacion(@PathParam("sip") String sip, @PathParam("numHabiacion") String numHabiacion){
+    public Response putPacienteHabitacion(@PathParam("sip") String sip, @PathParam("habiacion") String habiacion){
         Response response;
         
-        DAOPaciente.putHabitacion(sip, numHabiacion);
+        DAOPaciente.putHabitacion(sip, habiacion);
         response = Response.status(Response.Status.OK).build();
         return response;
     }

@@ -39,8 +39,8 @@ namespace gestiMed_Medico.clases
             get { return urgencia; }
             set { SetProperty(ref urgencia, value); }
         }
-        private DateTime nacimiento;
-        public DateTime Nacimiento
+        private string nacimiento;
+        public string Nacimiento
         {
             get { return nacimiento; }
             set { SetProperty(ref nacimiento, value); }
@@ -65,7 +65,7 @@ namespace gestiMed_Medico.clases
         }
 
         public Paciente() { }
-        public Paciente(string apellidos, DateTime nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
+        public Paciente(string apellidos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
         {
             this.apellidos = apellidos;
             this.nacimiento = nacimiento;
@@ -76,7 +76,7 @@ namespace gestiMed_Medico.clases
             this.tratamiento = tratamiento;
             this.urgencia = urgencia;
         }
-        public Paciente(string apellidos, List<Medico> medicos, DateTime nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
+        public Paciente(string apellidos, List<Medico> medicos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
         {
             this.apellidos = apellidos;
             this.medicos = medicos;
@@ -88,7 +88,7 @@ namespace gestiMed_Medico.clases
             this.tratamiento = tratamiento;
             this.urgencia = urgencia;
         }
-        public Paciente(string apellidos, DateTime nacimiento, string nombre, string numContacto, string sip, string urgencia)
+        public Paciente(string apellidos, string nacimiento, string nombre, string numContacto, string sip, string urgencia)
         {
             this.apellidos = apellidos;
             this.nacimiento = nacimiento;

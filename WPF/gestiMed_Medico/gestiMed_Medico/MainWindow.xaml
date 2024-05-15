@@ -45,11 +45,12 @@
             <RowDefinition Height="0.75*"></RowDefinition>
             <RowDefinition Height="0.5*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="Contraseña:" Style="{StaticResource baseTextBlock}"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Usuario:" Style="{StaticResource baseTextBlock}"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource baseTextBox}" Grid.ColumnSpan="2"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Style="{StaticResource baseTextBox}" Grid.ColumnSpan="2"/>
+        <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Source="src/logo2.png"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Contraseña: " Style="{StaticResource baseTextBlock}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Dni: " Style="{StaticResource baseTextBlock}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource baseTextBox}" Grid.ColumnSpan="2" x:Name="dniTextBox"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Style="{StaticResource baseTextBox}" Grid.ColumnSpan="2" x:Name="passTextBox"/>
         <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource baseButton}" Content="Aceptar" Click="aceptarButton_Click"/>
-        <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource baseButton}" Content="Salir"/>
+        <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource baseButton}" Content="Salir" Click="salirButton_Click"/>
     </Grid>
 </Window>
