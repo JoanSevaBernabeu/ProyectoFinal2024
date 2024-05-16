@@ -134,17 +134,19 @@ public class DAOPaciente {
         conectar();
         try{
             statement = con.createStatement();
-            String insertPaciente = "INSERT INTO paciente(sip,nombre,apellidos,numContacto,nacimiento,tratamiento) VALUES ('"+
-                    paciente.getSip()+"','"+paciente.getNombre()+"','"+paciente.getApellidos()+"','"
-                    +paciente.getNumContacto()+"','"+paciente.getNacimiento()+"','"+paciente.getTratamiento()
-                    +"');";
+            String insertPaciente = "INSERT INTO paciente(sip,nombre,apellidos,numContacto,nacimiento,tratamiento,urgencia,numHabitacion) VALUES ('"+
+                paciente.getSip()+"','"+paciente.getNombre()+"','"+paciente.getApellidos()+"','"
+                +paciente.getNumContacto()+"','"+paciente.getNacimiento()
+                +"','"+paciente.getTratamiento().getNombre() +"','"+paciente.getUrgencia()+"','"+paciente.getNumHabitacion().getNumHabitacion()
+                +"');";
             int rs = statement.executeUpdate(insertPaciente);
             insertaMedicos(listaMedicos,paciente);
             
         }catch(SQLException ex){
             Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            desconectar();
         }
-        desconectar();
     }
     
     public static void insertaMedicos(ListaMedico medicos,Paciente paciente) throws SQLException{

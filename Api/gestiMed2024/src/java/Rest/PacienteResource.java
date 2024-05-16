@@ -8,6 +8,7 @@ package Rest;
 import Clases.Paciente;
 import DAO.DAOPaciente;
 import Listas.ListaPaciente;
+import java.util.HashMap;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -19,6 +20,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
 /**
@@ -58,12 +60,19 @@ public class PacienteResource {
     @Path("nuevo")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postPaciente(Paciente paciente){
-        Response response;
+        Status status;
+        HashMap<String, String> mensaje = new HashMap<>();
         
-        DAOPaciente.pacientePost(paciente);
-        response = Response.status(Response.Status.CREATED).build();
+        try{
+            DAOPaciente.pacientePost(paciente);
+            status = Response.Status.CREATED;
+            mensaje.put("mensaje", String.format("Paciente %s añadido correctamente", paciente.getSip()));
+        }catch(Exception e){
+            status = Response.Status.INTERNAL_SERVER_ERROR;
+            mensaje.put("mensaje", String.format("Error añadiendo paciente %s: %s", paciente.getSip(), e.getLocalizedMessage()));
+        }
         
-        return response;
+        return Response.status(status).entity(mensaje).build();
     }
     
     @DELETE
