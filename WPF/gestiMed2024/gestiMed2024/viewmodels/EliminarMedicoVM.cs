@@ -60,7 +60,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Medico medico in medicos)
             {
-                if (medico.Dni == dni) existe = true;
+                if (medico.dni == dni) existe = true;
             }
             if (existe) deleteMedico(dni);
             else error();

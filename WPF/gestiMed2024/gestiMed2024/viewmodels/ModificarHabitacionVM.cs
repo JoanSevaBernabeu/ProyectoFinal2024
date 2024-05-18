@@ -69,7 +69,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Habitacion habitacion in habitaciones)
             {
-                if (habitacion.NumHabitacion.Equals(numero)) existe = true;
+                if (habitacion.numHabitacion.Equals(numero)) existe = true;
             }
             if (existe){
                 servicio.putHabitacion(numero, numCamas);

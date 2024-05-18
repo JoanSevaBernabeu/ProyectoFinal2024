@@ -77,7 +77,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Paciente pac in pacientes)
             {
-                if (pac.Sip == paciente.Sip) existe = true;
+                if (pac.sip == paciente.sip) existe = true;
             }
             if (existe) error();
             else postPaciente(paciente);

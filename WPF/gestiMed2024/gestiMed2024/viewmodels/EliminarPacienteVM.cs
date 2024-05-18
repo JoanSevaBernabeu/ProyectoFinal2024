@@ -72,7 +72,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Paciente paciente in pacientes)
             {
-                if (paciente.Sip == sip) existe = true;
+                if (paciente.sip == sip) existe = true;
             }
             if (existe) deletePaciente(sip);
             else error();

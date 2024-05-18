@@ -75,7 +75,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Medicamento med in medicamentos)
             {
-                if (med.Id == medicamento.Id) existe = true;
+                if (med.id == medicamento.id) existe = true;
             }
             if (existe) error();
             else postMedicamento(medicamento);

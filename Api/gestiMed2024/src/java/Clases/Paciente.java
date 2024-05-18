@@ -29,13 +29,13 @@ public class Paciente implements Serializable{
     public Paciente() {
     }
 
-    public Paciente(String sip, String nombre, String apellidos, String numContacto, String nacimiento, String urgencia) {
-        this.sip = sip;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.numContacto = numContacto;
-        this.nacimiento = nacimiento;
-        this.urgencia = urgencia;
+    public Paciente(String Sip, String Nombre, String Apellidos, String NumContacto, String Nacimiento, String Urgencia) {
+        this.sip = Sip;
+        this.nombre = Nombre;
+        this.apellidos = Apellidos;
+        this.numContacto = NumContacto;
+        this.nacimiento = Nacimiento;
+        this.urgencia = Urgencia;
     }
 
     public String getSip() {
@@ -112,7 +112,7 @@ public class Paciente implements Serializable{
 
     @Override
     public String toString() {
-        return "Paciente{" + "sip=" + sip + ", nombre=" + nombre + ", apellidos=" + apellidos + ", numContacto=" + numContacto + ", nacimiento=" + nacimiento + ", urgencia=" + urgencia + ", medicoList=" + medicoList + ", numHabitacion=" + numHabitacion + ", tratamiento=" + tratamiento + '}';
+        return "Paciente{" + "sip=" + sip + ", nombre=" + nombre + ", apellidos=" + apellidos + ", numContacto=" + numContacto + ", nacimiento=" + nacimiento + ", urgencia=" + urgencia + ", medicoList=" + medicoList + ", numHabitacion=" + numHabitacion.getNumHabitacion() + ", tratamiento=" + tratamiento + '}';
     }
     
     

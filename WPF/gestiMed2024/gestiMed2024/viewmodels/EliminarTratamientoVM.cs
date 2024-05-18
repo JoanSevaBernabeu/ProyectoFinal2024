@@ -71,7 +71,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Tratamiento tratamiento in tratamientos)
             {
-                if (tratamiento.Nombre == nombre) existe = true;
+                if (tratamiento.nombre == nombre) existe = true;
             }
             if (existe) deleteTratmiento(nombre);
             else error();

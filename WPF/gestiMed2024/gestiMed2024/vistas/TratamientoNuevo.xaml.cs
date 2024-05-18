@@ -50,7 +50,7 @@ namespace gestiMed2024.vistas
             string med = medicamentoComboBox.SelectedItem.ToString();
             Medicamento medicamento = vm.getMedicamento(med);
             Tratamiento tratamiento = new Tratamiento(descripcion,nombre,solucion);
-            tratamiento.Medicamento = medicamento;
+            tratamiento.medicamento = medicamento;
             return tratamiento;
         }
         private void rellenaComboBox()
@@ -58,7 +58,7 @@ namespace gestiMed2024.vistas
             List<Medicamento> medicamentos = vm.getMedicamentos();
             foreach (Medicamento med in medicamentos)
             {
-                medicamentoComboBox.Items.Add(med.Nombre);
+                medicamentoComboBox.Items.Add(med.nombre);
             }
         }
     }

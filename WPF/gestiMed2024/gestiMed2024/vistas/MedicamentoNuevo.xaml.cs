@@ -41,7 +41,7 @@ namespace gestiMed2024.vistas
             List<Tratamiento> tratamientos = vm.getTratamientos();
             foreach (Tratamiento trat in tratamientos)
             {
-                comboBox.Items.Add(trat.Nombre);
+                comboBox.Items.Add(trat.nombre);
             }
             
         }
@@ -77,7 +77,7 @@ namespace gestiMed2024.vistas
             string nombre = nombreTextBox.Text;
             List<Tratamiento> listaTratamientos = obtenerTratamientos();
             medicamento = new Medicamento(cantidad,id,intervalo,nombre);
-            medicamento.Tratamientos = listaTratamientos;
+            medicamento.tratamientos = listaTratamientos;
 
             return medicamento;
         }

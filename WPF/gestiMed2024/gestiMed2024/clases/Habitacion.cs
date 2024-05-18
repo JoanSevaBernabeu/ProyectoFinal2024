@@ -10,23 +10,23 @@ namespace gestiMed2024.clases
 {
     class Habitacion : ObservableObject
     {
-        private string numHabitacion;
-        public string NumHabitacion
+        private string NumHabitacion;
+        public string numHabitacion
         {
-            get { return numHabitacion; }
-            set { SetProperty(ref numHabitacion, value); }
+            get { return NumHabitacion; }
+            set { SetProperty(ref NumHabitacion, value); }
         }
-        private int camTotales;
-        public int CamTotales
+        private int CamTotales;
+        public int camTotales
         {
-            get { return camTotales; }
-            set { SetProperty(ref camTotales, value); }
+            get { return CamTotales; }
+            set { SetProperty(ref CamTotales, value); }
         }
-        private int camOcupadas;
-        public int CamOcupadas
+        private int CamOcupadas;
+        public int camOcupadas
         {
-            get { return camOcupadas; }
-            set { SetProperty(ref camOcupadas, value); }
+            get { return CamOcupadas; }
+            set { SetProperty(ref CamOcupadas, value); }
         }
         private List<Paciente> pacientes;
         public List<Paciente> Pacientes
@@ -39,9 +39,9 @@ namespace gestiMed2024.clases
         public Habitacion() { }
         public Habitacion(int camOcupadas, int camTotales, string numHabitacion)
         {
-            this.numHabitacion = numHabitacion;
-            this.camTotales = camTotales;
-            this.camOcupadas = camOcupadas;
+            this.NumHabitacion = numHabitacion;
+            this.CamTotales = camTotales;
+            this.CamOcupadas = camOcupadas;
         }
         public void addPaciente(Paciente paciente)
         {

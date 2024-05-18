@@ -60,7 +60,7 @@ namespace gestiMed2024.viewmodels
             bool existe = false;
             foreach (Habitacion hab in habitaciones)
             {
-                if (hab.NumHabitacion == habitacion.NumHabitacion) existe = true;
+                if (hab.numHabitacion == habitacion.numHabitacion) existe = true;
             }
             if (existe) error();
             else postHabitacion(habitacion);

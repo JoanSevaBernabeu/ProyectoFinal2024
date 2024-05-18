@@ -106,7 +106,20 @@ public class DAOPaciente {
         desconectar();
         return paciente;
     }
-    
+    /*
+    public static Habitacion obtenerHabitacion(String numHabitacion){
+        Habitacion habitacion = new Habitacion();
+        Statement statement = null;
+        conectar();
+        try{
+            String sentencia = ""
+        }catch(SQLException ex){
+            Logger.getLogger(DAOPaciente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        desconectar();
+        return habitacion;
+    }
+    */
     
     public static ListaMedico obtenerMedicos(String sip){
         ListaMedico lista = new ListaMedico();

@@ -9,45 +9,45 @@ namespace gestiMed2024.clases
 {
     class Tratamiento : ObservableObject
     {
-        private string nombre;
-        public string Nombre
+        private string Nombre;
+        public string nombre
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
-        private string descripcion;
-        public string Descripcion
+        private string Descripcion;
+        public string descripcion
         {
-            get { return descripcion; }
-            set { SetProperty(ref descripcion, value); }
+            get { return Descripcion; }
+            set { SetProperty(ref Descripcion, value); }
         }
-        private string solucion;
-        public string Solucion
+        private string Solucion;
+        public string solucion
         {
-            get { return solucion; }
-            set { SetProperty(ref solucion, value); }
+            get { return Solucion; }
+            set { SetProperty(ref Solucion, value); }
         }
-        private Medicamento medicamento;
-        public Medicamento Medicamento
+        private Medicamento Medicamento;
+        public Medicamento medicamento
         {
-            get { return medicamento; }
-            set { SetProperty(ref medicamento, value); }
+            get { return Medicamento; }
+            set { SetProperty(ref Medicamento, value); }
         }
 
         // Constructores
         public Tratamiento() { }
         public Tratamiento(string descripcion, Medicamento medicamento, string nombre, string solucion)
         {
-            this.descripcion = descripcion;
-            this.medicamento = medicamento;
-            this.nombre = nombre;
-            this.solucion = solucion;
+            this.Descripcion = descripcion;
+            this.Medicamento = medicamento;
+            this.Nombre = nombre;
+            this.Solucion = solucion;
         }
         public Tratamiento(string descripcion, string nombre, string solucion)
         {
-            this.descripcion = descripcion;
-            this.nombre = nombre;
-            this.solucion = solucion;
+            this.Descripcion = descripcion;
+            this.Nombre = nombre;
+            this.Solucion = solucion;
         }
         public void addMedicamento(Medicamento medicamento)
         {
