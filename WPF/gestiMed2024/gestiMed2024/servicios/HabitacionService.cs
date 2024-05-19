@@ -46,9 +46,9 @@ namespace gestiMed2024.servicios
         }
         public RestResponse putHabitacion(string numero, int numCamas)
         {
-            string ruta2 = numero + "/" + numCamas;
+            string ruta2 ="put/"+ numero + "/" + numCamas;
             var client = new RestClient(ruta);
-            var request = new RestRequest("/putHab/" + ruta2, Method.Delete);
+            var request = new RestRequest(ruta2, Method.Delete);
             var response = client.Put(request);
             return response;
         }

@@ -62,7 +62,7 @@ public class DAOTratamiento {
             ResultSet rs = statement.executeQuery(sentencia);
             while(rs.next()){
                 Tratamiento tratamiento = new Tratamiento(rs.getString("nombre"),rs.getString("descripcion"),rs.getString("solucion"));
-                Medicamento medicamento = getMedicamento(rs.getString("medicamento"));
+                Medicamento medicamento = DAOMedicamento.getMedicamento(rs.getString("medicamento"));
                 tratamiento.setMedicamento(medicamento);
                 lista.add(tratamiento);
             }

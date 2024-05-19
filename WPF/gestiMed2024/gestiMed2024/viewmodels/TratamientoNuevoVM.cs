@@ -58,8 +58,15 @@ namespace gestiMed2024.viewmodels
         }
         public Medicamento getMedicamento(string nombre)
         {
-            MedicamentoService medicamentoService = new MedicamentoService();
-            Medicamento medicamento = medicamentoService.getMedicamento(nombre);
+            List<Medicamento> medicamentos = getMedicamentos();
+            Medicamento medicamento = new Medicamento();
+            foreach(Medicamento med in medicamentos)
+            {
+                if (med.nombre.Equals(nombre))
+                {
+                    medicamento = med;
+                }
+            }
             return medicamento;
         }
         public void aceptar(Tratamiento tratamiento)

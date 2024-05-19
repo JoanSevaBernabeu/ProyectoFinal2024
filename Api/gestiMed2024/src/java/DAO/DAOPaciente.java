@@ -72,6 +72,8 @@ public class DAOPaciente {
                 paciente.setTratamiento(tratamiento);
                 ListaMedico medicos = obtenerMedicos(rs.getString("sip"));
                 paciente.setMedicoList(medicos);
+                Habitacion habitacion = DAOHabitacion.getHabitacion(rs.getString("numHabitacion"));
+                paciente.setNumHabitacion(habitacion);
                 lista.add(paciente);
             }
         }catch(SQLException ex){

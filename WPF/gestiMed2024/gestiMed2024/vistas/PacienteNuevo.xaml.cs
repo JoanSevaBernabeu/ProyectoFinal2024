@@ -41,9 +41,9 @@ namespace gestiMed2024.vistas
         }
         private void rellenaComboUrgencia()
         {
-            urgenciaComboBox.Items.Add("Urgente");
-            urgenciaComboBox.Items.Add("Medio");
-            urgenciaComboBox.Items.Add("Bajo");
+            urgenciaComboBox.Items.Add("alta");
+            urgenciaComboBox.Items.Add("media");
+            urgenciaComboBox.Items.Add("baja");
         }
         private void rellenaComboTratamiento()
         {

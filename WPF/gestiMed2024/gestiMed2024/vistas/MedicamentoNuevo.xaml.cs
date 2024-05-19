@@ -86,10 +86,18 @@ namespace gestiMed2024.vistas
         {
             StackPanel stack = tratamientosStackPanel;
             List<Tratamiento> tratamientos = null;
-            for (int i = 0; i < stack.Children.Count; i++)
+
+            foreach(var child in tratamientosStackPanel.Children)
             {
-                Tratamiento trat = vm.getTratamiento(stack.Children[i].ToString());
-                tratamientos.Add(trat);
+                if(child is ComboBox comboBox)
+                {
+                    if(comboBox.SelectedItem is ComboBox selectedItem)
+                    {
+                        string nombreTratamiento = selectedItem.ToString();
+                        Tratamiento trat = vm.getTratamiento(nombreTratamiento);
+                        tratamientos.Add(trat);
+                    }
+                }
             }
 
             return tratamientos;
