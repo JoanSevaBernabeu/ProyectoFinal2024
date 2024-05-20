@@ -10,23 +10,23 @@ namespace gestiMed2024.clases
 {
     class Medico : ObservableObject
     {
-        private string Dni;
-        public string dni
-        {
-            get { return Dni; }
-            set { SetProperty(ref Dni, value); }
-        }
-        private string Nombre;
-        public string nombre
-        {
-            get { return Nombre; }
-            set { SetProperty(ref Nombre, value); }
-        }
         private string Apellidos;
         public string apellidos
         {
             get { return Apellidos; }
             set { SetProperty(ref Apellidos, value); }
+        }
+        private string Contrasenya;
+        public string contrasenya
+        {
+            get { return Contrasenya; }
+            set { SetProperty(ref Contrasenya, value); }
+        }
+        private string Dni;
+        public string dni
+        {
+            get { return Dni; }
+            set { SetProperty(ref Dni, value); }
         }
         private string Email;
         public string email
@@ -34,11 +34,11 @@ namespace gestiMed2024.clases
             get { return Email; }
             set { SetProperty(ref Email, value); }
         }
-        private string Contrasenya;
-        public string contrasenya
+        private string Nombre;
+        public string nombre
         {
-            get { return Contrasenya; }
-            set { SetProperty(ref Contrasenya, value); }
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
         private string NumContacto;
         public string numContacto

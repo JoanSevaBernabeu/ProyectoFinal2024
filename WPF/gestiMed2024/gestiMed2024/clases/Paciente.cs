@@ -4,7 +4,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
+using gestiMed2024.listas;
+using System.Text.Json.Serialization;
 
 namespace gestiMed2024.clases
 {
@@ -16,11 +19,12 @@ namespace gestiMed2024.clases
             get { return Apellidos; }
             set { SetProperty(ref Apellidos, value); }
         }
-        private List<Medico> Medicos;
-        public List<Medico> medicos
+
+        private ListaMedicos MedicoList;
+        public ListaMedicos medicoList
         {
-            get { return Medicos; }
-            set { SetProperty(ref Medicos, value); }
+            get { return MedicoList; }
+            set { SetProperty(ref MedicoList, value); }
         }
         private string Nacimiento;
         public string nacimiento
@@ -34,11 +38,11 @@ namespace gestiMed2024.clases
             get { return NumContacto; }
             set { SetProperty(ref NumContacto, value); }
         }
-        private Habitacion Habitacion;
-        public Habitacion habitacion
+        private Habitacion NumHabitacion;
+        public Habitacion numHabitacion
         {
-            get { return Habitacion; }
-            set { SetProperty(ref Habitacion, value); }
+            get { return NumHabitacion; }
+            set { SetProperty(ref NumHabitacion, value); }
         }
         private string Sip;
         public string sip
@@ -72,19 +76,19 @@ namespace gestiMed2024.clases
             this.Nacimiento = nacimiento;
             this.Nombre = nombre;
             this.NumContacto = numContacto;
-            this.Habitacion = habitacion;
+            this.NumHabitacion = habitacion;
             this.Sip = sip;
             this.Tratamiento = tratamiento;
             this.Urgencia = urgencia;
         }
-        public Paciente(string apellidos,List<Medico> medicos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
+        public Paciente(string apellidos,ListaMedicos medicos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
         {
             this.Apellidos = apellidos;
-            this.Medicos = medicos;
+            this.MedicoList = medicos;
             this.Nacimiento = nacimiento;
             this.Nombre = nombre;
             this.NumContacto = numContacto;
-            this.Habitacion = habitacion;
+            this.NumHabitacion = habitacion;
             this.Sip = sip;
             this.Tratamiento = tratamiento;
             this.Urgencia = urgencia;

@@ -10,29 +10,29 @@ namespace gestiMed2024.clases
 {
     class Medicamento : ObservableObject
     {
-        private string Id;
-        public string id
-        {
-            get { return Id; }
-            set { SetProperty(ref Id, value); }
-        }
-        private string Nombre;
-        public string nombre
-        {
-            get { return Nombre; }
-            set { SetProperty(ref Nombre, value); }
-        }
         private int Cantidad;
         public int cantidad
         {
             get { return Cantidad; }
             set { SetProperty(ref Cantidad, value); }
         }
+        private string Id;
+        public string id
+        {
+            get { return Id; }
+            set { SetProperty(ref Id, value); }
+        }
         private int Intervalo;
         public int intervalo
         {
             get { return Intervalo; }
             set { SetProperty(ref Intervalo, value); }
+        }
+        private string Nombre;
+        public string nombre
+        {
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
         private List<Tratamiento> Tratamientos;
         public List<Tratamiento> tratamientos

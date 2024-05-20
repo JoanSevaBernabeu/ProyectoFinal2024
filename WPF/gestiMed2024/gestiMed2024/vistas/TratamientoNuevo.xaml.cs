@@ -50,23 +50,6 @@ namespace gestiMed2024.vistas
             Tratamiento tratamiento = new Tratamiento(descripcion, nombre, solucion);
 
             ComboBox comboBox = medicamentoComboBox;
-            /*
-            if(comboBox.SelectedItem is ComboBox selectedItem)
-            {
-                string med = selectedItem.ToString();
-                Medicamento medicamento = vm.getMedicamento(med);
-                tratamiento.medicamento = medicamento;
-            }
-            
-
-            if(comboBox.SelectedItem != null)
-            {
-                ComboBoxItem selected = (ComboBoxItem)medicamentoComboBox.SelectedItem;
-                string select = selected.Content.ToString();
-                Medicamento medicamento = vm.getMedicamento(select);
-                tratamiento.medicamento = medicamento;
-            }
-            */
             string select = medicamentoComboBox.SelectedItem.ToString();
             Medicamento medicamento = vm.getMedicamento(select);
             tratamiento.medicamento = medicamento;

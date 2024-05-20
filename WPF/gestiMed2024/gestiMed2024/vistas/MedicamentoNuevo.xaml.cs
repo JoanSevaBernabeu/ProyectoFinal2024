@@ -91,7 +91,7 @@ namespace gestiMed2024.vistas
             {
                 if(child is ComboBox comboBox)
                 {
-                    if(comboBox.SelectedItem is ComboBox selectedItem)
+                    if(comboBox.SelectedItem is ComboBoxItem selectedItem)
                     {
                         string nombreTratamiento = selectedItem.ToString();
                         Tratamiento trat = vm.getTratamiento(nombreTratamiento);

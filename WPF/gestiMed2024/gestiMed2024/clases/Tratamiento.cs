@@ -9,23 +9,11 @@ namespace gestiMed2024.clases
 {
     class Tratamiento : ObservableObject
     {
-        private string Nombre;
-        public string nombre
-        {
-            get { return Nombre; }
-            set { SetProperty(ref Nombre, value); }
-        }
         private string Descripcion;
         public string descripcion
         {
             get { return Descripcion; }
             set { SetProperty(ref Descripcion, value); }
-        }
-        private string Solucion;
-        public string solucion
-        {
-            get { return Solucion; }
-            set { SetProperty(ref Solucion, value); }
         }
         private Medicamento Medicamento;
         public Medicamento medicamento
@@ -33,6 +21,25 @@ namespace gestiMed2024.clases
             get { return Medicamento; }
             set { SetProperty(ref Medicamento, value); }
         }
+        private string Nombre;
+        public string nombre
+        {
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
+        }
+        private List<Paciente> PacienteList;
+        public List<Paciente> pacienteList
+        {
+            get { return PacienteList; }
+            set { SetProperty(ref PacienteList, value); }
+        }
+        private string Solucion;
+        public string solucion
+        {
+            get { return Solucion; }
+            set { SetProperty(ref Solucion, value); }
+        }
+        
 
         // Constructores
         public Tratamiento() { }
@@ -42,12 +49,14 @@ namespace gestiMed2024.clases
             this.Medicamento = medicamento;
             this.Nombre = nombre;
             this.Solucion = solucion;
+            this.PacienteList = null;
         }
         public Tratamiento(string descripcion, string nombre, string solucion)
         {
             this.Descripcion = descripcion;
             this.Nombre = nombre;
             this.Solucion = solucion;
+            this.PacienteList = null;
         }
         public void addMedicamento(Medicamento medicamento)
         {
