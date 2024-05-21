@@ -28,7 +28,6 @@ namespace gestiMed2024.vistas
             vm = new MedicamentoNuevoVM();
             this.DataContext = vm;
             vm.setVentana(this);
-            //rellenaComboBox();
             InitializeComponent();
             creaComboBox();
         }
@@ -63,6 +62,7 @@ namespace gestiMed2024.vistas
             Medicamento medicamento = obtenerMedicamento();
             if (medicamento == null) vm.error();
             else vm.aceptar(medicamento);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

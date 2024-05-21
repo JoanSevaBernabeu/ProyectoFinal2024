@@ -43,7 +43,7 @@ namespace gestiMed2024.viewmodels
             result = MessageBox.Show(mensaje, caption, botones);
             if (result == DialogResult.Yes)
             {
-                ventana.Close();
+                cierraVentana();
             }
         }
         public void setVentana(EliminarPaciente ventana)
@@ -64,7 +64,6 @@ namespace gestiMed2024.viewmodels
             result = MessageBox.Show(mensaje, caption, botones);
 
             servicio.deletePaciente(sip);
-            ventana.Close();
         }
         public void aceptar(string sip)
         {
@@ -76,6 +75,10 @@ namespace gestiMed2024.viewmodels
             }
             if (existe) deletePaciente(sip);
             else error();
+        }
+        public void cierraVentana()
+        {
+            ventana.Close();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace gestiMed2024.vistas
         {
             Medico med = obtenerMedico();
             vm.aceptar(med);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

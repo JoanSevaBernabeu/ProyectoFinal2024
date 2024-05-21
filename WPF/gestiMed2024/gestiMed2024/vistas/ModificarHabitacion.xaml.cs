@@ -33,6 +33,7 @@ namespace gestiMed2024.vistas
             string numero = numHabitacionTextBox.Text;
             int numCamas = int.Parse(numCamasOcupadas.Text);
             vm.aceptar(numero,numCamas);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

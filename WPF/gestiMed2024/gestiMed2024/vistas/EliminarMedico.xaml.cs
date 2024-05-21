@@ -32,6 +32,7 @@ namespace gestiMed2024.vistas
         {
             string dni = dniTextBox.Text;
             vm.aceptar(dni);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

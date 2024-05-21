@@ -170,7 +170,7 @@ public class DAOPaciente {
         ArrayList<Medico> lista = medicos.getLista();
         for(Medico med : lista){
             String consulta = "INSERT INTO trata VALUES ('"+med.getDni()+"','"+paciente.getSip()+"')";
-            ResultSet rs = statement.executeQuery(consulta);
+            int rs = statement.executeUpdate(consulta);
         }
     }
     

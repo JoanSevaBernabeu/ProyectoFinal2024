@@ -43,7 +43,7 @@ namespace gestiMed2024.viewmodels
             result = MessageBox.Show(mensaje, caption, botones);
             if (result == DialogResult.Yes)
             {
-                ventana.Close();
+                cierraVentana();
             }
         }
         public void setVentana(EliminarTratamiento ventana)
@@ -75,6 +75,10 @@ namespace gestiMed2024.viewmodels
             }
             if (existe) deleteTratmiento(nombre);
             else error();
+        }
+        public void cierraVentana()
+        {
+            ventana.Close();
         }
     }
 }

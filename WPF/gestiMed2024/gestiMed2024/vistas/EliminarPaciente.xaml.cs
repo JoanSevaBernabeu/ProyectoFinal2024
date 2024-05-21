@@ -32,6 +32,7 @@ namespace gestiMed2024.vistas
         {
             string sip = sipTextBox.Text;
             vm.aceptar(sip);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

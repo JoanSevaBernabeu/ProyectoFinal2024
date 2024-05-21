@@ -33,6 +33,7 @@ namespace gestiMed2024.vistas
         {
             Habitacion habitacion = obtenerHabitacion();
             vm.aceptar(habitacion);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

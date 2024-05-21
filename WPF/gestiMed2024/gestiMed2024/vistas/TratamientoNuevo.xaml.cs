@@ -37,6 +37,7 @@ namespace gestiMed2024.vistas
             Tratamiento tratamiento = obtenerTratamiento();
             if (tratamiento == null) vm.error();
             else vm.aceptar(tratamiento);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {

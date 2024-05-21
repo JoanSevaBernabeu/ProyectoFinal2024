@@ -32,6 +32,7 @@ namespace gestiMed2024.vistas
         {
             string nombre = tratamientoTextBox.Text;
             vm.aceptar(nombre);
+            vm.cierraVentana();
         }
         private void cancelarButton_Click(object sender, RoutedEventArgs e)
         {
