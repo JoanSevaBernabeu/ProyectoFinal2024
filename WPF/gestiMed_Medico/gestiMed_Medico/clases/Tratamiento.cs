@@ -9,45 +9,54 @@ namespace gestiMed_Medico.clases
 {
     class Tratamiento : ObservableObject
     {
-        private string nombre;
-        public string Nombre
+        private string Descripcion;
+        public string descripcion
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return Descripcion; }
+            set { SetProperty(ref Descripcion, value); }
         }
-        private string descripcion;
-        public string Descripcion
+        private Medicamento Medicamento;
+        public Medicamento medicamento
         {
-            get { return descripcion; }
-            set { SetProperty(ref descripcion, value); }
+            get { return Medicamento; }
+            set { SetProperty(ref Medicamento, value); }
         }
-        private string solucion;
-        public string Solucion
+        private string Nombre;
+        public string nombre
         {
-            get { return solucion; }
-            set { SetProperty(ref solucion, value); }
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
-        private Medicamento medicamento;
-        public Medicamento Medicamento
+        private List<Paciente> PacienteList;
+        public List<Paciente> pacienteList
         {
-            get { return medicamento; }
-            set { SetProperty(ref medicamento, value); }
+            get { return PacienteList; }
+            set { SetProperty(ref PacienteList, value); }
         }
+        private string Solucion;
+        public string solucion
+        {
+            get { return Solucion; }
+            set { SetProperty(ref Solucion, value); }
+        }
+
 
         // Constructores
         public Tratamiento() { }
         public Tratamiento(string descripcion, Medicamento medicamento, string nombre, string solucion)
         {
-            this.descripcion = descripcion;
-            this.medicamento = medicamento;
-            this.nombre = nombre;
-            this.solucion = solucion;
+            this.Descripcion = descripcion;
+            this.Medicamento = medicamento;
+            this.Nombre = nombre;
+            this.Solucion = solucion;
+            this.PacienteList = null;
         }
         public Tratamiento(string descripcion, string nombre, string solucion)
         {
-            this.descripcion = descripcion;
-            this.nombre = nombre;
-            this.solucion = solucion;
+            this.Descripcion = descripcion;
+            this.Nombre = nombre;
+            this.Solucion = solucion;
+            this.PacienteList = null;
         }
         public void addMedicamento(Medicamento medicamento)
         {

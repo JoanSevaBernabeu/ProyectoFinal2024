@@ -67,12 +67,8 @@ namespace gestiMed_Medico.viewmodels
             result = MessageBox.Show(mensaje, caption, botones);
             if (result == DialogResult.Yes)
             {
-                cierraVentana();
+                ventana.Close();
             }
-        }
-        public void cierraVentana()
-        {
-            ventana.Close();
         }
 
         public List<Paciente> getPacientes() { return pacientes;}

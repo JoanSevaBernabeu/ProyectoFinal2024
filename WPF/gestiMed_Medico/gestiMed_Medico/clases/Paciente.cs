@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using gestiMed_Medico.listas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,84 +10,85 @@ namespace gestiMed_Medico.clases
 {
     class Paciente : ObservableObject
     {
-        private string sip;
-        public string Sip
+        private string Apellidos;
+        public string apellidos
         {
-            get { return sip; }
-            set { SetProperty(ref sip, value); }
+            get { return Apellidos; }
+            set { SetProperty(ref Apellidos, value); }
         }
-        private string nombre;
-        public string Nombre
+
+        private ListaMedicos MedicoList;
+        public ListaMedicos medicoList
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return MedicoList; }
+            set { SetProperty(ref MedicoList, value); }
         }
-        private string apellidos;
-        public string Apellidos
+        private string Nacimiento;
+        public string nacimiento
         {
-            get { return apellidos; }
-            set { SetProperty(ref apellidos, value); }
+            get { return Nacimiento; }
+            set { SetProperty(ref Nacimiento, value); }
         }
-        private string numContacto;
-        public string NumContacto
+        private string NumContacto;
+        public string numContacto
         {
-            get { return numContacto; }
-            set { SetProperty(ref numContacto, value); }
+            get { return NumContacto; }
+            set { SetProperty(ref NumContacto, value); }
         }
-        private string urgencia;
-        public string Urgencia
+        private Habitacion NumHabitacion;
+        public Habitacion numHabitacion
         {
-            get { return urgencia; }
-            set { SetProperty(ref urgencia, value); }
+            get { return NumHabitacion; }
+            set { SetProperty(ref NumHabitacion, value); }
         }
-        private string nacimiento;
-        public string Nacimiento
+        private string Sip;
+        public string sip
         {
-            get { return nacimiento; }
-            set { SetProperty(ref nacimiento, value); }
+            get { return Sip; }
+            set { SetProperty(ref Sip, value); }
         }
-        private List<Medico> medicos;
-        public List<Medico> Medicos
+        private string Nombre;
+        public string nombre
         {
-            get { return medicos; }
-            set { SetProperty(ref medicos, value); }
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
-        private Tratamiento tratamiento;
-        public Tratamiento Tratamiento
+        private Tratamiento Tratamiento;
+        public Tratamiento tratamiento
         {
-            get { return tratamiento; }
-            set { SetProperty(ref tratamiento, value); }
+            get { return Tratamiento; }
+            set { SetProperty(ref Tratamiento, value); }
         }
-        private Habitacion habitacion;
-        public Habitacion Habitacion
+        private string Urgencia;
+        public string urgencia
         {
-            get { return habitacion; }
-            set { SetProperty(ref habitacion, value); }
+            get { return Urgencia; }
+            set { SetProperty(ref Urgencia, value); }
         }
 
         public Paciente() { }
         public Paciente(string apellidos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
         {
-            this.apellidos = apellidos;
-            this.nacimiento = nacimiento;
-            this.nombre = nombre;
-            this.numContacto = numContacto;
-            this.habitacion = habitacion;
-            this.sip = sip;
-            this.tratamiento = tratamiento;
-            this.urgencia = urgencia;
+            this.Apellidos = apellidos;
+            this.Nacimiento = nacimiento;
+            this.Nombre = nombre;
+            this.NumContacto = numContacto;
+            this.NumHabitacion = habitacion;
+            this.Sip = sip;
+            this.Tratamiento = tratamiento;
+            this.Urgencia = urgencia;
         }
-        public Paciente(string apellidos, List<Medico> medicos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
+        public Paciente(string apellidos, ListaMedicos medicos, string nacimiento, string nombre, string numContacto, Habitacion habitacion, string sip, Tratamiento tratamiento, string urgencia)
         {
-            this.apellidos = apellidos;
-            this.medicos = medicos;
-            this.nacimiento = nacimiento;
-            this.nombre = nombre;
-            this.numContacto = numContacto;
-            this.habitacion = habitacion;
-            this.sip = sip;
-            this.tratamiento = tratamiento;
-            this.urgencia = urgencia;
+            this.Apellidos = apellidos;
+            this.MedicoList = medicos;
+            this.Nacimiento = nacimiento;
+            this.Nombre = nombre;
+            this.NumContacto = numContacto;
+            this.NumHabitacion = habitacion;
+            this.Sip = sip;
+            this.Tratamiento = tratamiento;
+            this.Urgencia = urgencia;
         }
         public Paciente(string apellidos, string nacimiento, string nombre, string numContacto, string sip, string urgencia)
         {

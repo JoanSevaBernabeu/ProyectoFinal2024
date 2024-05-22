@@ -9,41 +9,41 @@ namespace gestiMed_Medico.clases
 {
     class Medico : ObservableObject
     {
-        private string dni;
-        public string Dni
+        private string Apellidos;
+        public string apellidos
         {
-            get { return dni; }
-            set { SetProperty(ref dni, value); }
+            get { return Apellidos; }
+            set { SetProperty(ref Apellidos, value); }
         }
-        private string nombre;
-        public string Nombre
+        private string Contrasenya;
+        public string contrasenya
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return Contrasenya; }
+            set { SetProperty(ref Contrasenya, value); }
         }
-        private string apellidos;
-        public string Apellidos
+        private string Dni;
+        public string dni
         {
-            get { return apellidos; }
-            set { SetProperty(ref apellidos, value); }
+            get { return Dni; }
+            set { SetProperty(ref Dni, value); }
         }
-        private string email;
-        public string Email
+        private string Email;
+        public string email
         {
-            get { return email; }
-            set { SetProperty(ref email, value); }
+            get { return Email; }
+            set { SetProperty(ref Email, value); }
         }
-        private string contrasenya;
-        public string Contrasenya
+        private string Nombre;
+        public string nombre
         {
-            get { return contrasenya; }
-            set { SetProperty(ref contrasenya, value); }
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
-        private string numContacto;
-        public string NumContacto
+        private string NumContacto;
+        public string numContacto
         {
-            get { return numContacto; }
-            set { SetProperty(ref numContacto, value); }
+            get { return NumContacto; }
+            set { SetProperty(ref NumContacto, value); }
         }
         private List<Paciente> pacientes;
         public List<Paciente> Pacientes
@@ -66,12 +66,12 @@ namespace gestiMed_Medico.clases
         }
         public Medico(string apellidos, string contrasenya, string dni, string email, string nombre, string numContacto)
         {
-            this.apellidos = apellidos;
-            this.contrasenya = contrasenya;
-            this.dni = dni;
-            this.email = email;
-            this.nombre = nombre;
-            this.numContacto = numContacto;
+            this.Apellidos = apellidos;
+            this.Contrasenya = contrasenya;
+            this.Dni = dni;
+            this.Email = email;
+            this.Nombre = nombre;
+            this.NumContacto = numContacto;
         }
     }
 }

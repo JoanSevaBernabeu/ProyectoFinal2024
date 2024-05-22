@@ -34,7 +34,7 @@ namespace gestiMed_Medico.viewmodels
             bool existe = false;
             foreach(Medico medico in medicos)
             {
-                if (medico.Dni.Equals(dni) && medico.Contrasenya.Equals(pass)) existe = true;
+                if (medico.dni.Equals(dni) && medico.contrasenya.Equals(pass)) existe = true;
             }
             if (existe) vistaPacientes();
             else error();

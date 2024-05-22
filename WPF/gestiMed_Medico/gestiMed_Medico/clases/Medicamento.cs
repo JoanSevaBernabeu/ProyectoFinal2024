@@ -10,44 +10,44 @@ namespace gestiMed_Medico.clases
 {
     class Medicamento : ObservableObject
     {
-        private string id;
-        public string Id
+        private int Cantidad;
+        public int cantidad
         {
-            get { return id; }
-            set { SetProperty(ref id, value); }
+            get { return Cantidad; }
+            set { SetProperty(ref Cantidad, value); }
         }
-        private string nombre;
-        public string Nombre
+        private string Id;
+        public string id
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return Id; }
+            set { SetProperty(ref Id, value); }
         }
-        private int cantidad;
-        public int Cantidad
+        private int Intervalo;
+        public int intervalo
         {
-            get { return cantidad; }
-            set { SetProperty(ref cantidad, value); }
+            get { return Intervalo; }
+            set { SetProperty(ref Intervalo, value); }
         }
-        private int intervalo;
-        public int Intervalo
+        private string Nombre;
+        public string nombre
         {
-            get { return intervalo; }
-            set { SetProperty(ref intervalo, value); }
+            get { return Nombre; }
+            set { SetProperty(ref Nombre, value); }
         }
-        private List<Tratamiento> tratamientos;
-        public List<Tratamiento> Tratamientos
+        private List<Tratamiento> Tratamientos;
+        public List<Tratamiento> tratamientos
         {
-            get { return tratamientos; }
-            set { SetProperty(ref tratamientos, value); }
+            get { return Tratamientos; }
+            set { SetProperty(ref Tratamientos, value); }
         }
         // Constructores
         public Medicamento() { }
         public Medicamento(int cantidad, string id, int intervalo, string nombre)
         {
-            this.cantidad = cantidad;
-            this.id = id;
-            this.intervalo = intervalo;
-            this.nombre = nombre;
+            this.Cantidad = cantidad;
+            this.Id = id;
+            this.Intervalo = intervalo;
+            this.Nombre = nombre;
         }
     }
 }

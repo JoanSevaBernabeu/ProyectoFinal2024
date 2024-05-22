@@ -27,7 +27,11 @@ namespace gestiMed_Medico.vistas
             this.DataContext = vm;
             vm.setVentana(this);
             InitializeComponent();
-            // itemsControl.ItemsSource = vm.Pacientes;
+        }
+
+        private void salirButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.salir();
         }
     }
 }
