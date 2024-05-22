@@ -5,6 +5,7 @@
         <group>
             <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Clases/Paciente.java</file>
             <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/DAO/DAOPaciente.java</file>
+            <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/DAO/DAOMedico.java</file>
             <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/DAO/DAOHabitacion.java</file>
             <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Clases/Habitacion.java</file>
             <file>file:/D:/ProyectoFinal2024/ProyectoFinal2024/Api/gestiMed2024/src/java/Rest/HabitacionResource.java</file>
