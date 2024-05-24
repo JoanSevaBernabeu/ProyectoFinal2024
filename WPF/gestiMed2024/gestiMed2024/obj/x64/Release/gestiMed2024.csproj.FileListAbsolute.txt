@@ -51,11 +51,11 @@ D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Rel
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\gestiMed2024.Properties.Resources.resources
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\gestiMed2024.csproj.GenerateResource.cache
 D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\gestiMed2024.csproj.CoreCompileInputs.cache
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\x64\Release\Gesti Med.exe.config
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\x64\Release\Gesti Med.exe
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\x64\Release\Gesti Med.pdb
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\Gesti Med_MarkupCompile.cache
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\Gesti Med_MarkupCompile.lref
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\Gesti Med.g.resources
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\Gesti Med.exe
-D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\Gesti Med.pdb
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\x64\Release\GestiMed.exe.config
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\x64\Release\GestiMed.exe
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\bin\x64\Release\GestiMed.pdb
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\GestiMed_MarkupCompile.cache
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\GestiMed_MarkupCompile.lref
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\GestiMed.g.resources
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\GestiMed.exe
+D:\ProyectoFinal2024\ProyectoFinal2024\WPF\gestiMed2024\gestiMed2024\obj\x64\Release\GestiMed.pdb
