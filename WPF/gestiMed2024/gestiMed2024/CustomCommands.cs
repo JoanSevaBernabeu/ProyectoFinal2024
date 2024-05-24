@@ -36,9 +36,9 @@ namespace gestiMed2024
                 new KeyGesture(Key.H,ModifierKeys.Control)
             }
             );
-        public static readonly RoutedUICommand EliminarHabitacion = new RoutedUICommand(
-            "EliminarHabitacion",
-            "EliminarHabitacion",
+        public static readonly RoutedUICommand ModificarHabitacion = new RoutedUICommand(
+            "ModificarHabitacion",
+            "ModificarHabitacion",
             typeof(CustomCommands),
             new InputGestureCollection
             {

@@ -89,8 +89,6 @@ namespace gestiMed2024.vistas
                     medicos.Add(medico);
                 }
             }
-
-
             return medicos;
         }
         private Paciente obtenerPaciente()
